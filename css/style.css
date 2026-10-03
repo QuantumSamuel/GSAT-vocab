@@ -1,0 +1,2073 @@
+/* ============================================================
+   學測英文單字 2.0 — Soft Minimal 設計語言（2.1.1 正式版）
+   token 制：淺/深 × 五強調色（藍/橘/綠/粉/灰）
+   ============================================================ */
+
+/* ---------- Tokens：淺色（4.2.0 重調：Notion 式三層 surface＋hairline 分離） ---------- */
+:root {
+  --bg: #FFFFFF;              /* 頁面底＝卡片同色，靠 1px 線分離（Notion） */
+  --surface: #FFFFFF;         /* surface-1 卡片 */
+  --surface-2: #F7F7F5;       /* 次要面板／hover 列 */
+  --surface-3: #EFEFEE;       /* active／pressed（4.2.0 新增第三層） */
+  --ink: #252525;
+  --muted: #787878;
+  --border: #E8E7E3;
+  --border-soft: #F0EFEC;     /* 列分隔線（比 --border 淺一階，4.2.0 新增） */
+  --shadow: none;             /* 4.2.0 hairline：卡片靠線不靠影；陰影只留浮層 */
+  --radius: 12px;             /* 卡片／Dialog（shape-md） */
+  --accent: #4A6FA5;
+  --accent-soft: #EEF2F6;
+  --good: #5A8A6A; --warn: #A8814A; --bad: #A85A4A;
+  /* 5.2 新增：第三種來源色（考古題）。不跟著強調色走——它是「題目來源」的固定色，
+     使用者換強調色時三種來源徽章的相對關係（real 藍／archive 紫／ai 綠）不能被打散 */
+  --src-archive: #7C5CBF; --src-archive-soft: #F1EDF8;
+  --font: Inter, "SF Pro Text", -apple-system, "Segoe UI",
+          "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  /* 4.2.0 spacing token（4 的倍數六階） */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* 4.2.0 shape token（M3 shape scale 五階） */
+  --shape-xs: 4px; --shape-sm: 8px; --shape-md: 12px; --shape-lg: 16px; --shape-full: 999px;
+  /* 4.2.0 頂欄高度（抽屜側欄 sticky 計算用） */
+  --topbar-h: 52px;
+}
+
+/* ---------- Tokens：深色（4.2.0 整組重調：全值對比 ≥ WCAG AA） ---------- */
+html.dark {
+  --bg: #191917;
+  --surface: #202020;
+  --surface-2: #2A2A28;
+  --surface-3: #343431;
+  --ink: #ECECEA;
+  --muted: #9A9A94;
+  --border: #333331;
+  --border-soft: #2C2C2A;
+  --shadow: none;
+  /* 語意色深色覆寫（4.2.0：--good/--warn 原漏、對比 3.96/3.99 不達 AA） */
+  --good: #8FBF9F; --warn: #C9A16B; --bad: #D9825F;
+  --src-archive: #A88FD6; --src-archive-soft: #2A2438;
+}
+
+/* ---------- 強調色 × 模式（10 組合） ---------- */
+html[data-accent="blue"]  { --accent: #4A6FA5; --accent-soft: #EEF2F6; }
+html[data-accent="orange"]{ --accent: #B8722F; --accent-soft: #F6EEE4; }
+html[data-accent="green"] { --accent: #5A8A6A; --accent-soft: #EDF3EF; }
+html[data-accent="pink"]  { --accent: #B06E85; --accent-soft: #F7EDF1; }
+html[data-accent="gray"]  { --accent: #6B6F76; --accent-soft: #F0F0EE; }
+html.dark[data-accent="blue"]   { --accent: #7FA3C9; --accent-soft: #26303B; }
+html.dark[data-accent="orange"] { --accent: #D49A5E; --accent-soft: #33291D; }
+html.dark[data-accent="green"]  { --accent: #7FA98C; --accent-soft: #22302A; }
+html.dark[data-accent="pink"]   { --accent: #C996AB; --accent-soft: #33242B; }
+html.dark[data-accent="gray"]   { --accent: #9A9AA0; --accent-soft: #2B2B2E; }
+
+/* ---------- 基礎 ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font); font-size: 15.5px; line-height: 1.65;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+h2 { font-size: 1.02rem; font-weight: 600; margin: 0 0 12px; }
+h3 { font-size: 0.92rem; font-weight: 600; margin: 14px 0 8px; }
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+a { color: var(--accent); }
+
+#page { max-width: 640px; margin: 0 auto; padding: calc(10px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px)); }
+main { padding: 0 0 24px; }
+footer {
+  text-align: center; color: var(--muted); font-size: 0.78rem;
+  padding: 18px 12px 22px;
+}
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+.card.error { border-color: color-mix(in srgb, var(--bad) 45%, var(--border)); }
+
+/* ---------- 按鈕 ---------- */
+.btn {
+  display: inline-block; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 14px; font-size: 0.88rem; font-family: inherit;
+  cursor: pointer; text-decoration: none; text-align: center;
+  transition: background 0.16s ease, border-color 0.16s ease, transform 0.1s ease;
+}
+.btn:hover { background: var(--surface-2); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { opacity: 0.92; }
+.btn.subtle { background: transparent; border-color: transparent; color: var(--muted); }
+.btn.subtle:hover { color: var(--ink); background: var(--surface-2); }
+.btn.marked { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.back-row { margin-bottom: 6px; }
+
+/* ---------- ☰ 目錄 ---------- */
+.chrome-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0 10px;
+  position: relative;
+  z-index: 100; /* 高於遮罩，展開選單時可點 */
+}
+#menu-fab, #back-fab, #user-fab {
+  width: 42px; height: 42px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--ink); font-size: 1.15rem; cursor: pointer;
+  box-shadow: var(--shadow); transition: background 0.16s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+#menu-fab:hover, #back-fab:hover, #user-fab:hover { background: var(--surface-2); }
+#menu-fab svg { width: 19px; height: 19px; }
+#user-fab svg { width: 19px; height: 19px; }
+/* 3.3.1 修復：ID 選擇器的 display 蓋過 .hidden → 需更高特異性才能隱藏 */
+#user-fab.hidden { display: none; }
+.menu-wrap { position: relative; }
+.left-cluster { display: flex; gap: 8px; align-items: center; }
+.user-menu {
+  display: none;
+  position: absolute; top: 48px; right: 0; min-width: 220px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden; z-index: 100;
+}
+.user-menu.open { display: block; }
+.user-menu a, .user-menu button {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 11px 16px; color: var(--ink); text-decoration: none; font-size: 0.95rem;
+  border: none; border-bottom: 1px solid var(--border); background: var(--surface);
+  transition: background 0.16s ease; cursor: pointer; font-family: inherit; text-align: left;
+}
+.user-menu a:last-child, .user-menu button:last-child { border-bottom: none; }
+.user-menu a:hover, .user-menu button:hover { background: var(--accent-soft); color: var(--accent); }
+.user-menu svg { width: 17px; height: 17px; color: var(--muted); flex: none; }
+.um-email, .um-guest {
+  padding: 10px 16px; font-size: 0.85rem; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.um-email { color: var(--accent); font-weight: 600; }
+#menu-overlay {
+  position: fixed; inset: 0; z-index: 99;
+  background: rgba(20, 20, 18, 0.35);
+  display: none; opacity: 0; transition: opacity 0.18s ease;
+}
+#menu-overlay.open { display: block; opacity: 1; }
+/* ---------- 4.2.0：全平台抽屜式側欄（決策 1C，Notion workspace 導航） ---------- */
+.menu {
+  display: flex; flex-direction: column; gap: 2px;
+  position: fixed; top: 0; left: 0; bottom: 0; width: 264px;
+  background: var(--surface-2); border-right: 1px solid var(--border);
+  padding: calc(14px + env(safe-area-inset-top, 0px)) 10px calc(16px + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto; z-index: 210;
+  transform: translateX(-102%);
+  transition: transform var(--motion-base, 200ms) var(--ease, cubic-bezier(0.2, 0, 0, 1));
+}
+.menu.open { transform: translateX(0); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16); }
+.menu .drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 4px 10px 10px; border-bottom: 1px solid var(--border); margin-bottom: 8px;
+}
+.menu .drawer-head b { font-size: .95rem; font-weight: 700; }
+.menu .drawer-head button {
+  width: 32px; height: 32px; border: none; background: transparent; color: var(--muted);
+  border-radius: var(--shape-sm, 8px); cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+}
+.menu .drawer-head button:hover { background: var(--surface-3); color: var(--ink); }
+.menu .drawer-head svg { width: 17px; height: 17px; }
+.menu .nav-grp {
+  font-size: .68rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .08em; padding: 12px 10px 4px;
+}
+.menu a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; color: var(--ink); text-decoration: none; font-size: 0.95rem;
+  border-radius: var(--shape-sm, 8px); transition: background 0.16s ease;
+}
+.menu a:hover { background: var(--surface-3); }
+.menu a.active { background: var(--surface); box-shadow: inset 3px 0 0 var(--accent); font-weight: 600; }
+.menu a svg { width: 17px; height: 17px; color: var(--muted); flex: none; }
+.menu a.active svg { color: var(--accent); }
+
+/* ---------- 首頁：快捷 ---------- */
+.quick-grid { display: flex; gap: 10px; margin-bottom: 12px; }
+.quick-card {
+  flex: 1; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px; cursor: pointer;
+  display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink);
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+.quick-card:hover { border-color: var(--accent); background: var(--accent-soft); }
+.quick-card svg { width: 20px; height: 20px; color: var(--accent); flex: none; }
+.quick-title { display: block; font-size: 0.95rem; font-weight: 600; }
+.quick-desc { display: block; font-size: 0.76rem; color: var(--muted); }
+
+/* ---------- 每日任務 ---------- */
+.srs-summary { display: flex; gap: 12px; margin-bottom: 14px; }
+.srs-box {
+  flex: 1; background: var(--surface-2); border-radius: 10px;
+  text-align: center; padding: 16px 12px; border: none; font-family: inherit; color: inherit;
+}
+.srs-box-btn { cursor: pointer; transition: background 0.16s ease; }
+.srs-box-btn:hover { background: var(--accent-soft); }
+.srs-box .num { font-size: 1.75rem; font-weight: 700; }
+.srs-box .label { font-size: 0.85rem; color: var(--muted); }
+.srs-box.due .num { color: var(--accent); }
+.daily-list { margin-top: 4px; }
+.daily-item {
+  display: flex; align-items: center; gap: 10px; padding: 8px 2px;
+  border-bottom: 1px solid var(--border); font-size: 0.93rem;
+}
+.daily-item:last-child { border-bottom: none; }
+.daily-word { font-weight: 600; }
+.daily-zh { color: var(--muted); font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+.due-today { color: var(--accent); font-weight: 600; }
+
+/* ---------- 排程管理 ---------- */
+.sched-panel {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px; margin-top: 10px;
+}
+.sched-row {
+  display: flex; align-items: center; gap: 6px; padding: 7px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.sched-row:last-child { border-bottom: none; }
+.sched-word {
+  flex: 1; font-weight: 600; min-width: 70px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.sched-row input[type="date"] {
+  border: 1px solid var(--border); border-radius: 6px; padding: 3px 5px;
+  font-family: inherit; font-size: 0.85rem; background: var(--surface); color: var(--ink);
+}
+.sched-row .btn { padding: 3px 8px; font-size: 0.85rem; }
+.sched-hint { font-size: 0.78rem; color: var(--muted); margin: 2px 0 4px; }
+
+/* ---------- 月曆（minimal） ---------- */
+.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.cal-head strong { font-size: 0.92rem; font-weight: 600; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.cal-week { text-align: center; font-size: 0.72rem; color: var(--muted); padding: 3px 0; }
+.cal-cell {
+  position: relative; aspect-ratio: 1.25; border: none; border-radius: 7px;
+  background: transparent; cursor: pointer; font-family: inherit; color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 2px; transition: background 0.16s ease;
+}
+.cal-cell:hover { background: var(--surface-2); }
+.cal-cell.empty { cursor: default; }
+.cal-cell .cal-day { font-size: 0.85rem; line-height: 1.2; }
+.cal-cell .cal-count { font-size: 0.68rem; color: var(--accent); line-height: 1.2; }
+.cal-cell .cal-date { display: none; }
+/* .cal-cell.today .cal-day 的舊樣式（accent 藥丸）已於 4.2.0 批次 3 D-3 改為
+   「accent 字＋字重加粗」，樣式在檔尾批次 3 區塊 */
+.cal-preview {
+  background: var(--surface-2); border-radius: 8px; padding: 8px 12px; margin-top: 8px;
+}
+/* .cal-preview-word 已於 4.2.0 批次 3 D-2 併入 .chip 統一樣式（js/ 不再引用）→ 已刪除 */
+
+/* ---------- 單詞卡 ---------- */
+/* 3.0.2 修正：統一固定高度，英文/簡略/完整釋義三種狀態卡片一樣大 */
+.flashcard {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  height: 280px; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px; padding: 22px 18px; margin: 10px 0;
+  cursor: pointer; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
+  transition: background 0.16s ease;
+}
+.flashcard:active { background: var(--surface-2); }
+.flashcard .lv { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; }
+.flashcard .word {
+  font-size: 1.7rem; font-weight: 650; text-align: center;
+  word-break: break-word; overflow-wrap: anywhere; white-space: pre-line;
+  max-height: 150px; overflow-y: auto;
+}
+.flashcard .word.zh-brief { font-size: 1.15rem; font-weight: 600; line-height: 1.6; }
+.flashcard .word.zh-full {
+  font-size: 0.95rem; font-weight: 500; text-align: left; line-height: 1.7;
+  max-height: 150px; overflow-y: auto;
+}
+.flashcard .pos { color: var(--muted); font-size: 0.9rem; min-height: 1.3em; }
+.status { text-align: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 8px; }
+.controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 10px 0; }
+.hint { text-align: center; font-size: 0.78rem; color: var(--muted); margin: 4px 0; }
+
+/* ---------- 等級選擇／模式卡 ---------- */
+.level-grid, .mode-grid, .theme-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.level-item, .mode-card {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 13px; cursor: pointer; user-select: none;
+  font-size: 0.92rem; position: relative;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+.level-item:hover, .mode-card:hover { border-color: var(--accent); }
+.mode-card { flex-direction: column; align-items: center; text-align: center; padding: 12px 10px; }
+.mode-icon { font-size: 1.3rem; line-height: 1.2; }
+.mode-title { font-weight: 600; font-size: 0.92rem; }
+.mode-desc { font-size: 0.76rem; color: var(--muted); }
+/* 3.1.1：練習選單圖示與子標題用強調色 */
+.chooser-card .mode-icon { color: var(--accent); }
+.chooser-card .mode-desc { color: var(--accent); opacity: 0.75; }
+.level-item input, .mode-card input { accent-color: var(--accent); margin: 0; }
+
+/* 目前選中的色調卡：框線高亮（3.0.0 移除 ✓ 標記） */
+.theme-card.on, .accent-card.on { border: 2px solid var(--accent); background: var(--accent-soft); padding: 7px 9px; }
+.theme-dot {
+  width: 18px; height: 18px; border-radius: 50%; display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- 查詢頁 ---------- */
+.search-row { display: flex; gap: 8px; margin: 8px 0; }
+.search-row input, textarea#tr-input {
+  flex: 1; min-width: 0; padding: 9px 12px;
+  border: 1px solid var(--border); border-radius: 8px;
+  font-size: 0.95rem; font-family: inherit; background: var(--surface); color: var(--ink);
+  transition: border-color 0.16s ease;
+}
+.search-row input:focus, textarea#tr-input:focus { outline: none; border-color: var(--accent); }
+textarea#tr-input { resize: vertical; width: 100%; }
+.suggestion-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.suggestion {
+  padding: 5px 12px; border-radius: 7px; border: 1px solid var(--border);
+  background: var(--surface); cursor: pointer; font-family: inherit;
+  font-size: 0.9rem; color: var(--ink); transition: border-color 0.16s ease;
+}
+.suggestion:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 4.2.0 批次 3 D-1：.word-line／.word-title 已改 .kv 定義列表（js/ 不再引用）→ 已刪除 */
+/* 4.3.0：.phonetic 改為 .word-header 內的 .word-phonetic（見檔尾 4.3.0 區塊）→ 已刪除 */
+.word-detail .pos { color: var(--muted); }
+/* 4.3.0：.senses 項目符號清單已從查詢頁移除（與 .dict-senses 資訊重複）→ 已刪除 */
+.dict-senses {
+  background: var(--surface-2); border-radius: 8px; padding: 10px 12px;
+  font-size: 0.9rem; line-height: 1.7; margin: 8px 0;
+}
+.tense-table table { width: auto; margin: 4px 0; }
+.tense-table th { background: transparent; color: var(--muted); font-weight: 500; }
+
+/* ---------- 片語／例句 ---------- */
+.collocations, .examples { margin: 6px 0; }
+.collocations-title, .examples-title {
+  font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; letter-spacing: 0.03em;
+}
+.col-item {
+  display: flex; gap: 10px; align-items: baseline;
+  padding: 5px 0; border-bottom: 1px solid var(--border);
+}
+.col-item:last-child { border-bottom: none; }
+.col-p { font-weight: 600; min-width: 45%; }
+.col-zh { color: var(--muted); font-size: 0.9rem; }
+/* 4.2.0 批次 3 D-1：.example 改引用塊（去 surface-2 底與 accent 直條）——樣式移到檔尾批次 3 區塊 */
+.example-en { font-size: 0.95rem; }
+.example-zh { color: var(--muted); font-size: 0.88rem; }
+
+/* ---------- 翻譯題 ---------- */
+.tr-question {
+  background: var(--surface-2); border-radius: 8px; padding: 12px 14px; margin: 8px 0;
+}
+.tr-line { display: flex; gap: 10px; margin: 4px 0; font-size: 1rem; line-height: 1.7; }
+.tr-no {
+  flex: none; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border); color: var(--muted);
+  font-size: 0.78rem; display: flex; align-items: center; justify-content: center; margin-top: 3px;
+}
+.tr-user, .tr-answer-line { margin: 6px 0; line-height: 1.6; font-size: 0.95rem; }
+.tr-label {
+  display: inline-block; background: var(--surface-2); color: var(--muted);
+  border-radius: 5px; font-size: 0.74rem; padding: 1px 8px; margin-right: 8px;
+}
+.tr-answers { background: var(--surface-2); border-radius: 8px; padding: 12px; margin: 8px 0; }
+.tr-answer-line.alt { color: var(--muted); }
+.tr-note {
+  color: var(--ink); background: var(--accent-soft); border-radius: 6px;
+  padding: 6px 10px; font-size: 0.88rem;
+}
+.tr-grading {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px; margin: 8px 0;
+}
+.grade-head { display: flex; gap: 10px; align-items: center; font-weight: 600; font-size: 0.95rem; }
+.grade-score { color: var(--accent); }
+.grade-verdict { border-radius: 6px; font-size: 0.78rem; padding: 1px 9px; font-weight: 500; }
+.grade-verdict.v-good { background: var(--accent-soft); color: var(--accent); }
+.grade-verdict.v-mid { background: var(--surface-2); color: var(--muted); }
+.grade-verdict.v-bad { background: var(--surface-2); color: var(--warn); }
+.grade-issue { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
+.grade-issue.ok { color: var(--good); }
+.grade-fixed { font-size: 0.9rem; margin-top: 4px; }
+.grade-comment {
+  border-top: 1px solid var(--border); margin-top: 8px; padding-top: 8px;
+  color: var(--muted); font-size: 0.9rem;
+}
+
+/* ---------- 統計 ---------- */
+/* 4.2.0 批次 3 D-4：統計頁第一張卡的 .stat-cards 已改 .stat-tiles（樣式在檔尾批次 3 區塊），
+   故 .stat-cards 已無呼叫端（admin.js 與 completion 仍用 .srs-box，樣式保留）。 */
+.stat-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+.stat-label { width: 130px; font-size: 0.86rem; color: var(--muted); flex: none; }
+.stat-bar { flex: 1; height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.stat-bar span { display: block; height: 100%; border-radius: 3px; background: var(--accent); opacity: 0.8; }
+.stat-val { width: 30px; text-align: right; font-size: 0.88rem; font-weight: 600; }
+
+/* ---------- 表格 ---------- */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll td, .table-scroll th { white-space: nowrap; }
+.table-scroll td.td-word { white-space: normal; min-width: 90px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th {
+  text-align: left; color: var(--muted); font-weight: 500; font-size: 0.8rem;
+  padding: 6px 8px; border-bottom: 1px solid var(--border);
+}
+td { padding: 9px 8px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: var(--surface-2); }
+
+/* ---------- 同步 ---------- */
+.sync-code {
+  font-size: 1.7rem; font-weight: 600; letter-spacing: 0.22em; text-align: center;
+  color: var(--accent); background: var(--accent-soft); border-radius: 8px;
+  padding: 8px; user-select: all;
+}
+.save-form { background: var(--surface-2); border-radius: 8px; padding: 14px; margin: 8px 0; }
+
+/* ---------- 徽章／狀態 ---------- */
+.badge {
+  display: inline-block; background: var(--surface-2); color: var(--muted);
+  font-size: 0.72rem; padding: 1px 9px; border-radius: 999px; letter-spacing: 0.03em;
+}
+.finish {
+  background: var(--accent-soft); color: var(--ink);
+  padding: 10px 12px; border-radius: 8px; text-align: center; margin: 8px 0;
+}
+.warning { color: var(--warn); min-height: 1.4em; margin: 4px 0; font-size: 0.92rem; }
+.hidden { display: none; }
+.menu a.hidden { display: none; } /* 3.1.1：後台入口僅管理員可見（.menu a 的 display:flex 蓋過 .hidden 的修復） */
+.error { border-color: color-mix(in srgb, var(--bad) 45%, var(--border)); }
+
+/* ---------- 路線圖 ---------- */
+.roadmap { padding-left: 1.3em; line-height: 1.9; margin: 6px 0; font-size: 0.92rem; }
+
+/* ---------- 字體大小 ---------- */
+/* 4.2.0：只影響內容區 #page，不再縮放全站 token 階梯 */
+html.font-s #page { font-size: 14px; }
+html.font-m #page { font-size: 15.5px; }
+html.font-l #page { font-size: 18.5px; }
+
+/* ---------- 響應式 ---------- */
+@media (max-width: 480px) {
+  main { padding: 10px 12px 20px; }
+  .card { padding: 15px; }
+  .flashcard .word { font-size: 1.55rem; }
+  .stat-label { width: 104px; }
+}
+
+/* 快捷卡圖示容器（SVG 外層） */
+.quick-icon { display: flex; flex: none; }
+.quick-icon svg { width: 20px; height: 20px; color: var(--accent); }
+.quick-card > span:last-child { flex: 1; min-width: 0; }
+
+/* ============================================================
+   2.1.1 月曆格改版：有複習的日期＝強調色底，字數放大加粗
+   ============================================================ */
+/* 4.2.0 批次 3 D-3：底色階（無排程 surface-2／有排程 accent-soft／今天且有排程 accent）
+   與 .sel 內框改寫於檔尾批次 3 區塊；此處保留 .cal-date 的定位（絕對左上角）
+   與 .cal-count 的字級基底。 */
+.cal-cell.has .cal-date {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.62rem;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+}
+.cal-cell.has .cal-count {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+/* 修正：強調色底的日期小字被舊規則 display:none 藏掉 → 重新顯示於左上角（細體小字） */
+.cal-cell.has .cal-date {
+  display: block;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   2.1.1 用戶回饋：首頁下移避開 ☰；快捷卡圖示+文字置中
+   ============================================================ */
+
+/* 首頁內容下移（☰ 按鈕固定在右上，底部約 54px） */
+
+
+/* 快捷卡：圖示在上、文字在下，整體置中 */
+.quick-card {
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px 10px 16px;
+  text-align: center;
+}
+.quick-card > span:last-child { flex: none; }
+.quick-title { font-size: 1.02rem; }
+.quick-icon svg { width: 24px; height: 24px; }
+
+/* ============================================================
+   2.1.1 用戶回饋第二批
+   ============================================================ */
+
+/* ---------- ① 今天格（4.2.0 批次 3 D-3 改底色階，樣式在檔尾批次 3 區塊） ---------- */
+
+/* ---------- ② 練習模式卡：等大、置中 ---------- */
+.mode-grid > .mode-card {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 118px;
+  justify-content: center;
+}
+.mode-icon svg { width: 26px; height: 26px; }
+
+/* ---------- ③ 返回鈕（左上，與目錄同規格）＋ 頂部頁面標籤 ---------- */
+#back-fab { display: none; }
+#back-fab.shown { display: inline-flex; }
+#back-fab:hover { background: var(--surface-2); }
+#back-fab svg { width: 18px; height: 18px; }
+#top-label {
+  flex: 1;
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+/* ---------- ④ 單詞本卡片 ---------- */
+.wb-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 8px 0;
+  background: var(--surface);
+}
+.wb-card .wb-name { font-weight: 600; font-size: 0.98rem; }
+.wb-card .wb-meta { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
+.wb-card .wb-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
+
+/* ---------- ⑥ 設置頁選項放大、均勻分布 ---------- */
+.card .mode-grid > .mode-card {
+  flex: 1 1 0;
+  min-height: 72px;
+  padding: 13px 8px;
+  justify-content: center;
+}
+.card .mode-grid { margin-bottom: 6px; }
+.card .mode-grid > .mode-card input[type="radio"] { width: 17px; height: 17px; }
+
+/* ---------- ⑤ 翻譯題：範圍列與題數滑桿 ---------- */
+.scope-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.scope-head .st { font-size: 0.86rem; font-weight: 600; }
+.scope-actions { display: flex; gap: 6px; }
+.scope-actions .btn { padding: 4px 10px; font-size: 0.8rem; }
+.scope-list {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 6px 0 10px;
+  background: var(--surface);
+}
+.scope-list .level-item { border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; padding: 8px 2px; }
+.scope-list .level-item:last-child { border-bottom: none; }
+.count-row { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.count-row input[type="number"] {
+  width: 76px;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+.count-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+
+/* 今天格統一（4.2.0 批次 3 D-3：改為 accent 實底白字，樣式在檔尾批次 3 區塊） */
+
+/* ============================================================
+   2.1.2 響應式：平板／電腦（橫向寬幕）
+   手機維持單欄；≥900px 橫向改雙欄、內容拓寬至 2/3
+   ============================================================ */
+
+/* ---------- 首頁：每日任務／月曆／快捷 的排列 ---------- */
+.home-layout { display: flex; flex-direction: column; }
+.home-daily { order: 2; }
+.home-cal { order: 3; }
+.quick-grid { order: 1; }
+
+@media (min-aspect-ratio: 5/4) {
+  /* 內容拓寬：左右各留 1/6（內容 2/3） */
+  #page { max-width: 66.7vw; }
+
+  /* 首頁雙欄：左＝每日任務＋快捷，右＝複習月曆；兩欄等高 */
+  .home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 14px;
+  }
+  .home-daily { order: 1; grid-column: 1; grid-row: 1; }
+  .quick-grid { order: 2; grid-column: 1; grid-row: 2; height: 100%; }
+  .home-cal { order: 1; grid-column: 2; grid-row: 1 / span 2; height: 100%; }
+  /* 快捷卡填滿剩餘高度，內容置中 */
+  .quick-card { height: 100%; min-height: 96px; justify-content: center; }
+
+  /* 寬幕下元件微調：卡片統一高度（3.0.2 修正） */
+  .flashcard { height: 320px; }
+  .flashcard .word { font-size: 2.1rem; }
+
+  /* 練習選單：畫面高度足夠時三卡拉長填滿（文字置中）；還原為並排卡片 */
+  .chooser-card {
+    min-height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .chooser-card .mode-grid { flex: 1; align-items: stretch; flex-direction: row; }
+  .chooser-card .mode-grid > .mode-card {
+    flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; min-height: 170px; padding: 12px 10px; gap: 7px;
+  }
+}
+
+/* 極寬螢幕（≥1600px）內容再放寬上限，避免過長行 */
+@media (min-aspect-ratio: 16/9) {
+  #page { max-width: 1200px; }
+}
+
+/* ============================================================
+   2.1.2 調整：排程面板捲動＋任務卡標題列＋複習管理頁
+   ============================================================ */
+
+/* 任務卡標題列：標題左、調整鈕右 */
+.task-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.task-head h2 { margin: 0; }
+
+/* 排程面板：一次約顯示 5 列，其餘捲動 */
+.sched-scroll {
+  max-height: 305px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- 複習管理頁 ---------- */
+.review-layout { display: grid; gap: 12px; }
+.review-layout .cal-card-wrap { order: 1; }
+.review-layout .list-card-wrap { order: 2; }
+@media (min-aspect-ratio: 5/4) {
+  .review-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .review-layout .cal-card-wrap { order: 2; }
+  .review-layout .list-card-wrap { order: 1; }
+}
+.review-day-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+.mgmt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mgmt-row:last-child { border-bottom: none; }
+.mgmt-row .mgmt-word {
+  flex: 1;
+  font-weight: 600;
+  min-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mgmt-row input[type="date"] {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+.mgmt-row .btn { padding: 4px 8px; font-size: 0.85rem; }
+.mgmt-empty { color: var(--muted); }
+
+/* ============================================================
+   3.0.1 體感升級：發音鈕／PWA 更新提示／豎屏練習橫條／更新日志
+   ============================================================ */
+
+/* ---------- 發音鈕（Web Speech） ---------- */
+.speak-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--surface); color: var(--accent);
+  cursor: pointer; flex: none; padding: 0;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+.speak-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+.speak-btn svg { width: 17px; height: 17px; }
+.speak-row { display: flex; justify-content: center; margin-top: 2px; }
+/* 查詢頁的 .word-line .speak-btn／.btn-mark-top 已於 4.2.0 批次 3 收編為 .word-actions（檔尾） */
+
+/* ---------- PWA 更新提示 ---------- */
+#update-toast {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 200; display: flex; align-items: center; gap: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 12px 10px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14); font-size: 0.9rem;
+}
+
+/* ---------- 練習模式選擇：豎屏（比例 < 5/4）改橫條式由上而下（圖示左、文字右） ---------- */
+/* 用媒體查詢反選，避免蓋掉上方 ≥5/4 橫屏的並排卡片規則 */
+@media not all and (min-aspect-ratio: 5/4) {
+  .chooser-card .mode-grid { flex-direction: column; }
+  .chooser-card .mode-grid > .mode-card {
+    flex-direction: row; justify-content: flex-start; align-items: center;
+    text-align: left; min-height: 0; width: 100%; padding: 15px 16px; gap: 15px;
+  }
+  .chooser-card .mode-icon { flex: none; }
+  .chooser-card .mode-icon svg { width: 30px; height: 30px; }
+  /* 3.0.2 修正：三個橫條等分撐滿可視高度 */
+  .chooser-card {
+    min-height: calc(100vh - 150px);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .chooser-card .mode-grid { flex: 1; align-items: stretch; }
+  .chooser-card .mode-grid > .mode-card { flex: 1 1 0; min-height: 92px; }
+  .chooser-card .mode-text { justify-content: center; }
+}
+.mode-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+
+/* ---------- 動畫引擎（3.0.5）：三款可選，html[data-anim] 控制 ----------
+   flip（預設）＝切頁左右推進＋卡片 3D 翻面＋按鈕深壓
+   soft        ＝切頁淡入上移＋卡片交叉淡換＋按壓微縮
+   spring      ＝切頁彈簧浮現＋卡片彈一下＋按鈕 hover 放大
+   全部只用 transform/opacity；prefers-reduced-motion 時自動停用 */
+
+/* --- 切頁 --- */
+html:not([data-anim="spring"]) .page-fwd > * { animation: pageSlideFwd .28s ease-out; }
+html:not([data-anim="spring"]) .page-back > * { animation: pageSlideBack .28s ease-out; }
+html[data-anim="soft"] .page-fwd > * { animation: pageFadeUp .22s ease-out; }
+html[data-anim="soft"] .page-back > * { animation: pageFadeUp .22s ease-out; }
+html[data-anim="spring"] .page-fwd > *,
+html[data-anim="spring"] .page-back > * { animation: pageSpring .3s cubic-bezier(.34, 1.56, .64, 1); }
+@keyframes pageSlideFwd {
+  from { opacity: 0; transform: translateX(26px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pageSlideBack {
+  from { opacity: 0; transform: translateX(-26px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pageFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pageSpring {
+  from { opacity: 0; transform: scale(.94) translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* --- 單字卡換面（.flipping 由 JS 在換內容時掛上） --- */
+html:not([data-anim="soft"]):not([data-anim="spring"]) .flashcard.flipping { animation: cardFlip3d .26s ease-in-out; }
+html[data-anim="soft"] .flashcard.flipping { animation: cardSwapFade .18s ease-out; }
+html[data-anim="spring"] .flashcard.flipping { animation: cardSwapPop .3s cubic-bezier(.34, 1.8, .64, 1); }
+@keyframes cardFlip3d {
+  0% { transform: perspective(800px) rotateY(0); }
+  50% { transform: perspective(800px) rotateY(90deg); }
+  100% { transform: perspective(800px) rotateY(0); }
+}
+@keyframes cardSwapFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cardSwapPop { 0% { transform: scale(.86); } 100% { transform: scale(1); } }
+
+/* --- 按鈕回饋 --- */
+html:not([data-anim="spring"]) .btn:active { transform: translateY(1px) scale(.98); box-shadow: inset 0 2px 5px rgba(0,0,0,.10); }
+html[data-anim="spring"] .btn { transition: transform .14s cubic-bezier(.34, 1.8, .64, 1), background .16s ease; }
+html[data-anim="spring"] .btn:hover { transform: scale(1.04); }
+html[data-anim="spring"] .btn:active { transform: scale(.94); }
+html[data-anim="soft"] .btn:active { transform: scale(.97); box-shadow: none; }
+.mode-card:active, .level-item:active, .srs-box-btn:active, .suggestion:active { transform: scale(.98); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important; transition-duration: .01ms !important;
+  }
+}
+
+/* ---------- 單詞本升級（3.0.2）：收攏卡／分組／導入／預設 ---------- */
+.wb-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin: 6px 0 10px; }
+.wb-group { margin-bottom: 12px; }
+.wb-group-head {
+  display: flex; align-items: center; gap: 8px; padding: 7px 2px;
+  border-bottom: 1px solid var(--border);
+}
+.grp-name { font-weight: 600; font-size: 0.95rem; }
+.grp-count { color: var(--muted); font-size: 0.82rem; flex: 1; }
+.grp-actions .btn { padding: 2px 8px; font-size: 0.8rem; }
+.wb-card { margin: 8px 0; }
+/* 4.2.0 批次 3 D-2：.wb-card.collapsed 的框線／底色／hover 已由 .list-row--tappable 接手
+   （放在檔尾批次 3 區塊；此處只留尺寸，選擇器特異度 .wb-card.collapsed 較高，
+   故 border/background/padding 必須在此清空，否則會蓋掉新樣式） */
+.wb-card.collapsed {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: none; border: none; border-radius: var(--shape-sm);
+  padding: 10px 8px; margin: 2px 0; cursor: pointer; font-family: inherit;
+  text-align: left; color: inherit;
+}
+.wb-card.collapsed:hover { border: none; }
+.wb-card.expanded {
+  border: 1px solid var(--border); border-radius: var(--shape-sm);
+  padding: 2px 12px 12px; background: var(--surface);
+}
+.wb-card.expanded .wb-card-head { padding: 10px 0; }
+/* .wb-detail 已於 4.2.0 批次 3 改為 surface-2 面板（樣式在檔尾批次 3 區塊） */
+.wb-controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 6px 0; }
+.wb-controls label {
+  font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 5px;
+}
+.wb-controls select {
+  border: 1px solid var(--border); border-radius: 6px; padding: 4px 6px;
+  background: var(--surface); color: var(--ink); font-family: inherit; font-size: 0.85rem;
+}
+.wb-words {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  max-height: 200px; overflow-y: auto; margin-top: 6px;
+}
+/* 4.2.0 批次 3 D-2：.wb-word 與 .cal-preview-word 已併入 .chip 統一樣式（js/ 不再引用），故刪除。
+   .chip-pool 的 .chip-opt 仍被 selection.js 使用，保留。 */
+.chip-pool { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.import-panel {
+  background: var(--surface-2); border-radius: 8px;
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.import-panel textarea {
+  width: 100%; padding: 9px 12px; border: 1px solid var(--border); border-radius: 8px;
+  font-family: inherit; font-size: 0.95rem; background: var(--surface); color: var(--ink);
+  resize: vertical;
+}
+.import-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 0; }
+.import-row label {
+  font-size: 0.82rem; color: var(--muted);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.import-row select, .import-row input {
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
+  background: var(--surface); color: var(--ink); font-family: inherit; font-size: 0.88rem;
+}
+.import-verdict { font-size: 0.9rem; margin: 6px 0; }
+.import-bad { color: var(--warn); }
+.preset-box { margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 10px; }
+/* .preset-item 已於 4.2.0 批次 2 刪除：後台三區（金鑰／公告／預設單詞本）改用 .list-row */
+
+/* ---------- 更新日志（介紹頁） ---------- */
+.log-group {
+  border: 1px solid var(--border); border-radius: 8px;
+  margin-bottom: 8px; background: var(--surface);
+}
+.log-group summary {
+  cursor: pointer; padding: 9px 13px; font-weight: 600; font-size: 0.92rem;
+  user-select: none; list-style: revert; color: var(--ink);
+}
+.log-list { margin: 0; padding: 2px 14px 10px 14px; list-style: none; }
+/* .log-list li 的 grid 與 .log-ver 的 muted 色已於 4.2.0 批次 3 D-7 改寫
+   （樣式在檔尾批次 3 區塊；此處保留字級與間距基底） */
+.log-list li { font-size: 0.88rem; line-height: 1.6; color: var(--muted); }
+.log-list li:last-child { border-bottom: none; }
+
+/* ============================================================
+   3.0.3 複習與統計：集合式任務／完成率環圈／熱力圖／掌握度／使用說明
+   ============================================================ */
+
+/* ---------- 每日任務：集合式分組 ---------- */
+.due-group {
+  display: flex; align-items: center; gap: 8px; padding: 8px 2px;
+  border-bottom: 1px solid var(--border);
+}
+.due-group:last-child { border-bottom: none; }
+.dg-words {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; font-weight: 600;
+}
+.dg-stage { color: var(--muted); font-size: 0.85rem; flex: none; }
+.dg-adjust-ui { display: flex; gap: 8px; align-items: center; padding: 6px 0; width: 100%; }
+.dg-adjust-ui input[type="date"] {
+  border: 1px solid var(--border); border-radius: 6px; padding: 4px 6px;
+  font-family: inherit; font-size: 0.85rem; background: var(--surface); color: var(--ink);
+}
+
+/* ---------- 完成率環圈 ---------- */
+.ring-box { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ring { width: 42px; height: 42px; }
+.ring-bg, .ring-fg { fill: none; stroke-width: 3.6; }
+.ring-bg { stroke: var(--surface-2); }
+.ring-fg { stroke: var(--accent); stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
+
+/* ---------- 學習熱力圖 ---------- */
+.heat { display: flex; gap: 3px; overflow-x: auto; }
+.heat-col { display: grid; grid-auto-rows: 12px; gap: 3px; }
+.heat-cell { width: 12px; height: 12px; border-radius: 3px; background: var(--surface-2); }
+.heat-cell.h1 { background: var(--accent); opacity: 0.3; }
+.heat-cell.h2 { background: var(--accent); opacity: 0.55; }
+.heat-cell.h3 { background: var(--accent); opacity: 0.8; }
+.heat-cell.h4 { background: var(--accent); }
+.heat-cell.future { opacity: 0.25; }
+
+/* ---------- 等級掌握度 ---------- */
+.mastery-bar {
+  flex: 1; height: 10px; border-radius: 5px; overflow: hidden;
+  display: flex; background: var(--surface-2);
+}
+.mastery-bar .m-fresh { background: var(--surface-2); }
+.mastery-bar .m-learning { background: var(--accent); opacity: 0.55; }
+.mastery-bar .m-grad { background: var(--accent); }
+
+/* ---------- 使用說明 ---------- */
+/* 4.2.0 批次 3 D-7：.guide-list 已改為 .doc-list／.doc-item（樣式在檔尾批次 3 區塊） */
+
+/* ============================================================
+   3.1.1 自動同步衝突提示
+   ============================================================ */
+#sync-dialog {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 210; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 14px; max-width: min(92vw, 420px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16); font-size: 0.9rem;
+}
+#sync-dialog .sd-title { font-weight: 600; margin-bottom: 4px; }
+#sync-dialog .sd-detail { color: var(--muted); font-size: 0.85rem; margin-bottom: 8px; }
+#sync-dialog .sd-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#sync-dialog .btn { padding: 5px 12px; font-size: 0.85rem; }
+
+/* ============================================================
+   3.2.0 登入／註冊頁（全新界面）
+   ============================================================ */
+.auth-wrap {
+  min-height: calc(100vh - 140px);
+  display: flex; align-items: center; justify-content: center;
+}
+.auth-card { width: 100%; max-width: 380px; padding: 26px 22px; }
+.auth-brand { text-align: center; margin-bottom: 14px; }
+.auth-logo {
+  width: 52px; height: 52px; margin: 0 auto 8px; border-radius: 14px;
+  background: var(--accent); color: #fff; font-size: 1.6rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.auth-title { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: 0.04em; }
+/* 4.2.0 批次 3 D-6：.auth-tabs／.auth-tab 已改用 .segmented（label＋radio），樣式刪除 */
+.auth-label {
+  display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;
+}
+/* .auth-label input 的樣式已收編為 .input-shared（檔尾批次 3 區塊），此處只留 label */
+.auth-submit { width: 100%; padding: 11px 0; font-size: 0.98rem; margin-top: 4px; }
+.auth-foot { text-align: center; margin-top: 12px; }
+
+/* ============================================================
+   3.3.0 後台即時監控
+   ============================================================ */
+.live-bar {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 8px;
+}
+.live-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--good); animation: livePulse 2s infinite;
+}
+@keyframes livePulse { 50% { opacity: .4 } }
+
+/* ============================================================
+   3.3.0 首頁公告：多則並列小卡（.ann-banner 保留向下相容，已不再使用）
+   ============================================================ */
+.ann-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.ann-card {
+  flex: 1 1 200px; display: flex; align-items: center; gap: 8px;
+  background: var(--accent-soft); border-radius: 8px; padding: 7px 10px; font-size: 0.85rem;
+}
+.ann-card .ann-close { width: 26px; height: 26px; border: none; background: transparent; color: var(--muted); margin-left: auto; border-radius: 7px; }
+.ann-card .ann-close svg { width: 14px; height: 14px; }
+.ann-card .ann-close:hover { background: var(--surface-2); color: var(--ink); }
+
+/* ============================================================
+   3.3.0 使用者管理：層級徽章、展開詳情、分級控制鈕
+   （.ud-filter「顯示已刪除」與 .btn-lv「層級下拉」已於 4.2.0 批次 2 刪除：
+     前者改 .segmented 四篩選、後者收進「⋯」選單）
+   ============================================================ */
+.btn-row-toggle {
+  border: none; background: transparent; color: var(--muted);
+  cursor: pointer; padding: 2px; vertical-align: middle; line-height: 0;
+}
+.btn-row-toggle:hover { color: var(--accent); }
+.btn-row-toggle svg { width: 16px; height: 16px; }
+.ud-detail > td { background: var(--surface-2); padding: 10px 12px; }
+.ud-grid {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 14px;
+  font-size: 0.88rem; margin: 0;
+}
+.ud-grid > span { color: var(--muted); }
+.ud-grid > strong { font-weight: 600; }
+
+/* ============================================================
+   3.3.1 個人主頁（帳號資訊／學習總覽／注銷賬號）
+   ============================================================ */
+.pf-block { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.pf-block:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.pf-block h3 { margin: 0 0 4px; font-size: 0.95rem; font-weight: 700; }
+.pf-block p { margin: 2px 0; }
+.pf-danger { border-color: color-mix(in srgb, var(--bad) 45%, var(--border)); }
+.pf-danger h2 { color: var(--bad); }
+.pf-danger-note { font-size: 0.9rem; color: var(--muted); }
+.pf-danger .btn { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, transparent); }
+.pf-danger .btn:hover { background: color-mix(in srgb, var(--bad) 12%, transparent); color: var(--bad); }
+.pf-danger-msg { color: var(--bad); font-size: 0.88rem; min-height: 1.3em; margin: 6px 0 0; }
+
+/* ============================================================
+   3.3.1 註冊牆：訪客進入鎖定功能頁 → 內容模糊＋鎖卡（無法操作）
+   ============================================================ */
+#app { position: relative; }
+#app.guest-locked > *:not(.guest-lock) {
+  filter: blur(7px);
+  pointer-events: none;
+  user-select: none;
+}
+.guest-lock {
+  position: absolute; inset: 0; z-index: 50;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 20px;
+}
+.guest-lock svg { width: 44px; height: 44px; color: var(--accent); margin-bottom: 8px; }
+.guest-lock h2 { margin: 0 0 4px; }
+.guest-lock .muted { margin-bottom: 12px; }
+
+/* ============================================================
+   3.3.1 後台：① 即時監控卡片頂端的 Edge Function 用量列（T-013）
+   ============================================================ */
+.sys-fn {
+  font-size: 0.88rem; color: var(--muted);
+  margin: 0 0 10px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================================
+   3.3.1 後台 ⑥ 統計圖表：純 SVG 折線圖（T-014，零依賴、零動畫）
+   ============================================================ */
+.line-chart { width: 100%; height: auto; display: block; margin: 4px 0 8px; }
+.line-chart polyline { fill: none; stroke-width: 2.5; }
+.line-chart circle { transition: r 0.12s ease; }
+.line-chart circle:hover { r: 5; }
+.line-chart text { font-family: inherit; }
+.chart-legend { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; }
+.chart-legend .lg { font-size: 0.85rem; font-weight: 600; }
+
+/* ============================================================
+   3.3.1 註冊牆：主頁卡片鎖（T-016 A）＋ 練習按鈕鎖（T-016 B）
+   ============================================================ */
+.card-locked > *:not(.card-lock-tip) {
+  filter: blur(5px); pointer-events: none; user-select: none;
+}
+.card-lock-tip {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: var(--muted); margin-bottom: 8px;
+}
+.card-lock-tip svg { width: 15px; height: 15px; color: var(--accent); flex: none; }
+.card-lock-tip a { color: var(--accent); font-weight: 600; }
+
+.btn-locked { opacity: 0.55; position: relative; }
+.btn-locked::after {
+  content: "\1F512"; position: absolute; top: -7px; right: -7px; font-size: 0.75rem;
+}
+
+/* ============================================================
+   4.0.0 界面修正與調整
+   ============================================================ */
+
+/* 用戶指示（4.0.0）：練習選單文字改回黑白（依深淺色），強調色只留在圖示 */
+.chooser-card .mode-desc { color: var(--ink); opacity: 0.72; }
+
+/* 公告卡：喇叭改統一線條 SVG */
+.ann-card .ann-text { display: flex; align-items: flex-start; gap: 8px; }
+.ann-card .ann-icon { width: 16px; height: 16px; flex: none; color: var(--accent); margin-top: 2px; }
+
+/* 排程管理刪除鈕：垃圾桶線條 SVG */
+.sched-row .btn svg { width: 15px; height: 15px; }
+
+/* 賬戶頁：修改密碼表單 */
+.pw-form { display: flex; flex-direction: column; gap: 8px; max-width: 420px; }
+.pw-form label { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.92rem; }
+.pw-form input { flex: 1; max-width: 260px; }
+
+/* 個人主頁橫屏（≥5/4）：卡片並排＋統計方塊自适应大小 */
+@media (min-aspect-ratio: 5/4) {
+  .profile-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 2fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .pf-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .pf-stats-grid .pf-block { margin: 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; }
+}
+
+/* 複習頁底部「不會單字」：呈現同原單詞本，間距縮短；橫屏跨滿兩欄 */
+.review-layout .unknown-card { order: 3; grid-column: 1 / -1; }
+.unknown-card h3 { margin: 0 0 6px; }
+.unknown-card .table-scroll { margin-top: 4px; }
+.unknown-card table td, .unknown-card table th { padding: 5px 8px; }
+
+/* ---------- 4.0.0 使用者選單界面橫屏版面（≥5/4；用戶已確認） ---------- */
+/* 賬戶頁：左＝帳號資訊＋修改密碼，右＝雲端同步＋注銷（紅卡右下） */
+/* 同步頁：摘要跨滿，左＝上傳雲端，右＝從雲端下載 */
+/* 統計頁：方塊卡跨滿，其餘四卡兩兩並排 */
+@media (min-aspect-ratio: 5/4) {
+  .account-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "info sync" "pw danger";
+    gap: 12px;
+    align-items: start;
+  }
+  .sync-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "sum sum" "up down";
+    gap: 12px;
+    align-items: start;
+  }
+  .stats-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .stats-layout .st-full { grid-column: 1 / -1; }
+}
+.account-layout .ac-info { grid-area: info; }
+.account-layout .ac-pw { grid-area: pw; }
+.account-layout .ac-sync { grid-area: sync; }
+.account-layout .ac-danger { grid-area: danger; }
+.sync-layout .sy-sum { grid-area: sum; }
+.sync-layout .sy-up { grid-area: up; }
+.sync-layout .sy-down { grid-area: down; }
+
+/* ============================================================
+   4.0.2 後台完善
+   ============================================================ */
+
+/* 使用者管理：在線狀態點點（閃爍＝持續活躍） */
+.status-dot {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  background: var(--muted);
+}
+.status-dot.st-online { background: var(--good); }
+.status-dot.st-active { background: var(--good); animation: dot-pulse 1.2s ease-in-out infinite; }
+.status-dot.st-warn { background: var(--warn); }
+.status-dot.st-off { background: var(--muted); opacity: 0.55; }
+@keyframes dot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.ud-legend {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin: 6px 0 2px;
+  font-size: 0.78rem; color: var(--muted);
+}
+
+/* 即時監控：平台額度列 */
+.quota-rows { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.q-row {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.q-row .stat-bar { display: block; width: 100%; }
+.q-val { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+
+/* 後台單詞本：分組標籤（後台列表＋使用者端分組標題共用） */
+.grp-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  vertical-align: middle;
+}
+
+/* ---------- 4.0.4 ---------- */
+/* 賬戶/統計橫屏方格：收斂過寬的欄，卡片更緊湊 */
+@media (min-aspect-ratio: 5/4) {
+  .account-layout { max-width: 920px; margin: 0 auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .stats-layout { max-width: 980px; margin: 0 auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .pf-stats-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  /* 詞形變化四欄同行 */
+  .tense-table table, .tense-table tbody, .tense-table tr { display: block; width: 100%; }
+  .tense-table tbody { display: flex; gap: 8px; }
+  .tense-table tr { flex: 1; border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; }
+  .tense-table th { display: block; text-align: left; color: var(--muted); font-size: 0.75rem; font-weight: 600; }
+  .tense-table td { display: block; text-align: left; font-weight: 600; }
+}
+/* 單字卡字體（設置） */
+html.word-s .flashcard .word { font-size: 0.85em; }
+html.word-l .flashcard .word { font-size: 1.2em; }
+html.word-xl .flashcard .word { font-size: 1.4em; }
+/* 例句：搜尋單字強調色粗體 */
+.ex-hl { color: var(--accent); font-weight: 700; }
+/* 一鍵移動列 */
+.bulk-move { display: flex; gap: 6px; align-items: center; margin: 0 0 8px; }
+.bulk-move input[type="date"] { flex: none; }
+
+/* ---------- 4.1.0 反饋／查詢標記移位 ---------- */
+#feedback-fab {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--ink); cursor: pointer; margin-right: 8px;
+  transition: background 0.16s ease;
+}
+#feedback-fab:hover { background: var(--surface-2); }
+#feedback-fab svg { width: 19px; height: 19px; }
+#feedback-panel {
+  position: fixed; top: 64px; right: 14px; z-index: 90;
+  width: min(360px, calc(100vw - 28px));
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+#feedback-panel .fb-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+#feedback-panel textarea { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 8px; background: var(--surface-2); color: var(--ink); font-family: inherit; resize: vertical; }
+.fb-list-title { font-weight: 600; font-size: 0.88rem; margin-top: 8px; }
+.fb-item { border-top: 1px solid var(--border); padding: 8px 0; }
+.fb-item:first-child { border-top: none; }
+.fb-q { font-size: 0.88rem; line-height: 1.5; }
+.fb-a { font-size: 0.85rem; margin-top: 4px; padding: 6px 8px; background: var(--accent-soft); border-radius: 8px; }
+.fb-reply-row { display: flex; gap: 6px; margin-top: 6px; }
+.fb-reply-row input { flex: 1; border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; background: var(--surface-2); color: var(--ink); font-family: inherit; }
+/* 查詢：標記按鈕靠右已於 4.2.0 批次 3 收編為 .word-actions（檔尾批次 3 區塊） */
+
+/* ============================================================
+   4.1.1 Design System — Soft Minimal × Material 3
+   分層：Tokens → Typography → Components → Practice
+   ============================================================ */
+
+/* ---------- Typography Scale（學習內容層級：EN 字 → 中文 → 例句 → 支援資訊） ---------- */
+.tp-page-title { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em; margin: 0 0 10px; }
+.tp-section-title { font-size: 1rem; font-weight: 700; margin: 14px 0 8px; }
+.tp-card-title { font-size: 0.95rem; font-weight: 600; margin: 0 0 6px; }
+.tp-body { font-size: 0.92rem; line-height: 1.6; }
+.tp-secondary { font-size: 0.85rem; color: var(--muted); }
+.tp-caption { font-size: 0.76rem; color: var(--muted); letter-spacing: 0.02em; }
+.tp-word-en { font-size: 1.55rem; font-weight: 700; line-height: 1.25; }
+.tp-word-zh { font-size: 1rem; font-weight: 600; line-height: 1.6; }
+.tp-example { font-size: 0.88rem; line-height: 1.6; }
+
+/* ---------- Semantic tokens（success/error；深淺色各自定義） ---------- */
+/* 4.1.1 修復（QA 實證）：須用 :root（與上方既有 token 同特異度、較晚出現者勝）——
+   原用 html 選擇器特異度低於 :root，淺色模式新色全被蓋回舊值 */
+:root { --ok: #3F7D5C; --ok-soft: rgba(63, 125, 92, 0.12); --bad: #B4552D; --bad-soft: rgba(180, 85, 45, 0.1); }
+html.dark { --ok: #7BB89A; --ok-soft: rgba(123, 184, 154, 0.14); --bad: #D9825F; --bad-soft: rgba(217, 130, 95, 0.13); }
+
+/* ---------- Focus ring（全站鍵盤焦點慣例） ---------- */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.btn:focus-visible, .mode-card:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Motion tokens ---------- */
+html { --motion-fast: 150ms; --motion-base: 200ms; --motion-slow: 250ms; --ease: cubic-bezier(0.2, 0, 0, 1); }
+
+/* ---------- Button 3-level（primary＝.btn.primary；secondary＝.btn；tertiary＝.btn-text） ---------- */
+.btn-text {
+  background: transparent; border: none; color: var(--accent);
+  padding: 6px 10px; cursor: pointer; font-size: 0.88rem; font-weight: 600;
+  border-radius: 8px; transition: background var(--motion-fast) var(--ease);
+  font-family: inherit;
+}
+.btn-text:hover { background: var(--accent-soft); }
+.btn-text:disabled { opacity: 0.45; cursor: default; }
+.btn.danger { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, transparent); }
+.btn.danger:hover { background: var(--bad-soft); }
+
+/* ---------- Icon-only button ---------- */
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 10px; flex: none;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--ink); cursor: pointer; transition: background var(--motion-fast) var(--ease);
+}
+.icon-btn:hover { background: var(--surface-2); }
+.icon-btn svg { width: 18px; height: 18px; }
+
+/* ---------- 內嵌 SVG 圖標（4.1.1：取代 emoji UI 圖標的尺寸與對位） ---------- */
+.card-h2-icon { display: inline-flex; align-items: center; vertical-align: -3px; }
+.card-h2-icon svg { width: 17px; height: 17px; margin-right: 6px; color: var(--muted); }
+.wb-toolbar .btn svg { width: 15px; height: 15px; vertical-align: -3px; }
+.cw-meaning .btn-text svg { width: 13px; height: 13px; vertical-align: -2px; }
+.q-nav-btn svg { width: 15px; height: 15px; vertical-align: -3px; }
+.cal-nav { width: 30px; height: 30px; border-radius: 8px; }
+.cal-nav svg { width: 16px; height: 16px; }
+.seg-row { display: flex; flex-direction: column; gap: 4px; }
+.seg-label { font-size: 0.82rem; color: var(--muted); }
+
+/* ---------- 行內小圖標（4.2.0：純文字段落內的 ICONS 內聯 svg，emoji 禁令的收尾） ---------- */
+.ic-inline { vertical-align: -2px; flex: none; }
+svg.ic-inline + span, span.ic-text { margin-left: 4px; }
+/* 一般按鈕內的 chevron／圖標（返回、上一個、下一題…） */
+.btn > svg { width: 15px; height: 15px; vertical-align: -3px; }
+/* 星級徽章：多顆星水平排列 */
+.stars { display: inline-flex; align-items: center; gap: 1px; vertical-align: -2px; }
+.stars svg { flex: none; }
+.badge.stars { padding: 1px 6px; }
+/* 星級勾選項目（.level-item 內） */
+.level-item .stars svg { width: 14px; height: 14px; }
+/* 圖表圖例的色點（取代 ● 文字符號） */
+.lg-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: currentColor; margin-right: 5px; vertical-align: -1px; }
+
+/* ---------- Toast（一般＝目前 Accent；semantic 才用 semantic 色） ---------- */
+#toast-region { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; }
+.toast {
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-left: 3px solid var(--accent);
+  border-radius: 10px; padding: 9px 16px; font-size: 0.88rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  animation: toast-in var(--motion-base) var(--ease);
+  max-width: min(480px, calc(100vw - 32px));
+}
+.toast.toast-ok { border-left-color: var(--ok); }
+.toast.toast-bad { border-left-color: var(--bad); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Dialog（M3 結構＋Soft Minimal 視覺） ---------- */
+.dlg-overlay { position: fixed; inset: 0; z-index: 150; background: rgba(0, 0, 0, 0.35); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.dlg {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  width: min(440px, 100%); padding: 18px; animation: toast-in var(--motion-base) var(--ease);
+}
+.dlg-title { font-size: 1rem; font-weight: 700; margin: 0 0 8px; }
+.dlg-body { font-size: 0.9rem; line-height: 1.6; color: var(--ink); }
+.dlg-body.dlg-danger { color: var(--bad); }
+.dlg-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+
+/* ---------- Empty state（SVG icon＋說明＋可選動作） ---------- */
+.empty-state { text-align: center; padding: 26px 14px; color: var(--muted); }
+.empty-state svg { width: 34px; height: 34px; opacity: 0.5; }
+.empty-state .es-title { font-weight: 600; color: var(--ink); margin: 8px 0 4px; font-size: 0.95rem; }
+.empty-state .es-desc { font-size: 0.85rem; }
+.empty-state .btn { margin-top: 10px; }
+
+/* ---------- Segmented control（radio 語意；:has 選中底色） ---------- */
+.segmented { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.segmented label { padding: 7px 14px; font-size: 0.85rem; cursor: pointer; border-right: 1px solid var(--border); background: var(--surface); transition: background var(--motion-fast) var(--ease); }
+.segmented label:last-child { border-right: none; }
+.segmented label:hover { border-color: var(--accent); }
+/* 4.1.1：.segmented 可能被放進 .import-row，該處的 .import-row label 會帶 column flex 樣式；
+   此處明確收回 display，避免標籤排版受外層污染（兩者特異度相同，靠順序無法保證） */
+.import-row .segmented label { display: block; }
+.segmented input { position: absolute; opacity: 0; pointer-events: none; }
+.segmented label:has(input:checked) { background: var(--accent-soft); }
+.segmented label:has(input:checked) span { font-weight: 700; }
+
+/* ---------- Practice Homepage（4 分類） ---------- */
+.practice-tree { display: flex; flex-direction: column; gap: 14px; }
+.pt-section .tp-section-title { display: flex; align-items: center; gap: 8px; }
+.pt-section .tp-section-title svg { width: 18px; height: 18px; color: var(--accent); }
+.pt-grid { display: grid; gap: 10px; }
+@media (min-aspect-ratio: 5/4) {
+  /* .pt-1x4 已於 4.2.0 批次 2 刪除：模擬考不再需要「1 欄／寬螢幕變 2 欄」的網格 */
+  .pt-grid.pt-2x2 { grid-template-columns: repeat(2, 1fr); }
+  .pt-grid.pt-3row { grid-template-columns: repeat(3, 1fr); }
+}
+.pt-card {
+  display: flex; align-items: center; gap: 12px; text-align: left; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px; cursor: pointer; font-family: inherit; width: 100%;
+  transition: border-color var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+}
+.pt-card:hover { border-color: var(--accent); background: var(--accent-soft); }
+.pt-card .pt-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex: none; }
+.pt-card .pt-icon svg { width: 19px; height: 19px; color: var(--accent); }
+.pt-card { color: var(--ink); }
+.pt-card .pt-title { font-weight: 600; font-size: 0.94rem; color: var(--ink); }
+.pt-card .pt-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+/* ---------- Unified Question Shell ---------- */
+.q-shell { display: flex; flex-direction: column; gap: 12px; }
+.q-shell-head { display: flex; align-items: center; gap: 10px; }
+.q-shell-head .q-type { font-size: 0.78rem; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
+.q-shell-head .q-progress-num { font-size: 0.82rem; color: var(--muted); margin-left: auto; white-space: nowrap; }
+.q-progress-bar { height: 4px; border-radius: 99px; background: var(--surface-2); overflow: hidden; flex: 1; }
+.q-progress-bar > span { display: block; height: 100%; background: var(--accent); border-radius: 99px; transition: width var(--motion-base) var(--ease); }
+.q-content { min-height: 120px; }
+.q-nav { display: flex; justify-content: space-between; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
+.q-feedback { min-height: 1.2em; font-size: 0.88rem; }
+.q-feedback.ok { color: var(--ok); }
+.q-feedback.bad { color: var(--bad); }
+
+/* ---------- Matching ---------- */
+.match-prompt { background: var(--surface-2); border-radius: 10px; padding: 14px; text-align: center; }
+.match-prompt .mp-word { font-size: 1.3rem; font-weight: 700; }
+.match-prompt .mp-hint { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+.match-grid { display: grid; gap: 8px; }
+@media (min-aspect-ratio: 5/4) { .match-grid.g4 { grid-template-columns: 1fr 1fr; } .match-grid.g6 { grid-template-columns: 1fr 1fr 1fr; } }
+.match-card {
+  border: 1.5px solid var(--border); border-radius: 10px; background: var(--surface);
+  padding: 11px 12px; cursor: pointer; font-size: 0.9rem; line-height: 1.5;
+  text-align: left; font-family: inherit; color: var(--ink);
+  transition: border-color var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+}
+.match-card:hover { border-color: var(--accent); }
+.match-card.selected { background: var(--accent-soft); border-color: var(--accent); }
+.match-card.f-correct { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 45%, transparent); }
+.match-card.f-wrong { background: var(--bad-soft); border-color: color-mix(in srgb, var(--bad) 55%, transparent); border-width: 2.5px; padding: 9.5px 10.5px; }
+.match-card.f-missed { border-color: var(--ok); border-width: 2.5px; padding: 9.5px 10.5px; background: var(--ok-soft); }
+.match-card:disabled { cursor: default; }
+
+/* ---------- Selection ---------- */
+.sel-passage { background: var(--surface-2); border-radius: 10px; padding: 12px 14px; font-size: 0.92rem; line-height: 1.8; margin-bottom: 10px; white-space: pre-wrap; }
+.sel-option {
+  display: block; width: 100%; text-align: left; font-family: inherit;
+  border: 1.5px solid var(--border); border-radius: 10px; background: var(--surface);
+  padding: 10px 12px; font-size: 0.9rem; cursor: pointer; color: var(--ink); margin: 6px 0;
+  transition: border-color var(--motion-fast) var(--ease), background var(--motion-fast) var(--ease);
+}
+.sel-option:hover { border-color: var(--accent); }
+.sel-option.picked { border-color: var(--accent); background: var(--accent-soft); }
+.sel-option.f-correct { background: var(--ok-soft); border-color: var(--ok); }
+.sel-option.f-wrong { background: var(--bad-soft); border-color: var(--bad); }
+.discourse-boxes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 10px 0; }
+@media (min-aspect-ratio: 5/4) { .discourse-boxes { grid-template-columns: repeat(5, 1fr); } }
+.dbox { border: 1.5px dashed var(--border); border-radius: 8px; min-height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; cursor: pointer; background: var(--surface-2); padding: 4px; text-align: center; word-break: break-word; }
+.dbox.filled { border-style: solid; background: var(--surface); color: var(--ink); }
+.dbox.f-correct { background: var(--ok-soft); border-color: var(--ok); border-style: solid; }
+.dbox.f-wrong { background: var(--bad-soft); border-color: var(--bad); border-style: solid; }
+.chip-pool { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.chip-opt { border: 1px solid var(--border); border-radius: 99px; background: var(--surface); padding: 4px 12px; font-size: 0.83rem; cursor: pointer; font-family: inherit; color: var(--ink); }
+.chip-opt:hover { border-color: var(--accent); }
+.chip-opt.used { opacity: 0.35; pointer-events: none; }
+/* 5.2 考古題：文章中譯摺疊（exam 的 passage 題組只顯示一次，逐題重複會把頁面拉長） */
+.passage-zh { margin: -4px 0 10px; font-size: 0.85rem; }
+.passage-zh > summary { cursor: pointer; color: var(--muted); }
+.passage-zh-body { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; margin-top: 6px; line-height: 1.85; white-space: pre-wrap; color: var(--ink); }
+
+/* ---------- Translation / Spelling（direct-in-sentence） ---------- */
+.tz-sentence { font-size: 1.02rem; line-height: 2.3; letter-spacing: 0.01em; }
+.tz-blank {
+  border: none; border-bottom: 2px solid var(--border); background: transparent;
+  color: var(--accent); font: inherit; font-weight: 700; text-align: center;
+  padding: 0 2px; margin: 0 2px; min-width: 60px;
+}
+.tz-blank:focus { border-bottom-color: var(--accent); background: var(--accent-soft); }
+.tz-blank.revealed { color: var(--ink); border-bottom-color: var(--border); font-weight: 500; }
+.tz-blank.ok { border-bottom-color: var(--ok); color: var(--ok); }
+.tz-blank.bad { border-bottom-color: var(--bad); color: var(--bad); }
+.tz-word { display: inline-block; margin: 0 1px; }
+.tz-punct { margin-right: 4px; }
+.tz-zh { display: block; margin-top: 8px; font-size: 0.86rem; color: var(--muted); }
+.content-words { margin-top: 10px; }
+.content-words .cw { display: inline-block; border: 1px solid var(--border); border-radius: 99px; padding: 3px 12px; margin: 3px 4px 3px 0; font-size: 0.85rem; cursor: pointer; background: var(--surface); color: var(--ink); }
+.content-words .cw:hover { border-color: var(--accent); color: var(--accent); }
+.cw-meaning { font-size: 0.82rem; color: var(--accent); margin: 6px 0; min-height: 1.2em; }
+.spell-input-row { display: flex; align-items: center; gap: 10px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
+.spell-input-row .zh-prompt { font-size: 1.05rem; font-weight: 600; }
+.spell-input { border: none; border-bottom: 2px solid transparent; background: transparent; color: var(--ink); font: inherit; font-size: 1.1rem; padding: 4px 6px; text-align: center; min-width: 180px; }
+.spell-input:focus { background: var(--accent-soft); }
+
+/* ---------- Completion ---------- */
+.completion { text-align: center; padding: 26px 12px; }
+.completion .c-score { font-size: 2rem; font-weight: 700; color: var(--accent); margin: 6px 0; }
+.completion .c-stats { display: flex; justify-content: center; gap: 18px; margin: 12px 0 18px; flex-wrap: wrap; }
+.completion .c-stats .srs-box .num { font-size: 1.3rem; }
+.completion .c-actions { display: flex; justify-content: center; gap: 8px; }
+
+/* ---------- 歷屆真題模擬考（4.2.0） ---------- */
+.completion .c-stats .srs-box .num.exam-papers { font-size: 0.95rem; }
+.exam-report { margin: 8px auto 4px; max-width: 420px; text-align: left; }
+.exam-report td { padding: 5px 8px; font-size: 0.86rem; }
+.exam-report td:last-child { text-align: right; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.exam-report tr.er-head td { font-size: 0.78rem; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 3px; }
+.exam-report tr.er-head td:last-child { text-align: left; color: var(--muted); }
+
+/* ============================================================
+   4.2.0 inline style 收編
+   把 js/ 模板字串裡的 style="..." 靜態設計值搬進來；class 命名對應語意。
+   仍留在行內的只有「真正隨資料變動的值」：長條寬度（width:%）、
+   強調色底色（theme-dot 的 background）、依單字長度算出的輸入框寬度。
+   ============================================================ */
+
+/* 按鈕列：靠左／靠右排列（原本 12 處 controls + justify-content） */
+.controls.controls-start { justify-content: flex-start; }
+.controls.controls-end { justify-content: flex-end; }
+
+/* 段落間距：區塊下的小字提示（原本 margin-top:6px／margin:8px 0 0 等） */
+.note-tight { margin-top: 6px; }
+.note-below { margin: 8px 0 0; }
+.note-inset { margin: 4px 0; }
+.note-block { margin: 12px 0; }
+.note-head { margin-top: 10px; }
+
+/* 標題（原本寫死在 h3 上的 margin-top） */
+.section-title { margin-top: 14px; }
+.section-title-lg { margin-top: 16px; }
+
+/* 區塊間距（div / list 上的 margin-bottom、margin-top） */
+.grid-gap-sm { margin-bottom: 8px; }   /* 模式選擇列、統計列 */
+.list-offset { margin-top: 10px; }     /* 每日任務到期清單 */
+/* 4.3.0：.cap-list 原為「釋義補充（AI 審核）」清單，該區塊已併入 .dict-senses → 已刪除 */
+.wb-words-compact { max-height: 120px; }  /* 導入預覽字表（比一般 .wb-words 矮） */
+.wb-detail-meta { margin-bottom: 6px; }   /* 單詞本展開區的「練習結束於…」 */
+.clear-row { margin-top: 6px; }       /* 按鈕與上方表格的間距 */
+
+/* 表單控制項 */
+.input-mono-upper { text-transform: uppercase; }  /* 8 碼同步代碼 */
+.input-key { letter-spacing: 2px; }   /* 註冊金鑰輸入 */
+.input-otp { letter-spacing: 4px; }    /* 郵箱驗證碼輸入 */
+.input-key-code { letter-spacing: 1px; } /* 後台金鑰代碼顯示 */
+/* 後台手動輸入金鑰：掛 .search-row 取得 .search-row input 的既有外觀
+   （邊框／圓角／字體／focus 環／flex:1），這裡只固定容器寬度並取消上下 margin */
+.search-row-compact { width: 230px; margin: 0; }
+.select-flex { flex: 1; }              /* Gemini 模型下拉 */
+.search-row-tight { margin-top: 6px; }/* 模型列與上一列的間距 */
+
+/* 顏色與語意 */
+.text-good { color: var(--good); }     /* 金鑰「未使用」 */
+.passage-blank { color: var(--accent); }  /* 文意選填當前題號空格（selection.js） */
+/* 成績頁：迷你測驗的補充說明列（原本寫死在 td 上的 color/font-size） */
+.exam-report tr.er-note td { color: var(--muted); font-size: 0.82rem; }
+
+/* 圖表圖例：色值搬進 CSS（原本寫死 style="color:var(--accent)"） */
+.chart-legend .lg-accent { color: var(--accent); }
+.chart-legend .lg-warn { color: var(--warn); }
+
+/* 表單列中的按鈕：貼齊輸入框底緣（.import-row 是 column 排列，鈕不會自動對齊） */
+.align-end { align-self: flex-end; }
+
+/* 圖標按鈕內的 svg 尺寸（原本寫死 style="width:14px;height:14px"）
+   （icon-sm-15 已於 4.2.0 批次 2 移除：後台刷新鈕改用 .icon-btn-sm 後無呼叫端） */
+.icon-sm-14 { width: 14px; height: 14px; }
+
+/* 勾選列：去掉框線的輕量選項（允許 0 個正確） */
+.check-plain { border: none; padding: 4px 2px; }
+
+/* 導入面板的動作列（原本 class="row" + inline flex/gap/margin） */
+.import-actions { display: flex; gap: 8px; margin-top: 8px; }
+
+/* 反饋面板：關閉鈕、動作列 */
+#feedback-panel .icon-sm-14 { flex: none; }
+#feedback-panel .fb-actions { margin: 8px 0 4px; }
+
+/* ============================================================
+   4.2.0 批次 2
+   A 節：後台 admin workspace 化（js/pages/admin.js）
+   ============================================================ */
+
+/* ---------- A-1：後台 workspace 版面（左欄 176px 分區導航＋右欄單區） ---------- */
+.admin-shell {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+.admin-nav {
+  display: flex; flex-direction: column; gap: var(--space-1);
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-1);
+  position: sticky; top: var(--space-2);
+}
+.admin-nav-item {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  color: var(--ink); text-decoration: none;
+  border-radius: var(--shape-sm);
+  transition: background var(--motion-fast) var(--ease);
+}
+.admin-nav-item:hover { background: var(--surface-3); }
+.admin-nav-item.active {
+  background: var(--surface);
+  box-shadow: inset 3px 0 0 var(--accent);
+  font-weight: 600;
+}
+.admin-nav-icon { display: inline-flex; align-items: center; flex: none; color: var(--muted); }
+.admin-nav-icon svg { width: 16px; height: 16px; }
+.admin-nav-item.active .admin-nav-icon { color: var(--accent); }
+.admin-nav-label { font-size: 0.88rem; }
+/* 手機：左欄改為頂部橫向捲動列（176px 欄在 640px 版心下會擠掉右欄） */
+@media (max-width: 560px) {
+  .admin-shell { grid-template-columns: minmax(0, 1fr); }
+  .admin-nav { flex-direction: row; overflow-x: auto; position: static; }
+  .admin-nav-item { white-space: nowrap; }
+  .admin-nav-item.active { box-shadow: inset 0 -3px 0 var(--accent); }
+}
+
+/* 頂部工具列：即時監控狀態＋刷新／登出 */
+.admin-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-2); flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+.admin-live { margin-bottom: 0; }
+.admin-bar-actions { display: inline-flex; align-items: center; gap: var(--space-1); }
+.admin-panel-card { padding-top: var(--space-4); }
+.admin-desc { margin: 0 0 var(--space-1); }
+.admin-meta { margin: 0 0 var(--space-4); }
+
+/* 小尺寸 icon-btn（後台刷新鈕／使用者列的「⋯」） */
+.icon-btn-sm { width: 32px; height: 32px; border-radius: var(--shape-sm); border-color: transparent; background: transparent; color: var(--muted); }
+.icon-btn-sm:hover { background: var(--surface-2); color: var(--ink); }
+.icon-btn-sm svg { width: 16px; height: 16px; }
+
+/* ---------- A-2/A-3：使用者表格（操作型密度） ---------- */
+.ud-table th {
+  padding: var(--space-2) 10px;
+  background: var(--surface-2);
+  color: var(--muted); font-weight: 600; font-size: 0.76rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.ud-table td {
+  padding: 6px 10px;
+  height: 32px;
+  border-bottom: 1px solid var(--border-soft);
+  white-space: nowrap;
+}
+.ud-table tr:hover td { background: var(--surface-2); }
+/* 狀態點欄固定 28px：Email 欄拆兩欄後，點不會跟著 email 長度擠動 */
+.ud-table .td-dot { width: 28px; min-width: 28px; padding-left: 10px; padding-right: 0; }
+.ud-table .td-dot .status-dot { margin-right: 0; }
+.ud-table .td-word { white-space: normal; min-width: 90px; }
+.ud-table .td-ops { width: 40px; text-align: right; }
+.ud-count { margin: 0 0 var(--space-2); }
+.ud-search { margin: var(--space-2) 0; }
+.ud-search input { width: 100%; }
+.ud-seg { margin: var(--space-2) 0 var(--space-3); gap: var(--space-1); }
+
+/* 「⋯」帳號操作選單：複用 .user-menu 樣式，定位值由 admin.js 依按鈕位置行內寫入 */
+.ud-menu { min-width: 190px; z-index: 160; }
+.ud-menu button { padding: var(--space-2) var(--space-3); font-size: 0.88rem; }
+.ud-menu button:disabled { opacity: 0.45; cursor: default; }
+.ud-menu button:disabled:hover { background: var(--surface); color: var(--ink); }
+.ud-menu button.is-current { color: var(--muted); }
+.ud-menu button.is-current::after { content: '（目前）'; font-size: 0.76rem; color: var(--muted); }
+.ud-menu button.is-danger { color: var(--bad); }
+.ud-menu button.is-danger:hover { background: var(--bad-soft); color: var(--bad); }
+
+/* ---------- A-7：七區列表列統一 .list-row ---------- */
+/* 取代 .preset-item／後台 .fb-item：金鑰／公告／預設單詞本／反饋共用同一列樣式 */
+.list-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-2); padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border-soft);
+  transition: background var(--motion-fast) var(--ease);
+}
+.list-row:hover { background: var(--surface-2); }
+.list-row:last-child { border-bottom: none; }
+.list-row.split > span { display: inline-flex; align-items: center; gap: var(--space-1); flex: none; }
+/* 反饋工單在後台：內容可換行，列高不鎖 32px（.list-row 只給間距與線） */
+.list-row.fb-admin { align-items: flex-start; flex-direction: column; gap: var(--space-2); }
+
+/* ---------- openDialog 輸入模式（取代原生 prompt） ---------- */
+.dlg-input {
+  width: 100%; margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border); border-radius: var(--shape-sm);
+  background: var(--surface); color: var(--ink);
+  font-size: 0.95rem; font-family: inherit;
+}
+.dlg-input:focus { outline: none; border-color: var(--accent); }
+
+/* ============================================================
+   4.2.0 批次 2 — B 節：練習首頁 feature 卡（決策 6A）
+   四分類維持 .pt-grid；模擬考改成間隔線後的滿欄單卡
+   ============================================================ */
+
+/* 分類之間的分隔線（.practice-tree 直排子項之間） */
+.section-divider { border-top: 1px solid var(--border); margin: var(--space-1) 0; }
+
+/* Feature 卡：滿欄、左側 4px accent 直條、標題＋描述＋右側 badge 橫排 */
+.pt-card--feature {
+  border-left: 4px solid var(--accent);
+  padding: var(--space-4);
+  gap: var(--space-3);
+}
+.pt-card--feature .pt-icon { width: 40px; height: 40px; }
+.pt-card--feature .pt-icon svg { width: 21px; height: 21px; }
+.pt-feature-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.pt-feature-body .pt-title { font-size: 1rem; }
+.pt-feature-body .pt-desc { margin-top: 2px; }
+.pt-feature-badge {
+  background: var(--accent-soft); color: var(--accent);
+  border-radius: 99px; font-weight: 600; font-size: 0.78rem;
+  padding: var(--space-1) var(--space-3);
+  align-self: center; flex: none;
+}
+/* 窄螢幕：badge 換行到下一列，避免和描述擠在一起 */
+@media (max-width: 420px) {
+  .pt-card--feature { flex-wrap: wrap; }
+  .pt-feature-badge { margin-left: 52px; }  /* 對齊 icon 右緣（4px 直條 + 40px icon + 12px gap） */
+}
+
+/* ---------- 4.2.0 批次 3 ---------- */
+/* C 節：剩餘原生彈窗全換 openDialog。本節只補元件擴充需要的樣式，
+   其餘（.dlg/.dlg-body/.dlg-danger/.dlg-input/.list-row 等）沿用 4.1.1 既有規則。 */
+
+/* openDialog bodyHtml 裡的「要照打的等寬碼」區塊（注銷帳號防誤觸確認）
+   取代原生 prompt 裡靠換行與縮排表達的對照提示；等寬＋底色讓兩段文字可掃讀比對。 */
+.dlg-code {
+  display: inline-block; margin: 0 var(--space-1);
+  padding: 0 var(--space-2);
+  background: var(--surface-3);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--shape-xs);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700; letter-spacing: 0.2em; color: var(--ink);
+}
+/* danger 對話框裡的碼沿用 --bad 語意色，與 .dlg-body.dlg-danger 的警示色一致 */
+.dlg-body.dlg-danger .dlg-code { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 30%, transparent); }
+
+/* ============================================================
+   4.2.0 批次 3 — D 節：內容頁結構
+   D-1 查詢頁 .kv 定義列表／.exam-sent-list／.ex-zh／.example 引用塊
+   D-2 單詞本 .list-row--tappable／.wb-detail 面板／.chip
+   D-3 月曆格子狀態（.cal-cell 改底色階＋.sel 內框）
+   D-4 統計頁 .stat-tile／熱力圖星期與月份標／圖例
+   D-5 設置頁 .segmented 收攏（沿用 4.1.1 .segmented，只補滿寬與間距）
+   D-6 auth .auth-seg／.input-shared
+   D-7 intro .log-list grid／.doc-item
+   D-8 profile .prop-row／.notice-bar
+   ============================================================ */
+
+/* ---------- D-1 查詢頁 ---------- */
+/* 4.3.0：查詢頁頭部改用 .word-header（badges 行＋單字/音標行），見檔尾 4.3.0 區塊
+   ——.kv 定義列表（.kv/.kv-row/.kv-k/.kv-v/.kv-row--head）已整組移除 */
+/* 查詢頁的兩個動作鈕（朗讀／標記不會）：4.3.0 移到 .word-header 之外單獨一列 */
+.word-actions { display: flex; align-items: center; gap: var(--space-2); margin: var(--space-2) 0 var(--space-3); }
+.word-actions .btn-mark-top { margin-left: auto; flex: none; }
+.word-actions .btn-mark-top svg { width: 15px; height: 15px; vertical-align: -3px; }
+.word-actions .speak-btn { width: 30px; height: 30px; }
+
+/* 4.3.0：.exam-sent-list／.ex-zh／.cap-list 已隨考題例句改用 .example、AI 釋義改併入
+   .dict-senses 而不再使用 → 已刪除 */
+/* .example 例句：4.2.0 去 surface-2 底與 accent 直條，改引用塊（--border 直條） */
+.example {
+  border-left: 2px solid var(--border);
+  border-radius: 0; padding: var(--space-2) 0 var(--space-2) 12px;
+  margin: var(--space-2) 0; background: none;
+}
+.example + .example { border-top: 1px solid var(--border-soft); padding-top: var(--space-2); }
+.example-en { font-size: 0.95rem; }
+.example-zh { color: var(--muted); font-size: 0.88rem; }
+
+/* ---------- D-2 單詞本 ---------- */
+/* 收攏列：無邊框的可點列（.list-row 的可點版本）＋左側 accent 直條指示可展開 */
+.list-row--tappable {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+  width: 100%; padding: 10px 8px; margin: 2px 0;
+  border: none; border-radius: var(--shape-sm);
+  background: none; color: inherit; font-family: inherit; text-align: left;
+  cursor: pointer;
+  transition: background var(--motion-fast) var(--ease), box-shadow var(--motion-fast) var(--ease);
+  box-shadow: inset 2px 0 0 var(--accent-soft);
+}
+.list-row--tappable:hover { background: var(--surface-3); box-shadow: inset 2px 0 0 var(--accent); }
+.list-row--tappable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* 展開態：整張卡不再畫 accent 外框（4.2.0），細節面板自成一格 */
+.wb-card.expanded { border-color: var(--border); padding: 2px 12px 12px; }
+.wb-detail {
+  background: var(--surface-2); border-radius: var(--shape-sm);
+  padding: var(--space-3); margin-top: var(--space-2);
+}
+/* 三種單字 chip 統一（單詞本卡／導入預覽／月曆預覽、畢業清單） */
+.chip {
+  display: inline-block; background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--shape-sm); padding: 2px 9px;
+  margin: 2px 3px 2px 0; font-size: 0.86rem; line-height: 1.5;
+}
+
+/* ---------- D-3 月曆（core/calendar.js 的格子狀態） ---------- */
+/* 4.2.0：格子狀態改底色階，不再靠「今天」畫 2px 實心 ring */
+.cal-cell.has { background: var(--accent-soft); }
+.cal-cell.has:hover { background: color-mix(in srgb, var(--accent-soft) 70%, var(--accent) 30%); opacity: 1; }
+.cal-cell.has .cal-date { color: var(--muted); }
+.cal-cell.has .cal-count { color: var(--accent); font-size: 1.15rem; }
+/* 今天且有排程：accent 實底＋白字 */
+.cal-cell.today.has { background: var(--accent); box-shadow: none; }
+.cal-cell.today.has .cal-date { color: rgba(255, 255, 255, 0.8); }
+.cal-cell.today.has .cal-count { color: #fff; }
+/* 今天但無排程：只給底色，不再套 ring */
+.cal-cell.today { background: var(--surface-2); box-shadow: none; }
+.cal-cell.today .cal-day { background: none; color: var(--accent); padding: 0; font-weight: 700; }
+/* 選中：1px 實線內框（取代 1.5px dashed outline） */
+.cal-cell.sel { outline: none; box-shadow: inset 0 0 0 1px var(--ink); }
+.cal-cell.sel.today.has { box-shadow: inset 0 0 0 1px var(--ink); }
+
+/* ---------- D-4 統計頁 ---------- */
+/* .stat-tile：1px gap ＋底色當表格線，取代 .srs-box 的數字用途 */
+.stat-tiles {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px; background: var(--border-soft);
+  border: 1px solid var(--border-soft); border-radius: var(--shape-sm);
+  overflow: hidden; margin: var(--space-2) 0;
+}
+.stat-tile { background: var(--surface); padding: var(--space-3) var(--space-4); }
+.stat-tile-num { font-size: 1.55rem; font-weight: 700; line-height: 1.2; }
+.stat-tile-label { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+.stat-tile-sub { font-size: 0.76rem; color: var(--muted); opacity: 0.85; }
+/* 掌握度長條的數字欄要放得下「已畢業 / 全部」 */
+.stat-val { width: auto; min-width: 64px; }
+/* 熱力圖：左側星期標＋每欄頂端的月份標 */
+.heat { display: flex; gap: 3px; align-items: flex-start; overflow-x: auto; }
+.heat-dow {
+  display: flex; flex-direction: column; gap: 3px; flex: none;
+  font-size: 0.68rem; color: var(--muted); line-height: 12px;
+}
+.heat-dow span { height: 12px; }
+.heat-body { display: flex; gap: 3px; }
+.heat-col-wrap { display: flex; flex-direction: column; gap: 2px; flex: none; }
+.heat-month { font-size: 0.66rem; color: var(--muted); height: 12px; line-height: 12px; }
+.heat-col { display: grid; grid-auto-rows: 12px; gap: 3px; }
+.heat-legend { display: flex; align-items: center; gap: 4px; margin: var(--space-2) 0 0; }
+.heat-legend .heat-cell { width: 12px; height: 12px; border-radius: var(--shape-xs); }
+
+/* ---------- D-5 設置頁 ---------- */
+/* 7 組短選項改 .segmented：滿寬平分、上下留白固定，避免每組高度不一 */
+.card .segmented { display: flex; width: 100%; margin: var(--space-2) 0 var(--space-4); }
+.card .segmented label { flex: 1 1 0; min-width: 0; text-align: center; }
+/* 選項文字較長的（單字卡字體、模型）允許縮排換行 */
+.card .segmented label span { display: block; }
+/* 4.2.0 批次 3 D-5：.seg-row 內的 .segmented（配對題型、後台使用者篩選）沿用既有 inline 寬度，
+   不吃 .card .segmented 的滿寬規則——該規則特異度較高，需明確收回 */
+.card .seg-row .segmented { display: inline-flex; width: auto; margin: 0; }
+.card .seg-row .segmented label { flex: none; }
+
+/* ---------- D-6 auth ---------- */
+/* 分頁用 .segmented：整寬、兩等分（.auth-tabs／.auth-tab 已於 4.2.0 批次 3 移除） */
+.auth-seg { display: flex; width: 100%; margin-bottom: var(--space-4); }
+.auth-seg label { flex: 1 1 0; text-align: center; }
+/* 表單輸入共用 .search-row input 的樣式（4.2.0 批次 3：auth-label input 收編） */
+.input-shared {
+  display: block; width: 100%; margin-top: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border); border-radius: var(--shape-sm);
+  background: var(--surface); color: var(--ink);
+  font-size: 0.95rem; font-family: inherit;
+}
+.input-shared:focus { outline: none; border-color: var(--accent); }
+
+/* ---------- D-7 intro ---------- */
+/* 更新日志：左欄版本號 64px 固定、右欄說明佔滿；不再用虛線分隔 */
+.log-list li {
+  display: grid; grid-template-columns: 64px 1fr; gap: var(--space-2);
+  align-items: baseline; padding: var(--space-2) 0; border-bottom: none;
+}
+.log-list .log-ver { color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.log-list .log-text { min-width: 0; }
+/* 使用說明：左標題 88px、右說明 */
+.doc-list { margin: var(--space-2) 0 0; padding: 0; list-style: none; }
+.doc-item {
+  display: grid; grid-template-columns: 88px 1fr; gap: var(--space-3);
+  align-items: baseline; padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.doc-item:last-child { border-bottom: none; }
+.doc-title { font-weight: 600; font-size: 0.92rem; }
+.doc-item > span:last-child { font-size: 0.92rem; line-height: 1.7; color: var(--ink); }
+@media (max-width: 380px) {
+  .doc-item { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* ---------- D-8 profile ---------- */
+/* 頁面屬性：label-value 兩欄 */
+.prop-list { margin: var(--space-2) 0 0; }
+.prop-row {
+  display: grid; grid-template-columns: 72px 1fr; gap: var(--space-3);
+  align-items: baseline; padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.prop-row:last-child { border-bottom: none; }
+.prop-k { color: var(--muted); font-size: 0.85rem; }
+.prop-v { min-width: 0; word-break: break-word; overflow-wrap: anywhere; }
+/* 「只存在這台裝置」：surface-2 底＋左側 3px 直條 */
+.notice-bar {
+  background: var(--surface-2);
+  border-left: 3px solid var(--muted);
+  border-radius: var(--shape-xs);
+  padding: var(--space-2) var(--space-3);
+  margin: var(--space-2) 0; font-size: 0.86rem; color: var(--muted);
+}
+
+/* ============================================================
+   4.3.0 查詢頁優化
+   ① 單字頭部重排：.kv 定義列表 → .word-header（標籤行＋單字/音標行）
+   ② .senses 項目符號清單移除（資訊併入 .dict-senses）
+   ③ AI 審核補充義項併入 .dict-senses，行首加 .dict-ai-tag 小標
+   ④ 考題例句改用與例句相同的 .example 結構，出處另標 .example-source
+   沿用既有 token：--space-*／--shape-*／--surface-*／--border-soft
+   ============================================================ */
+
+/* ---------- ① 單字頭部 ---------- */
+.word-header { margin: 0 0 var(--space-1); }
+/* 標籤行：Lv 徽章＋考題星級（沒有星級時是 muted 小字「未出現於考題」） */
+.word-badges {
+  display: flex; align-items: center; gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+/* 單字＋音標同行：音標字級較小、muted，跟著單字但不搶標題 */
+.word-main {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: var(--space-2); min-width: 0;
+}
+.word-en { min-width: 0; overflow-wrap: anywhere; }
+.word-phonetic {
+  color: var(--muted); font-size: 0.92rem; line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* ---------- ③ 釋義區：AI 補充義項的小標 ---------- */
+/* 行首小標（而非右側徽章）：同一區塊內要一眼看出「上面是字典、下面是 AI 補充」 */
+.dict-row--ai { border-top: 1px solid var(--border-soft); margin-top: var(--space-1); padding-top: var(--space-1); }
+.dict-ai-tag {
+  color: var(--muted); font-size: 0.72rem; letter-spacing: 0.03em;
+  margin-right: 6px; user-select: none;
+}
+
+/* ---------- ④ 例句出處小徽章 ---------- */
+/* 放在句尾：出處是輔助資訊，不該打斷「英文 → 中文」的閱讀順序 */
+.example-source {
+  color: var(--muted); font-size: 0.72rem; letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
+
+
+/* ---------- 4.3.1 批次 0：題庫來源選擇器＋練習結束整合 ---------- */
+.bank-picker { display: flex; flex-direction: column; gap: 2px; }
+.bank-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: var(--shape-sm, 8px); cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface);
+  transition: background 0.16s ease;
+}
+.bank-item:hover { background: var(--surface-2); }
+.bank-item:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.bank-item input { accent-color: var(--accent); }
+.bank-item-label { font-size: 0.92rem; }
+.bank-item-count { margin-left: auto; font-size: 0.78rem; }
+.btn-quit { border-color: var(--border); color: var(--muted); }
+.btn-quit:hover { color: var(--bad); border-color: var(--bad); }
+
+/* ---------- 4.3.1 批次 1 ---------- */
+/* 設定區排版（配對／拼寫子頁）：左標題（.tp-card-title）＋右控制項，組間以 .section-divider 分隔 */
+.settings-list { display: flex; flex-direction: column; margin: var(--space-2) 0; }
+.settings-row { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) 0; }
+.settings-row-title { flex: 1 1 auto; min-width: 0; }
+.settings-row-title .tp-card-title { margin: 0; }
+.settings-row-title .tp-caption { margin: 2px 0 0; }
+.settings-row-main { flex: 0 0 auto; display: flex; align-items: center; justify-content: flex-end; }
+/* bank-picker 較寬（單詞本名稱長）：控制項改佔滿右側並靠左排，避免整列被撐爆 */
+.settings-row--stack { align-items: flex-start; }
+.settings-row--stack .settings-row-main { flex: 1 1 auto; flex-direction: column; align-items: stretch; }
+/* 5.0 勘誤：.settings-row（上）與 .hidden（444 行）同權重且較晚定義，display:flex 蓋過
+   display:none——拼寫頁的範圍切換列（單詞本／AI 題庫字）自 4.3.1 起從未真的收合過 */
+.settings-row.hidden { display: none; }
+/* 收合列的尾隨分隔線一併隱藏，避免連續多條細線疊在一起 */
+.settings-row.hidden + .section-divider { display: none; }
+.settings-note { margin: var(--space-1) 0 0; }
+/* 開關（允許 0 個正確等布林設定）：checkbox ＋ 文字，貼齊右緣 */
+.settings-switch { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; white-space: nowrap; }
+.settings-switch input { accent-color: var(--accent); }
+
+/* ---------- 4.3.1 批次 2 ---------- */
+/* ① 題庫來源＝數量為 0（此題型無題）：整列淡出且不可勾（js 端同時 disabled） */
+.bank-item--empty { opacity: 0.5; cursor: not-allowed; }
+.bank-item--empty .bank-item-count { color: var(--muted); }
+
+/* ② 題目來源徽章（自製／真題 113E1／AI）：放在題幹上方，輔助資訊不搶主體。
+   顏色用屬性選擇器帶（data-src 來自題目的來源標記），不用動態組 class 名 */
+.sel-head { display: flex; flex-direction: column; gap: var(--space-1); }
+.sel-head .tp-body { margin: 0; }
+.sel-head .src-badge { align-self: flex-start; }
+.src-badge {
+  display: inline-block; border: 1px solid var(--border); border-radius: var(--shape-full);
+  padding: 1px 8px; font-size: 0.72rem; color: var(--muted); background: var(--surface-2);
+  letter-spacing: 0.03em; white-space: nowrap;
+}
+.src-badge[data-src="real"] { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--accent); background: var(--accent-soft); }
+.src-badge[data-src="ai"] { border-color: color-mix(in srgb, var(--ok) 45%, transparent); color: var(--ok); }
+/* 5.2 考古題：與真題同屬「歷屆考題」，但徽章文字自帶屆次（考古題 109學測），
+   故用第三種色（紫）區隔，避免與 real 的藍、ai 的綠混淆 */
+.src-badge[data-src="archive"] { border-color: color-mix(in srgb, var(--src-archive) 45%, transparent); color: var(--src-archive); background: var(--src-archive-soft); }
+
+/* ③ 選項可二次點擊查釋義：行內小字連結（.btn-text 的低調版本） */
+.sel-lookup-hint {
+  float: right; font-size: 0.74rem; color: var(--muted);
+  border-bottom: 1px dotted var(--muted); margin-left: 8px; white-space: nowrap;
+}
+.sel-option:disabled { cursor: pointer; }
+.sel-option:disabled .sel-lookup-hint { color: var(--accent); border-bottom-color: var(--accent); }
+.sel-option:disabled:hover .sel-lookup-hint { color: var(--accent); }
+.mc-slot { margin: 2px 0 8px; }
+
+/* ④ 迷你單詞卡（.mini-card 緊湊版）：選項與 content words 共用 */
+.mini-card {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: var(--shape-sm);
+  padding: var(--space-2) var(--space-3); font-size: 0.86rem;
+}
+.mini-card--none { border-left-color: var(--muted); color: var(--muted); }
+.mc-kv { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-2); }
+.mc-kv-k { font-weight: 600; color: var(--ink); }
+.mc-kv-raw { color: var(--muted); font-size: 0.8rem; }
+.mc-kv-phonetic { color: var(--muted); font-size: 0.82rem; }
+.mc-senses { margin-top: 4px; color: var(--ink); line-height: 1.7; }
+.mc-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.mc-actions .btn-text { font-size: 0.8rem; }
+.mc-actions .btn-text svg { width: 13px; height: 13px; vertical-align: -2px; }
+
+/* ⑤ 練習結束：本次收集單字的整合面板（新建／合併） */
+.join-panel { margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--border-soft); text-align: left; }
+.join-words { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--space-2) 0; }
+.join-words .chip { display: inline-flex; align-items: center; gap: 3px; }
+.join-words .chip--plan { border-color: var(--ok); color: var(--ok); }
+.join-words .chip-flag { display: inline-flex; }
+.join-words .chip-flag svg { width: 12px; height: 12px; }
+.join-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.join-form { margin-top: var(--space-3); }
+.join-merge-item { display: flex; align-items: center; gap: 6px; padding: 4px 0; cursor: pointer; }
+.join-merge-item input { accent-color: var(--accent); }
+
+/* ⑥ 中譯英：三個 AI 入口同一排（批次 4 第 6 項）——題庫兩張卡另成一排 */
+.pt-section .pt-grid { margin-bottom: var(--space-3); }
+.pt-section .tp-section-title { margin: var(--space-3) 0 var(--space-2); }
+
+/* ⑦ 文意選填：正解標示（原本是行內樣式，搬進 class） */
+.dc-answer { margin-left: 6px; color: var(--accent); font-weight: 600; }
+
+/* ⑧ 中譯英空格下劃線（批次 4 第 4 項）：
+   .tz-blank 原本 border-bottom 透明（4.1.1 改的），改回可見下劃線——
+   未輸入時 --border 就看得到空格位置，輸入後由 .ok/.bad 覆寫成綠／紅。
+   （規則本身在 1470 行那組既有宣告裡改值，不另立新 class） */

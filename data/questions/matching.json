@@ -1,0 +1,25 @@
+{
+  "note": "4.1.1 樣本題庫（starter）：反義詞語意群（many-to-many，雙向）與片語配對。正式題庫將由 4.0.1 考題語料庫管線擴充。",
+  "antonym": [
+    { "prompt": "ancient", "promptSub": "adj.", "correct": ["modern", "new", "recent", "current"], "distractorPool": ["elderly", "traditional", "classic", "original", "future", "young", "past", "rapid"] },
+    { "prompt": "generous", "promptSub": "adj.", "correct": ["stingy", "selfish", "greedy"], "distractorPool": ["wealthy", "kind", "helpful", "honest", "modest", "humble", "loyal"] },
+    { "prompt": "increase", "promptSub": "v.", "correct": ["decrease", "reduce", "decline", "drop"], "distractorPool": ["improve", "expand", "raise", "grow", "double", "extend"] },
+    { "prompt": "artificial", "promptSub": "adj.", "correct": ["natural", "real", "genuine"], "distractorPool": ["false", "fake", "plastic", "modern", "simple", "unusual"] },
+    { "prompt": "brave", "promptSub": "adj.", "correct": ["cowardly", "timid", "fearful"], "distractorPool": ["bold", "strong", "confident", "proud", "calm", "harsh"] },
+    { "prompt": "permanent", "promptSub": "adj.", "correct": ["temporary", "brief", "short-term"], "distractorPool": ["lasting", "stable", "fixed", "durable", "annual", "final"] },
+    { "prompt": "reject", "promptSub": "v.", "correct": ["accept", "approve", "welcome"], "distractorPool": ["refuse", "deny", "decline", "review", "collect", "receive"] },
+    { "prompt": "benefit", "promptSub": "n.", "correct": ["harm", "damage", "disadvantage"], "distractorPool": ["profit", "gain", "advantage", "value", "cost", "support"] },
+    { "prompt": "pessimistic", "promptSub": "adj.", "correct": ["optimistic", "hopeful", "positive"], "distractorPool": ["negative", "gloomy", "sad", "realistic", "careless", "anxious"] },
+    { "prompt": "praise", "promptSub": "v.", "correct": ["criticize", "blame", "condemn"], "distractorPool": ["reward", "thank", "support", "encourage", "prize", "respect"] }
+  ],
+  "phrase": [
+    { "prompt": "照顧（某人）", "promptSub": "phr.", "correct": ["look after", "take care of", "care for"], "distractorPool": ["look for", "look into", "wait for", "ask for", "pick up", "turn to"] },
+    { "prompt": "放棄", "promptSub": "phr.", "correct": ["give up", "walk away from"], "distractorPool": ["give in", "give out", "take up", "put off", "carry on", "hold on"] },
+    { "prompt": "推遲", "promptSub": "phr.", "correct": ["put off", "postpone until later", "hold off"], "distractorPool": ["put on", "take off", "get off", "see off", "call off", "let off"] },
+    { "prompt": "找出（事實）", "promptSub": "phr.", "correct": ["find out", "figure out", "look into"], "distractorPool": ["look for", "look after", "put out", "bring out", "come out", "turn out"] },
+    { "prompt": "繼續", "promptSub": "phr.", "correct": ["carry on", "go on", "keep on"], "distractorPool": ["get on", "put on", "take on", "hold on", "come on", "turn on"] },
+    { "prompt": "取消", "promptSub": "phr.", "correct": ["call off", "cancel"], "distractorPool": ["call for", "call on", "put off", "take off", "break off", "show off"] },
+    { "prompt": "忍受", "promptSub": "phr.", "correct": ["put up with", "tolerate", "stand"], "distractorPool": ["put away", "put down", "get along", "look down on", "come up with", "keep up with"] },
+    { "prompt": "意外遇到", "promptSub": "phr.", "correct": ["come across", "run into", "bump into"], "distractorPool": ["come up", "run over", "turn up", "show up", "look up", "bring up"] }
+  ]
+}

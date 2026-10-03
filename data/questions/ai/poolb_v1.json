@@ -1,0 +1,1414 @@
+{
+ "meta": {
+  "sourceType": "ai",
+  "pool": "B",
+  "generator": "MiniMax-M3.1-Flash-Preview",
+  "generatedAt": "2026-10-02T17:52:31.876Z",
+  "reviewStatus": "glm_review_passed",
+  "note": "Pool B 批次：閱讀 8 篇＋篇章 6 組",
+  "styleReference": [
+   "4.0/4.1.1/data/questions/real.json（閱讀測驗 193 題、篇章結構 64 題：stem／options／option_texts／answer／option_pool 欄位與選項排序慣例）",
+   "4.0/reference-site/reading-comprehension.json（153 篇：structure.genre／org／transitions／outline，用於文章組織與轉折詞設計）",
+   "4.0/reference-site/discourse-structure.json（gsat 8 篇篇章結構：選項順序固定於同一篇、答案不依序出現的慣例）",
+   "4.0/4.3.2-ai-bank-spec.md（三池品質門檻：字庫命中、正解去重、答案分布、解析含干擾項原因）"
+  ],
+  "topics": {
+   "閱讀測驗": [
+    "科普｜睡眠與記憶鞏固",
+    "社會｜銀髮族高齡友善工作",
+    "文化｜小劇場的排練與兩套計畫",
+    "環境｜食物浪費與剩食救食",
+    "科技｜太空碎片與連鎖效應",
+    "科普｜候鳥的地磁導航",
+    "科技｜3D 列印義肢與開放協作",
+    "社會｜公共圖書館的角色轉變"
+   ],
+   "篇章結構": [
+    "環境｜免費太陽能屋頂",
+    "文化｜公園裡的免費書桌",
+    "科普｜海水淡化與能源成本",
+    "社會｜義肢運動員的裝備專業化",
+    "科技｜遠距工作的折衷路徑",
+    "文化｜老屋維修與街區再生"
+   ]
+  },
+  "selfCheck": "4.0/4.1.1/tools/qa_b_poolb_check.mjs（題數／材質分布／字庫命中率／去重／答案分布）＋ 4.0/4.1.1/tools/qa_b_poolb_stale.mjs（解析引用的英文片段仍存在於 option_texts 或 passage）",
+  "count": {
+   "readingGroups": 8,
+   "readingQuestions": 24,
+   "discourseGroups": 6,
+   "discourseQuestions": 24,
+   "total": 48
+  },
+  "schemaNote": "options 採「A. 文字」完整形式（real.json 的 options 僅存字母、選項文字另存 option_texts）；option_texts 兩者皆有，消費端可擇一。",
+  "reviewedAt": "2026-10-03"
+ },
+ "reading": [
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 1,
+   "topic": "科普｜睡眠與記憶鞏固",
+   "passage": "Most people lose sleep without noticing how little they get. Yet the brain is very busy during the night. Facts learned during the day are moved out of temporary storage and into systems that last longer. In experiments, those who slept after a lesson remembered the material far better than those who stayed awake for the same number of hours. Deep sleep seems to repeat the electrical patterns made earlier in the day, and this repeat strengthens the links between nerve cells. The brain also uses the night to clear waste from its tissues, which may explain why people who lack sleep feel dull and slow. The good news is that one night of real sleep can restore most of what was lost. Bad news: a lost hour of sleep is harder to notice than it sounds, and students who study late often fail to see how far their memory has fallen.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 1,
+     "qnum": 1,
+     "stem": "According to the passage, what happens during deep sleep?",
+     "options": [
+      "A. The brain clears waste from its own tissues.",
+      "B. The brain repeats the day's electrical patterns and strengthens links between cells.",
+      "C. The brain moves new facts into temporary storage.",
+      "D. The brain compares people who sleep with those who stay awake."
+     ],
+     "option_texts": [
+      "The brain clears waste from its own tissues.",
+      "The brain repeats the day's electrical patterns and strengthens links between cells.",
+      "The brain moves new facts into temporary storage.",
+      "The brain compares people who sleep with those who stay awake."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "文中 Deep sleep seems to repeat… 指出深層睡眠會重播白天的電訊號並加強神經細胞之間的連結，故選 B；A 把同處提到的清理廢物（clear waste）誤當成 deep sleep 的功能，但那是另一個句子、不是重點句；C 與原文相反，文中說事實是「移出（out of）」暫時儲存；D 把實驗的比較對象說成 deep sleep 本身的動作，實驗是比較睡與不睡的人。",
+     "passage": "Most people lose sleep without noticing how little they get. Yet the brain is unusually busy during the night. Facts learned during the day are moved out of temporary storage and into systems that last longer. In experiments, those who slept after a lesson remembered the material far better than those who stayed awake for the same number of hours. Deep sleep seems to repeat the electrical patterns made earlier in the day, and this repeat strengthens the links between nerve cells. The brain also uses the night to clear waste from its tissues, which may explain why people who lack sleep feel dull and slow. The good news is that one night of real sleep can restore most of what was lost. Bad news: a lost hour of sleep is harder to notice than it sounds, and students who study late often fail to see how far their memory has fallen."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 1,
+     "qnum": 2,
+     "stem": "What can be inferred about students who study late?",
+     "options": [
+      "A. They usually learn more material than other students.",
+      "B. They prefer studying alone at night.",
+      "C. They are able to notice quickly when they are tired.",
+      "D. They often fail to realize how much their memory has fallen."
+     ],
+     "option_texts": [
+      "They usually learn more material than other students.",
+      "They prefer studying alone at night.",
+      "They are able to notice quickly when they are tired.",
+      "They often fail to realize how much their memory has fallen."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "末句 fail to see how far their memory has fallen 正是「自己察覺不到記憶衰退」，推論得 D；A 文中沒有比較學得多或少的證據；B 文章未提是否獨自唸書；C 與「睡太少很難察覺」的敘述相反，sleep 缺的人反而感覺鈍慢。",
+     "passage": "Most people lose sleep without noticing how little they get. Yet the brain is unusually busy during the night. Facts learned during the day are moved out of temporary storage and into systems that last longer. In experiments, those who slept after a lesson remembered the material far better than those who stayed awake for the same number of hours. Deep sleep seems to repeat the electrical patterns made earlier in the day, and this repeat strengthens the links between nerve cells. The brain also uses the night to clear waste from its tissues, which may explain why people who lack sleep feel dull and slow. The good news is that one night of real sleep can restore most of what was lost. Bad news: a lost hour of sleep is harder to notice than it sounds, and students who study late often fail to see how far their memory has fallen."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 1,
+     "qnum": 3,
+     "stem": "What is the main purpose of the passage?",
+     "options": [
+      "A. To explain why sleep matters for memory and thinking.",
+      "B. To compare the sleep habits of people in different countries.",
+      "C. To introduce a new device for measuring brain activity.",
+      "D. To show that older students need more rest."
+     ],
+     "option_texts": [
+      "To explain why sleep matters for memory and thinking.",
+      "To compare the sleep habits of people in different countries.",
+      "To introduce a new device for measuring brain activity.",
+      "To show that older students need more rest."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "全文由「睡眠時大腦仍忙於整理記憶」談到「缺睡會讓人遲鈍」，最後給出好壞消息，主旨是說明睡眠對記憶與思考的重要性，故選 A；B 文中從未比較不同國家的學生；C 沒有介紹任何測量腦波的儀器；D 文章只提 study late 的學生，沒有談年齡。",
+     "passage": "Most people lose sleep without noticing how little they get. Yet the brain is unusually busy during the night. Facts learned during the day are moved out of temporary storage and into systems that last longer. In experiments, those who slept after a lesson remembered the material far better than those who stayed awake for the same number of hours. Deep sleep seems to repeat the electrical patterns made earlier in the day, and this repeat strengthens the links between nerve cells. The brain also uses the night to clear waste from its tissues, which may explain why people who lack sleep feel dull and slow. The good news is that one night of real sleep can restore most of what was lost. Bad news: a lost hour of sleep is harder to notice than it sounds, and students who study late often fail to see how far their memory has fallen."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 2,
+   "topic": "社會｜銀髮族高齡友善工作",
+   "passage": "As the population grows older, many countries now face the same question: how can older workers stay useful without wearing themselves out? In one country, a new answer has spread. Firms give workers over sixty a choice between a lighter job with the same pay and a shorter week with the same total pay. The point is not to push people out. It is to let them choose the shape of their later years. Studies show that workers who keep a job after retirement age stay healthier and report more daily satisfaction. Yet the arrangement works only when the job itself is planned again. A tired back, a long meeting, or a night shift can not simply be given to an older person and called flexibility. Several companies have found that the real gain comes from changes that help all workers, such as better lighting and shorter standing tasks. Age, in this view, is not a barrier but a variable that a workplace can design around.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 2,
+     "qnum": 1,
+     "stem": "According to the passage, what may workers over sixty choose?",
+     "options": [
+      "A. To leave the company and receive a large payment.",
+      "B. The same pay with a shorter week only.",
+      "C. The same pay with lighter work, or the same total pay with a shorter week.",
+      "D. To teach younger workers instead of working."
+     ],
+     "option_texts": [
+      "To leave the company and receive a large payment.",
+      "The same pay with a shorter week only.",
+      "The same pay with lighter work, or the same total pay with a shorter week.",
+      "To teach younger workers instead of working."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "文中 a choice between a lighter job with the same pay and a shorter week with the same total pay 正是 C 的兩個選項，故選 C；A 文中明說 The point is not to push people out，不是發錢離職；B 只保留 shorter week，漏掉 lighter job 那一半；D 文章沒有安排長輩改當老師。",
+     "passage": "As the population grows older, many countries now face the same question: how can older workers stay useful without wearing themselves out? In one Asian country, an unusual answer has spread. Firms give workers over sixty a choice between a lighter job with the same pay and a shorter week with the same total pay. The point is not to push people out. It is to let them choose the shape of their later years. Studies show that workers who keep a job after retirement age stay healthier and report more daily satisfaction. Yet the arrangement works only when the job itself is redesigned. A tired back, a long meeting, or a night shift cannot simply be handed to an older person and called flexibility. Several companies have found that the real gain comes from changes that help everyone, such as better lighting and shorter standing tasks. Age, in this view, is not a barrier but a variable that a workplace can design around."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 2,
+     "qnum": 2,
+     "stem": "What does the passage say about shorter standing tasks?",
+     "options": [
+      "A. They are only useful for older workers.",
+      "B. They are changes that help all workers, not just older ones.",
+      "C. They cost more than better lighting.",
+      "D. Managers do not like them."
+     ],
+     "option_texts": [
+      "They are only useful for older workers.",
+      "They are changes that help all workers, not just older ones.",
+      "They cost more than better lighting.",
+      "Managers do not like them."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "倒數第二句 文中 changes that help all workers, such as better lighting and shorter standing tasks 明說這些改變對所有員工都有益，故選 B；A 與 everyone 直接矛盾；C 文中沒有比較花費高低；D 文章未提及管理者態度。",
+     "passage": "As the population grows older, many countries now face the same question: how can older workers stay useful without wearing themselves out? In one Asian country, an unusual answer has spread. Firms give workers over sixty a choice between a lighter job with the same pay and a shorter week with the same total pay. The point is not to push people out. It is to let them choose the shape of their later years. Studies show that workers who keep a job after retirement age stay healthier and report more daily satisfaction. Yet the arrangement works only when the job itself is redesigned. A tired back, a long meeting, or a night shift cannot simply be handed to an older person and called flexibility. Several companies have found that the real gain comes from changes that help everyone, such as better lighting and shorter standing tasks. Age, in this view, is not a barrier but a variable that a workplace can design around."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 2,
+     "qnum": 3,
+     "stem": "What is the passage mainly about?",
+     "options": [
+      "A. Why older people should stop working before they are sixty.",
+      "B. The history of a shortage of workers in one country.",
+      "C. A comparison of pay systems in two countries.",
+      "D. How workplaces can adjust work so that older workers can keep going."
+     ],
+     "option_texts": [
+      "Why older people should stop working before they are sixty.",
+      "The history of a shortage of workers in one country.",
+      "A comparison of pay systems in two countries.",
+      "How workplaces can adjust work so that older workers can keep going."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "全文從問題（how can older workers stay useful）談到日本的做法、研究結果與設計原則，主旨是工作場所如何調整以讓年長者持續工作，故選 D；A 與 The point is not to push people out 相反；B 沒有交代勞工短缺的歷史；C 文章只談日本，未做兩國比較。",
+     "passage": "As the population grows older, many countries now face the same question: how can older workers stay useful without wearing themselves out? In one Asian country, an unusual answer has spread. Firms give workers over sixty a choice between a lighter job with the same pay and a shorter week with the same total pay. The point is not to push people out. It is to let them choose the shape of their later years. Studies show that workers who keep a job after retirement age stay healthier and report more daily satisfaction. Yet the arrangement works only when the job itself is redesigned. A tired back, a long meeting, or a night shift cannot simply be handed to an older person and called flexibility. Several companies have found that the real gain comes from changes that help everyone, such as better lighting and shorter standing tasks. Age, in this view, is not a barrier but a variable that a workplace can design around."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 3,
+   "topic": "文化｜小劇場的排練",
+   "passage": "In a small theater, a play is often built without a single famous player. The work begins with a reading, when the director reads the whole script aloud and the company listens. Nothing is decided yet. Then a table is pushed to one side and the players stand up and begin to try things. A line is dropped, a gesture is changed, and the same page is read again. This stage is called the table work, and its only rule is that nothing is perfect for long. The company also keeps two plans on the floor at all times. One follows the written text closely, and the other is free to break it when a better moment appears. Directors often say the second plan is where the play really lives. In the end the audience sees a story that looks inevitable, although nothing about it ever was. The polish comes not from a grand plan but from hundreds of tiny choices made in a quiet room.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 3,
+     "qnum": 1,
+     "stem": "What is the table work?",
+     "options": [
+      "A. A meeting in which the director announces the final plan.",
+      "B. A stage in which players try many versions of a scene and change lines freely.",
+      "C. A performance in front of an audience.",
+      "D. A written report on the sales of the show."
+     ],
+     "option_texts": [
+      "A meeting in which the director announces the final plan.",
+      "A stage in which players try many versions of a scene and change lines freely.",
+      "A performance in front of an audience.",
+      "A written report on the sales of the show."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "文中描述把桌子推到一旁、演員站起來試各種做法、句子與手勢隨時改動，這就是 table work，故選 B；A 是開頭的全體朗讀（reading）且文中沒說要公布角色；C 觀眾看到的是最後的演出，不是排練；D 文中完全沒有提到銷售報告。",
+     "passage": "In a small theater, a play is often built without a single famous actor. The work begins with a reading, when the director reads the whole script aloud and the company listens. Nothing is decided yet. Then a table is pushed to one side and the players stand up and begin to try things. A line is dropped, a gesture is changed, and the same page is read again. This stage is called the table work, and its only rule is that nothing is perfect for long. The company also keeps two plans on the floor at all times. One follows the written text closely, and the other is free to break it when a better moment appears. Directors often say the second plan is where the play truly lives. In the end the audience sees a story that looks inevitable, although nothing about it ever was. The polish comes not from a grand plan but from hundreds of tiny choices made in a quiet room."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 3,
+     "qnum": 2,
+     "stem": "What do the two plans on the floor suggest about the director?",
+     "options": [
+      "A. The director is willing to move away from the text when something works better.",
+      "B. The director has no plan for the last act.",
+      "C. The director wants the audience to know the real plot.",
+      "D. The director hopes to sell the play to another theater."
+     ],
+     "option_texts": [
+      "The director is willing to move away from the text when something works better.",
+      "The director has no plan for the last act.",
+      "The director wants the audience to know the real plot.",
+      "The director hopes to sell the play to another theater."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "文中說公司同時保留貼近原文與可以 break it when a better moment appears 兩套計畫，顯示導演願意在更好時脫離文字，故選 A；B 文中兩套計畫並存但沒有說導演無法決定；C 沒有談觀眾要知道真實情節；D 沒有提到賣給別的劇場。",
+     "passage": "In a small theater, a play is often built without a single famous actor. The work begins with a reading, when the director reads the whole script aloud and the company listens. Nothing is decided yet. Then a table is pushed to one side and the players stand up and begin to try things. A line is dropped, a gesture is changed, and the same page is read again. This stage is called the table work, and its only rule is that nothing is perfect for long. The company also keeps two plans on the floor at all times. One follows the written text closely, and the other is free to break it when a better moment appears. Directors often say the second plan is where the play truly lives. In the end the audience sees a story that looks inevitable, although nothing about it ever was. The polish comes not from a grand plan but from hundreds of tiny choices made in a quiet room."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 3,
+     "qnum": 3,
+     "stem": "What does the passage mainly describe?",
+     "options": [
+      "A. Why famous players prefer large theaters.",
+      "B. The business side of running a theater company.",
+      "C. How audience members judge a new play.",
+      "D. How a play moves from rough attempts to a smooth performance."
+     ],
+     "option_texts": [
+      "Why famous players prefer large theaters.",
+      "The business side of running a theater company.",
+      "How audience members judge a new play.",
+      "How a play moves from rough attempts to a smooth performance."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "文章先寫朗讀與不斷重試的過程，最後用 In the end the audience sees a story that looks inevitable 收束，描述的是從零碎嘗試到流暢演出的過程，故選 D；A 開頭即說沒有知名演員；B 全文不談經營成本；C 文章談的是排練者的判斷，不是觀眾如何評價。",
+     "passage": "In a small theater, a play is often built without a single famous actor. The work begins with a reading, when the director reads the whole script aloud and the company listens. Nothing is decided yet. Then a table is pushed to one side and the players stand up and begin to try things. A line is dropped, a gesture is changed, and the same page is read again. This stage is called the table work, and its only rule is that nothing is perfect for long. The company also keeps two plans on the floor at all times. One follows the written text closely, and the other is free to break it when a better moment appears. Directors often say the second plan is where the play truly lives. In the end the audience sees a story that looks inevitable, although nothing about it ever was. The polish comes not from a grand plan but from hundreds of tiny choices made in a quiet room."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 4,
+   "topic": "環境｜食物浪費與剩食救食",
+   "passage": "A third of the food produced in the world is never eaten. Some of it is lost on the farm or in a truck, but most is thrown away in shops and homes after it looks old. The waste is not only food. Water, land, and fuel have already been used to grow it. Many cities have learned that the cheapest way to help hungry people is not to grow more, but to move what is already there. In several towns, drivers collect bread, fruit, and vegetables that stores can no longer sell. A law of 2016 in one country forced large stores to give away food that they could no longer sell. Critics complained about cost and safety, but the amount rescued soon grew larger than the first results suggested. Many people argue that the habit has changed more than the amount. People who once checked a date and threw the food away now ask who could still eat it. The system is still small, and many countries have no rule at all.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 4,
+     "qnum": 1,
+     "stem": "What do drivers in several towns do?",
+     "options": [
+      "A. They transport fresh food to farms for free.",
+      "B. They measure the cost of water and fuel.",
+      "C. They collect food that shops can no longer sell.",
+      "D. They check the dates on food in stores."
+     ],
+     "option_texts": [
+      "They transport fresh food to farms for free.",
+      "They measure the cost of water and fuel.",
+      "They collect food that shops can no longer sell.",
+      "They check the dates on food in stores."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "文中 drivers collect bread, fruit, and vegetables that stores can no longer sell 直接對應 C，故選 C；A 文中只說食物運輸出問題，沒有說把食物免費送到農場；B 浪費水土地燃料是農家的成本，與司機無關；D 查日期是後面民眾的行為，不是司機的工作。",
+     "passage": "A third of the food produced in the world is never eaten. Some of it is lost on the farm or in a truck, but most is thrown away in shops and homes after it looks old. The waste is not only food. Water, land, and fuel have already been used to grow it. Many cities have learned that the cheapest way to help hungry people is not to grow more, but to move what is already there. In several European towns, drivers collect bread, fruit, and vegetables that stores can no longer sell. A law of 2016 in one country forced large stores to give away food that they could no longer sell. Critics complained about cost and safety, but the amount rescued soon grew larger than the first results suggested. Supporters argue that the habit has changed more than the amount. People who once checked a date and threw the food away now ask who could still eat it. The system is still small, and many countries have no rule at all, but the question it raises is hard to ignore."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 4,
+     "qnum": 2,
+     "stem": "What does the phrase \"the cheapest way to help hungry people\" refer to?",
+     "options": [
+      "A. Building more roads into rural areas.",
+      "B. Raising the price of food in shops.",
+      "C. Teaching farmers to grow new kinds of crops.",
+      "D. Moving food that already exists to people who need it."
+     ],
+     "option_texts": [
+      "Building more roads into rural areas.",
+      "Raising the price of food in shops.",
+      "Teaching farmers to grow new kinds of crops.",
+      "Moving food that already exists to people who need it."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "同句後面接 not to grow more, but to move what is already there，指的就是把既有的食物送到需要的人手上，故選 D；A 文中完全未提蓋路；B 漲價反而讓人買不起，與幫助飢民相反；C 的 grow more 正是文中被否定的那一半。",
+     "passage": "A third of the food produced in the world is never eaten. Some of it is lost on the farm or in a truck, but most is thrown away in shops and homes after it looks old. The waste is not only food. Water, land, and fuel have already been used to grow it. Many cities have learned that the cheapest way to help hungry people is not to grow more, but to move what is already there. In several European towns, drivers collect bread, fruit, and vegetables that stores can no longer sell. A law of 2016 in one country forced large stores to give away food that they could no longer sell. Critics complained about cost and safety, but the amount rescued soon grew larger than the first results suggested. Supporters argue that the habit has changed more than the amount. People who once checked a date and threw the food away now ask who could still eat it. The system is still small, and many countries have no rule at all, but the question it raises is hard to ignore."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 4,
+     "qnum": 3,
+     "stem": "What is the passage mainly about?",
+     "options": [
+      "A. The rules that one country passed about farming.",
+      "B. The cost of water and fuel on a farm.",
+      "C. A way of reducing food waste by using food that already exists.",
+      "D. The reason hungry people refuse to buy food."
+     ],
+     "option_texts": [
+      "The rules that one country passed about farming.",
+      "The cost of water and fuel on a farm.",
+      "A way of reducing food waste by using food that already exists.",
+      "The reason hungry people refuse to buy food."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "全文圍繞食物被丟棄的浪費，介紹各城鎮回收未售食物與一國立法推動剩食救食，主旨是以既有的食物減少浪費，故選 C；A 法規是針對大型商店的捐贈義務，不是耕作規則；B 只是在說明浪費的不只食物；D 文中沒有寫飢民拒買食物。",
+     "passage": "A third of the food produced in the world is never eaten. Some of it is lost on the farm or in a truck, but most is thrown away in shops and homes after it looks old. The waste is not only food. Water, land, and fuel have already been used to grow it. Many cities have learned that the cheapest way to help hungry people is not to grow more, but to move what is already there. In several European towns, drivers collect bread, fruit, and vegetables that stores can no longer sell. A law of 2016 in one country forced large stores to give away food that they could no longer sell. Critics complained about cost and safety, but the amount rescued soon grew larger than the first results suggested. Supporters argue that the habit has changed more than the amount. People who once checked a date and threw the food away now ask who could still eat it. The system is still small, and many countries have no rule at all, but the question it raises is hard to ignore."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 5,
+   "topic": "科技｜太空碎片與連鎖效應",
+   "passage": "Every object sent into space carries a piece of it, even the paint on its outside. That paint is hit by tiny grains of dust and by the sharp edges of dead machines. Over years, the surface slowly breaks into smaller and smaller pieces, a chain effect that grows step by step. Once a fragment is small enough, it can stay in orbit for a very long time. A paint chip the size of a grain of rice can travel around the earth many times a day. The danger is not the falling object, which usually burns up long before it lands, but the working satellites. A single fast piece can damage a solar panel or stop a signal. Because the number of pieces is growing, engineers now test how to lower a satellite after its work is done, so it can burn safely in a lower layer of air. Several companies also collect old machines that still fly. The task is slow, and each move costs money, but the sky above us is a room that all countries share.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 5,
+     "qnum": 1,
+     "stem": "Why can a small piece of paint stay in orbit for a long time?",
+     "options": [
+      "A. Because the air high above the earth pushes it upward.",
+      "B. Because it is small enough to keep going around the earth without falling quickly.",
+      "C. Because the sun pulls it toward the earth.",
+      "D. Because paint is softer than metal."
+     ],
+     "option_texts": [
+      "Because the air high above the earth pushes it upward.",
+      "Because it is small enough to keep going around the earth without falling quickly.",
+      "Because the sun pulls it toward the earth.",
+      "Because paint is softer than metal."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "文中 Once a fragment is small enough, it can stay in orbit for a very long time 與下一句每天繞地球數圈，都指向碎片小到不易落下，故選 B；A 高空空氣稀薄且不會把人推上去；C 文中未提太陽引力；D 下一段已說小碎片帶來危險，並非因為比金屬輕才留著。",
+     "passage": "Every object sent into space carries a piece of it, even the paint on its outside. That paint is hit by tiny grains of dust and by the sharp edges of dead machines. Over years, the surface slowly breaks into smaller and smaller pieces, a process scientists call the cascade effect. Once a fragment is small enough, it can stay in orbit for a very long time. A paint chip the size of a grain of rice can travel around the earth many times a day. The danger is not the falling object, which usually burns up long before it lands, but the working satellites. A single fast-moving piece can damage a solar panel or stop a signal. Because the number of pieces is growing, engineers now test how to lower a satellite after its work is done, so it can burn safely in a thinner layer of air. Several companies also collect old machines that still fly. The task is slow, and each move costs money, but the sky above us is a room that everyone shares."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 5,
+     "qnum": 2,
+     "stem": "What does the last sentence imply?",
+     "options": [
+      "A. Space is too small for more machines.",
+      "B. Only a few countries have satellites in orbit.",
+      "C. Countries should stop sending machines into space.",
+      "D. Damage done in space can affect people who did not cause it."
+     ],
+     "option_texts": [
+      "Space is too small for more machines.",
+      "Only a few countries have satellites in orbit.",
+      "Countries should stop sending machines into space.",
+      "Damage done in space can affect people who did not cause it."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "the sky above us is a room that everyone shares 把太空比喻成共用的房間，意即軌道是共享資源，任一國產生的碎片都可能撞到別人的衛星，故選 D；A 文中談的是碎片危害，不是容量不足；B 沒有比較各國數量；C 文章主張清理而非停發。",
+     "passage": "Every object sent into space carries a piece of it, even the paint on its outside. That paint is hit by tiny grains of dust and by the sharp edges of dead machines. Over years, the surface slowly breaks into smaller and smaller pieces, a process scientists call the cascade effect. Once a fragment is small enough, it can stay in orbit for a very long time. A paint chip the size of a grain of rice can travel around the earth many times a day. The danger is not the falling object, which usually burns up long before it lands, but the working satellites. A single fast-moving piece can damage a solar panel or stop a signal. Because the number of pieces is growing, engineers now test how to lower a satellite after its work is done, so it can burn safely in a thinner layer of air. Several companies also collect old machines that still fly. The task is slow, and each move costs money, but the sky above us is a room that everyone shares."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 5,
+     "qnum": 3,
+     "stem": "What is the passage mainly about?",
+     "options": [
+      "A. Why old space machines break into small pieces and how this endangers satellites.",
+      "B. How to build satellites that are much heavier.",
+      "C. Why a country should stop sending machines into space.",
+      "D. Why falling objects never reach the ground."
+     ],
+     "option_texts": [
+      "Why old space machines break into small pieces and how this endangers satellites.",
+      "How to build satellites that are much heavier.",
+      "Why a country should stop sending machines into space.",
+      "Why falling objects never reach the ground."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "前半敘述碎片如何產生（連鎖效應），後半說明危害與工程界的清理努力，兩者合起來是主旨，故選 A；B 文中沒有談增加重量；C 清理而非停發，與本文方向相反；D 燃燒完不落地只是文中一個補充細節，不是全篇重點。",
+     "passage": "Every object sent into space carries a piece of it, even the paint on its outside. That paint is hit by tiny grains of dust and by the sharp edges of dead machines. Over years, the surface slowly breaks into smaller and smaller pieces, a process scientists call the cascade effect. Once a fragment is small enough, it can stay in orbit for a very long time. A paint chip the size of a grain of rice can travel around the earth many times a day. The danger is not the falling object, which usually burns up long before it lands, but the working satellites. A single fast-moving piece can damage a solar panel or stop a signal. Because the number of pieces is growing, engineers now test how to lower a satellite after its work is done, so it can burn safely in a thinner layer of air. Several companies also collect old machines that still fly. The task is slow, and each move costs money, but the sky above us is a room that everyone shares."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 6,
+   "topic": "科普｜候鳥的地磁導航",
+   "passage": "Every autumn, birds leave northern lands and travel thousands of kilometers to warmer places, often at night and often alone. How they know the way has been asked for centuries. The stars help, but experiments show that birds with a clear view of the night sky choose the correct direction. Light alone is not the whole answer, however. In a famous series of tests, young birds were placed in a circular cage where no sky was visible. At first they picked random directions, but after researchers placed an artificial field matching the earth's magnetic field, the birds began to line up toward the same corner. The same result was found for animals as different as rats, butterflies, and bacteria, which suggests that sensing the field is a very old skill, older than birds. A light, thin layer on the eye may act as a small compass needle. Scientists are still not sure how much of this sense remains in people, who no longer need to travel so far.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 6,
+     "qnum": 1,
+     "stem": "What happened to the young birds after the artificial magnetic field was placed?",
+     "options": [
+      "A. They chose random directions.",
+      "B. They could not see the field.",
+      "C. They began to choose the same direction.",
+      "D. They stopped moving altogether."
+     ],
+     "option_texts": [
+      "They chose random directions.",
+      "They could not see the field.",
+      "They began to choose the same direction.",
+      "They stopped moving altogether."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "文中 At first they picked random directions, but after… the birds began to line up toward the same corner，說明加上磁場後行為改變，故選 C；A 是加磁場之前的狀況；B 鳥在無天空可見的籠子裡靠的是磁場不是視覺，與「看不到磁場」無關；D 文中只說排成同一方向，並非停止不動。",
+     "passage": "Every autumn, birds leave northern lands and travel thousands of kilometers to warmer places, often at night and often alone. How they know the way has been asked for centuries. The stars help, but experiments show that birds with a clear view of the night sky choose the correct direction. Light alone cannot be the whole answer, however. In a famous series of tests, young birds were placed in a circular cage where no sky was visible. At first they picked random directions, but after researchers placed an artificial field matching the earth's magnetic field, the birds began to line up toward the same corner. The same result was found for animals as different as rats, butterflies, and bacteria, which suggests that sensing the field is a very old skill, older than birds. A light, oily film on the eye may act as a small compass needle. Scientists are still unsure how much of this sense remains in people, who no longer need to travel so far."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 6,
+     "qnum": 2,
+     "stem": "What does the result found in rats and bacteria suggest?",
+     "options": [
+      "A. The ability to sense the field is very old in the history of life.",
+      "B. Rats and bacteria are close relatives of birds.",
+      "C. The artificial field was set up in the wrong way.",
+      "D. Such a sense is common only among animals that travel far."
+     ],
+     "option_texts": [
+      "The ability to sense the field is very old in the history of life.",
+      "Rats and bacteria are close relatives of birds.",
+      "The artificial field was set up in the wrong way.",
+      "Such a sense is common only among animals that travel far."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "文中 which suggests that sensing the field is a very old skill 明說感磁是很古老的能力，故選 A；B 細菌與鳥毫無親緣關係，文中未提；C 既然實驗成功，就不是設錯；D 細菌不遠行卻也能感磁，與「只有會遠行的動物才有」相反。",
+     "passage": "Every autumn, birds leave northern lands and travel thousands of kilometers to warmer places, often at night and often alone. How they know the way has been asked for centuries. The stars help, but experiments show that birds with a clear view of the night sky choose the correct direction. Light alone cannot be the whole answer, however. In a famous series of tests, young birds were placed in a circular cage where no sky was visible. At first they picked random directions, but after researchers placed an artificial field matching the earth's magnetic field, the birds began to line up toward the same corner. The same result was found for animals as different as rats, butterflies, and bacteria, which suggests that sensing the field is a very old skill, older than birds. A light, oily film on the eye may act as a small compass needle. Scientists are still unsure how much of this sense remains in people, who no longer need to travel so far."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 6,
+     "qnum": 3,
+     "stem": "What is the passage mainly about?",
+     "options": [
+      "A. The reason people stopped traveling long distances.",
+      "B. Evidence that animals can use the earth's magnetic field to find their way.",
+      "C. The number of birds that fly each autumn.",
+      "D. How to build a round cage for young birds."
+     ],
+     "option_texts": [
+      "The reason people stopped traveling long distances.",
+      "Evidence that animals can use the earth's magnetic field to find their way.",
+      "The number of birds that fly each autumn.",
+      "How to build a round cage for young birds."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "文章從候鳥如何認路談起，再用鳥、鼠、蝴蝶、細菌的實驗說明牠們能感知地磁，主旨是動物能靠地磁找到方向，故選 B；A 末句只是說人不太需要長途旅行，不是重點；C 文中沒有任何數字；D 圓籠只是實驗工具，無關主旨。",
+     "passage": "Every autumn, birds leave northern lands and travel thousands of kilometers to warmer places, often at night and often alone. How they know the way has been asked for centuries. The stars help, but experiments show that birds with a clear view of the night sky choose the correct direction. Light alone cannot be the whole answer, however. In a famous series of tests, young birds were placed in a circular cage where no sky was visible. At first they picked random directions, but after researchers placed an artificial field matching the earth's magnetic field, the birds began to line up toward the same corner. The same result was found for animals as different as rats, butterflies, and bacteria, which suggests that sensing the field is a very old skill, older than birds. A light, oily film on the eye may act as a small compass needle. Scientists are still unsure how much of this sense remains in people, who no longer need to travel so far."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 7,
+   "topic": "科技｜3D 列印義肢與開放協作",
+   "passage": "For many years, a child who lost a hand had to wait for a new one, and the cost was often too high for a family. A machine that prints objects layer by layer has now changed that. A simple hand can be designed on a computer, printed in plastic in a few hours, and fitted to the arm. Because the shape is measured from the child's own body, the new hand fits better than one bought in a shop, and it can be rebuilt as the child grows. The price is only part of the cost. Most of the work is done in the open, where people who have the skill share their plans. A father who can draw well may make the first design, and a nearby worker with a small shop prints it. Because every part can be changed, a broken hand is not thrown away; only the failed part is printed again. It is not a copy of a healthy hand, but a tool that lets a child carry a bag or hold a pen.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 7,
+     "qnum": 1,
+     "stem": "What is an advantage of measuring the shape from the child's own body?",
+     "options": [
+      "A. The printing time becomes much shorter.",
+      "B. The hand no longer needs a computer design.",
+      "C. The new hand fits better and can be rebuilt as the child grows.",
+      "D. The hand costs exactly the same as a hand bought in a shop."
+     ],
+     "option_texts": [
+      "The printing time becomes much shorter.",
+      "The hand no longer needs a computer design.",
+      "The new hand fits better and can be rebuilt as the child grows.",
+      "The hand costs exactly the same as a hand bought in a shop."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "文中 Because the shape is measured from the child's own body 直接導出 the new hand fits better… and it can be rebuilt as the child grows，故選 C；A 縮短時間的是列印本身（in a few hours），與量測無關；B 文中明說要在電腦上設計；D 文中只說價格只是成本的一部分，沒有說與現成品同價。",
+     "passage": "For many years, a child who lost a hand had to wait for a new one, and the cost was often too high for a family. A machine that prints objects layer by layer has now changed that. A simple hand can be designed on a computer, printed in plastic in a few hours, and fitted to the arm. Because the shape is measured from the child's own body, the new hand fits better than one bought in a shop, and it can be rebuilt as the child grows. The price is only a small part of the cost. Most of the work is done in the open, where people who have the skill share their plans. A father who can draw well may make the first design, and a nearby worker with a small workshop may print it. Because every part can be changed, a broken hand is not thrown away; only the failed part is printed again. It is not a perfect copy of a healthy hand, but a tool that lets a child carry a bag or hold a pen."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 7,
+     "qnum": 2,
+     "stem": "What does the phrase \"not a copy of a healthy hand\" mean in the passage?",
+     "options": [
+      "A. The printed hand is often broken after a few days.",
+      "B. A factory does not recommend this kind of hand.",
+      "C. The plastic must be printed many times.",
+      "D. It is useful for daily tasks even though it is not a real hand."
+     ],
+     "option_texts": [
+      "The printed hand is often broken after a few days.",
+      "A factory does not recommend this kind of hand.",
+      "The plastic must be printed many times.",
+      "It is useful for daily tasks even though it is not a real hand."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "該句後面接 It is a tool that lets a child carry a bag or hold a pen，說明它雖非真手卻能完成日常動作，故選 D；A 不符文意，壞掉只要重印壞掉的零件；B 文中沒有工廠的意見；C 重印是針對故障零件，不是「不完美」的代價。",
+     "passage": "For many years, a child who lost a hand had to wait for a new one, and the cost was often too high for a family. A machine that prints objects layer by layer has now changed that. A simple hand can be designed on a computer, printed in plastic in a few hours, and fitted to the arm. Because the shape is measured from the child's own body, the new hand fits better than one bought in a shop, and it can be rebuilt as the child grows. The price is only a small part of the cost. Most of the work is done in the open, where people who have the skill share their plans. A father who can draw well may make the first design, and a nearby worker with a small workshop may print it. Because every part can be changed, a broken hand is not thrown away; only the failed part is printed again. It is not a perfect copy of a healthy hand, but a tool that lets a child carry a bag or hold a pen."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 7,
+     "qnum": 3,
+     "stem": "What is the passage mainly about?",
+     "options": [
+      "A. The history of plastic in hospitals.",
+      "B. A cheap way to make new hands that can be changed and shared.",
+      "C. The design of a printing machine for factories.",
+      "D. A family that moved to another country."
+     ],
+     "option_texts": [
+      "The history of plastic in hospitals.",
+      "A cheap way to make new hands that can be changed and shared.",
+      "The design of a printing machine for factories.",
+      "A family that moved to another country."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "文章說明 3D 列印可低價做出義肢、零件可重印、且由開放社群分工共享技術，主旨是這種可修改、可協作的廉價做法，故選 B；A 文中未提醫院；C 機器只說可層層列印，不是工廠機器設計；D 只提到一位會畫圖的父親，沒有搬家情節。",
+     "passage": "For many years, a child who lost a hand had to wait for a new one, and the cost was often too high for a family. A machine that prints objects layer by layer has now changed that. A simple hand can be designed on a computer, printed in plastic in a few hours, and fitted to the arm. Because the shape is measured from the child's own body, the new hand fits better than one bought in a shop, and it can be rebuilt as the child grows. The price is only a small part of the cost. Most of the work is done in the open, where people who have the skill share their plans. A father who can draw well may make the first design, and a nearby worker with a small workshop may print it. Because every part can be changed, a broken hand is not thrown away; only the failed part is printed again. It is not a perfect copy of a healthy hand, but a tool that lets a child carry a bag or hold a pen."
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "B1",
+   "section": "閱讀測驗",
+   "group": 8,
+   "topic": "社會｜公共圖書館的角色轉變",
+   "passage": "A public library is one of the few places where a person may stay all day without buying anything. In the past this was the main reason people came. Now the air is warm, the chairs are soft, and a visitor can answer an email, fill out a form, or sleep for an hour. Libraries have accepted this change with quiet skill. In several countries, a desk near the entrance lends computers, tools, seeds, and even musical instruments, and the borrowing rules are often much simpler than those of a book. The quiet room is still there, but it now shares the building with a workshop, a kitchen, and a small hall where a talk is given every week. Staff have had to learn new jobs. Many are asked about a computer one minute and about a child's reading the next. Yet the idea at the center has not changed. A library is not built around what people buy, and that is exactly why people trust it.",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 8,
+     "qnum": 1,
+     "stem": "What can visitors borrow from the desk in some libraries?",
+     "options": [
+      "A. Only books about computers.",
+      "B. Money for travel tickets.",
+      "C. Computers, tools, seeds, and musical instruments.",
+      "D. Meals and hotel rooms."
+     ],
+     "option_texts": [
+      "Only books about computers.",
+      "Money for travel tickets.",
+      "Computers, tools, seeds, and musical instruments.",
+      "Meals and hotel rooms."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "文中 lends computers, tools, seeds, and even musical instruments 逐項對應 C，故選 C；A 的 Only books about computers 把項目縮成只有電腦書，與列舉的工具、種子、樂器不符；B 文中沒有提到旅費補貼；D 雖有 kitchen，但那是建築中的一個空間，不是借用的餐食。",
+     "passage": "A public library is one of the few places where a person may stay all day without buying anything. In the past this was the main reason people came. Now the air is warm, the chairs are soft, and a visitor can answer an email, fill out a form, or sleep for an hour. Libraries have accepted this change with quiet skill. In several countries, a desk near the entrance lends computers, tools, seeds, and even musical instruments, and the borrowing rules are often much simpler than those of a book. The quiet room is still there, but it now shares the building with a workshop, a kitchen, and a small hall where a talk is given every week. Staff have had to learn new jobs. Many are asked about a computer one minute and about a child's reading the next. Yet the idea at the center has not changed. A library is not built around what people buy, and that is exactly why people trust it."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 8,
+     "qnum": 2,
+     "stem": "According to the passage, why do people trust the library?",
+     "options": [
+      "A. It is one of the few places that asks nothing from visitors.",
+      "B. It is the only place that sells nothing.",
+      "C. Its staff are paid more than those in other places.",
+      "D. It has more books than any other library."
+     ],
+     "option_texts": [
+      "It is one of the few places that asks nothing from visitors.",
+      "It is the only place that sells nothing.",
+      "Its staff are paid more than those in other places.",
+      "It has more books than any other library."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "首句 one of the few places where a person may stay all day without buying anything 與末句 not built around what people buy 互相呼應，說明它不向訪客索取，故選 A；B 的 only the place 語氣過絕，文中用的是 one of the few；C、D 文中都沒有提到薪水或館藏數量。",
+     "passage": "A public library is one of the few places where a person may stay all day without buying anything. In the past this was the main reason people came. Now the air is warm, the chairs are soft, and a visitor can answer an email, fill out a form, or sleep for an hour. Libraries have accepted this change with quiet skill. In several countries, a desk near the entrance lends computers, tools, seeds, and even musical instruments, and the borrowing rules are often much simpler than those of a book. The quiet room is still there, but it now shares the building with a workshop, a kitchen, and a small hall where a talk is given every week. Staff have had to learn new jobs. Many are asked about a computer one minute and about a child's reading the next. Yet the idea at the center has not changed. A library is not built around what people buy, and that is exactly why people trust it."
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "閱讀測驗",
+     "year": "AI",
+     "paper": "B1",
+     "group": 8,
+     "qnum": 3,
+     "stem": "What does the passage mainly focus on?",
+     "options": [
+      "A. Why people should stop visiting public places.",
+      "B. The rules for borrowing musical instruments.",
+      "C. The best way to build a private study room.",
+      "D. How a public library has widened its role while keeping its basic idea."
+     ],
+     "option_texts": [
+      "Why people should stop visiting public places.",
+      "The rules for borrowing musical instruments.",
+      "The best way to build a private study room.",
+      "How a public library has widened its role while keeping its basic idea."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "文章先寫圖書館新增借用服務與空間、再寫館員工作改變，最後指出 the idea at the center has not changed，主旨是角色擴大而核心不變，故選 D；A 文章鼓勵人待在圖書館而非離開；B 借閱規則只以 much simpler 一句帶過；C 私人書房不是文章話題。",
+     "passage": "A public library is one of the few places where a person may stay all day without buying anything. In the past this was the main reason people came. Now the air is warm, the chairs are soft, and a visitor can answer an email, fill out a form, or sleep for an hour. Libraries have accepted this change with quiet skill. In several countries, a desk near the entrance lends computers, tools, seeds, and even musical instruments, and the borrowing rules are often much simpler than those of a book. The quiet room is still there, but it now shares the building with a workshop, a kitchen, and a small hall where a talk is given every week. Staff have had to learn new jobs. Many are asked about a computer one minute and about a child's reading the next. Yet the idea at the center has not changed. A library is not built around what people buy, and that is exactly why people trust it."
+    }
+   ]
+  }
+ ],
+ "discourse": [
+  {
+   "group": 1,
+   "topic": "環境｜免費太陽能屋頂",
+   "passage": "Many cities are now offering free solar panels. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A An installer first checks the roof, and then the family signs a long contract.",
+    "B The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+    "C A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+    "D Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+   ],
+   "optionOrderNote": "四個空格的選項順序固定同一組，且刻意不依 ❶❷❸❹ 排列（沿用 real.json 篇章結構區段的慣例）",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 1,
+     "stem": "Which fits blank ❶?",
+     "options": [
+      "A. An installer first checks the roof, and then the family signs a long contract.",
+      "B. The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "C. A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "D. Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_texts": [
+      "An installer first checks the roof, and then the family signs a long contract.",
+      "The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_pool": "group-bank",
+     "answer": "B",
+     "explanation": "❶ 要的是a public fund pays for the panels 說明「free」的錢從哪裡來，與前句的 free 正面扣合，故選 B；A 施工與簽約是拿到補助之後才發生的步驟；C 屋頂條件屬於適用資格，應在制度說明之後；D Ten years later 是全篇最後的成效。",
+     "group": 1,
+     "passage": "Many cities are now offering free solar panels. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 2,
+     "stem": "Which fits blank ❷?",
+     "options": [
+      "A. An installer first checks the roof, and then the family signs a long contract.",
+      "B. The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "C. A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "D. Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_texts": [
+      "An installer first checks the roof, and then the family signs a long contract.",
+      "The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_pool": "group-bank",
+     "answer": "C",
+     "explanation": "❷ 要的是a good candidate 與 panels lose power in shade 交代「哪種房子適合裝」，卡在制度說明與實際施工之間，故選 C；A first checks the roof 是執行面，已在 ❶ 說明原則後才輪到；B 已經用於 ❶，重複會讓兩格講同一件事；D Ten years later 的時間跨度只能放最後。",
+     "group": 1,
+     "passage": "Many cities are now offering free solar panels. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 3,
+     "stem": "Which fits blank ❸?",
+     "options": [
+      "A. An installer first checks the roof, and then the family signs a long contract.",
+      "B. The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "C. A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "D. Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_texts": [
+      "An installer first checks the roof, and then the family signs a long contract.",
+      "The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_pool": "group-bank",
+     "answer": "A",
+     "explanation": "❸ 要的是first checks the roof 承接 ❷ 的候選資格，寫出接下來的實際流程，故選 A；B 已用於 ❶；C 已用於 ❷；D Ten years later 只能收尾。",
+     "group": 1,
+     "passage": "Many cities are now offering free solar panels. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 4,
+     "stem": "Which fits blank ❹?",
+     "options": [
+      "A. An installer first checks the roof, and then the family signs a long contract.",
+      "B. The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "C. A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "D. Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_texts": [
+      "An installer first checks the roof, and then the family signs a long contract.",
+      "The idea is simple: a public fund pays for the panels, and the family pays only a small share each month.",
+      "A family with a dark roof that faces the south is a good candidate, since panels lose power in shade.",
+      "Ten years later, the system is still making electricity, and the meter at the end of the street has slowed down."
+     ],
+     "option_pool": "group-bank",
+     "answer": "D",
+     "explanation": "❹ 要的是Ten years later 與 the meter… has slowed down 同時給出時間與成效，替全文作結，故選 D；A 施工過程；B 經費來源；C 屋頂條件。",
+     "group": 1,
+     "passage": "Many cities are now offering free solar panels. ❶ ❷ ❸ ❹"
+    }
+   ]
+  },
+  {
+   "group": 2,
+   "topic": "文化｜公園裡的免費書桌",
+   "passage": "A different kind of market has appeared in several parks. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A Some people bring books they have read twice, and the table fills again before noon.",
+    "B On a table under a tree, twenty books are laid out with no prices at all.",
+    "C Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+    "D Anyone may take a book, and a second person may leave one in its place."
+   ],
+   "optionOrderNote": "四個空格的選項順序固定同一組，且刻意不依 ❶❷❸❹ 排列（沿用 real.json 篇章結構區段的慣例）",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 1,
+     "stem": "Which fits blank ❶?",
+     "options": [
+      "A. Some people bring books they have read twice, and the table fills again before noon.",
+      "B. On a table under a tree, twenty books are laid out with no prices at all.",
+      "C. Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "D. Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_texts": [
+      "Some people bring books they have read twice, and the table fills again before noon.",
+      "On a table under a tree, twenty books are laid out with no prices at all.",
+      "Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_pool": "group-bank",
+     "answer": "B",
+     "explanation": "❶ 要的是On a table under a tree… with no prices at all 先給出場景與「沒有標價」這個關鍵特徵，故選 B；A 書堆回補是後續現象；C Within a year 屬於長期成效；D 交換規則應在描寫之後。",
+     "group": 2,
+     "passage": "A different kind of market has appeared in several parks. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 2,
+     "stem": "Which fits blank ❷?",
+     "options": [
+      "A. Some people bring books they have read twice, and the table fills again before noon.",
+      "B. On a table under a tree, twenty books are laid out with no prices at all.",
+      "C. Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "D. Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_texts": [
+      "Some people bring books they have read twice, and the table fills again before noon.",
+      "On a table under a tree, twenty books are laid out with no prices at all.",
+      "Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_pool": "group-bank",
+     "answer": "D",
+     "explanation": "❷ 要的是Anyone may take a book, and a second person may leave one in its place 說明「拿一本、留一本」的規則，故選 D；A 規則被遵守後才會出現書堆回補的現象；B 已用於 ❶；C Within a year 的長期視角要留給結尾。",
+     "group": 2,
+     "passage": "A different kind of market has appeared in several parks. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 3,
+     "stem": "Which fits blank ❸?",
+     "options": [
+      "A. Some people bring books they have read twice, and the table fills again before noon.",
+      "B. On a table under a tree, twenty books are laid out with no prices at all.",
+      "C. Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "D. Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_texts": [
+      "Some people bring books they have read twice, and the table fills again before noon.",
+      "On a table under a tree, twenty books are laid out with no prices at all.",
+      "Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_pool": "group-bank",
+     "answer": "A",
+     "explanation": "❸ 要的是bring books they have read twice 與 fills again before noon 呈現規則運作後的當天現象，故選 A；B 是起點描寫，重複會讓 ❶ 與 ❸ 內容重疊；C Within a year 應放最後；D 已用於 ❷。",
+     "group": 2,
+     "passage": "A different kind of market has appeared in several parks. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 4,
+     "stem": "Which fits blank ❹?",
+     "options": [
+      "A. Some people bring books they have read twice, and the table fills again before noon.",
+      "B. On a table under a tree, twenty books are laid out with no prices at all.",
+      "C. Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "D. Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_texts": [
+      "Some people bring books they have read twice, and the table fills again before noon.",
+      "On a table under a tree, twenty books are laid out with no prices at all.",
+      "Within a year, a few such tables have turned a corner of the park into the busiest place on a slow afternoon.",
+      "Anyone may take a book, and a second person may leave one in its place."
+     ],
+     "option_pool": "group-bank",
+     "answer": "C",
+     "explanation": "❹ 要的是Within a year 與 turned a corner of the park into the busiest place 給出長期影響，足以收束全文，故選 C；A 只是當天的現象；B 攤位描寫；D 交換規則。",
+     "group": 2,
+     "passage": "A different kind of market has appeared in several parks. ❶ ❷ ❸ ❹"
+    }
+   ]
+  },
+  {
+   "group": 3,
+   "topic": "科普｜海水淡化與能源成本",
+   "passage": "In dry countries, the sea has become a source of drinking water. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+    "B Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+    "C The plants push sea water through a fine filter, and the salt is left behind.",
+    "D Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+   ],
+   "optionOrderNote": "四個空格的選項順序固定同一組，且刻意不依 ❶❷❸❹ 排列（沿用 real.json 篇章結構區段的慣例）",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 1,
+     "stem": "Which fits blank ❶?",
+     "options": [
+      "A. The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "B. Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "C. The plants push sea water through a fine filter, and the salt is left behind.",
+      "D. Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_texts": [
+      "The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "The plants push sea water through a fine filter, and the salt is left behind.",
+      "Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_pool": "group-bank",
+     "answer": "C",
+     "explanation": "❶ 要的是push sea water through a fine filter 說明海水如何變成淡水，是全篇的原理，故選 C；A 用電成本是原理之後的代價；B Even so 是轉折收尾；D recover most of that energy 必須先有「用很多電」的前提。",
+     "group": 3,
+     "passage": "In dry countries, the sea has become a source of drinking water. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 2,
+     "stem": "Which fits blank ❷?",
+     "options": [
+      "A. The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "B. Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "C. The plants push sea water through a fine filter, and the salt is left behind.",
+      "D. Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_texts": [
+      "The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "The plants push sea water through a fine filter, and the salt is left behind.",
+      "Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_pool": "group-bank",
+     "answer": "A",
+     "explanation": "❷ 要的是need a great deal of power 提出能源限制，正好為下一格的新技術鋪陳，故選 A；B Even so 應放最後；C 已用於 ❶；D that energy 指的就是本句提到的電，否則指涉懸空。",
+     "group": 3,
+     "passage": "In dry countries, the sea has become a source of drinking water. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 3,
+     "stem": "Which fits blank ❸?",
+     "options": [
+      "A. The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "B. Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "C. The plants push sea water through a fine filter, and the salt is left behind.",
+      "D. Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_texts": [
+      "The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "The plants push sea water through a fine filter, and the salt is left behind.",
+      "Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_pool": "group-bank",
+     "answer": "D",
+     "explanation": "❸ 要的是recover most of that energy 與 the price of a liter has fallen in ten years 同時回應成本與時間，故選 D；A 已用於 ❷；B Even so 是結論；C 原理放在此處會打斷成本主線。",
+     "group": 3,
+     "passage": "In dry countries, the sea has become a source of drinking water. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 4,
+     "stem": "Which fits blank ❹?",
+     "options": [
+      "A. The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "B. Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "C. The plants push sea water through a fine filter, and the salt is left behind.",
+      "D. Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_texts": [
+      "The older plants need a great deal of power, and this cost has kept many of them near the coast.",
+      "Even so, a dry year is not solved by plants alone, and farmers are still told to save water first.",
+      "The plants push sea water through a fine filter, and the salt is left behind.",
+      "Newer plants can now recover most of that energy, so the price of a liter has fallen in ten years."
+     ],
+     "option_pool": "group-bank",
+     "answer": "B",
+     "explanation": "❹ 要的是Even so 承接降價，a dry year is not solved by plants alone 把話題拉回節水的現實限制，故選 B；A 只說明限制；C 原理；D 技術進展。",
+     "group": 3,
+     "passage": "In dry countries, the sea has become a source of drinking water. ❶ ❷ ❸ ❹"
+    }
+   ]
+  },
+  {
+   "group": 4,
+   "topic": "社會｜義肢運動員的裝備專業化",
+   "passage": "A sporting event for athletes with missing arms or legs began small and is now watched around the world. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+    "B Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+    "C Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+    "D The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+   ],
+   "optionOrderNote": "四個空格的選項順序固定同一組，且刻意不依 ❶❷❸❹ 排列（沿用 real.json 篇章結構區段的慣例）",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 1,
+     "stem": "Which fits blank ❶?",
+     "options": [
+      "A. For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "B. Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "C. Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "D. The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_texts": [
+      "For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_pool": "group-bank",
+     "answer": "B",
+     "explanation": "❶ 要的是Early on、simply wanted to finish a race 是起步期的寫照，與 began small 呼應，故選 B；A no longer… but… 是全篇結論；C Today 屬於現況；D The turning point came 是中段轉折。",
+     "group": 4,
+     "passage": "A sporting event for athletes with missing arms or legs began small and is now watched around the world. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 2,
+     "stem": "Which fits blank ❷?",
+     "options": [
+      "A. For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "B. Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "C. Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "D. The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_texts": [
+      "For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_pool": "group-bank",
+     "answer": "D",
+     "explanation": "❷ 要的是The turning point came 明確標示轉折，並用 lighter shoes changed their times 說明技術帶來的影響，故選 D；A 議題層次高於現況描述；B 已用於 ❶；C Today 的時間太晚。",
+     "group": 4,
+     "passage": "A sporting event for athletes with missing arms or legs began small and is now watched around the world. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 3,
+     "stem": "Which fits blank ❸?",
+     "options": [
+      "A. For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "B. Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "C. Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "D. The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_texts": [
+      "For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_pool": "group-bank",
+     "answer": "C",
+     "explanation": "❸ 要的是Today the best records 與 train in the same clubs、started their own brands 呈現技術轉折後的今天，故選 C；A 公共議題應放最後；B 已用於 ❶；D 已用於 ❷。",
+     "group": 4,
+     "passage": "A sporting event for athletes with missing arms or legs began small and is now watched around the world. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 4,
+     "stem": "Which fits blank ❹?",
+     "options": [
+      "A. For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "B. Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "C. Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "D. The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_texts": [
+      "For these athletes, the public question is no longer whether they can compete, but how the rules can be fair.",
+      "Early on, most competitors simply wanted to finish a race, and few of them had medical staff who knew the sport.",
+      "Today the best records are set by athletes who train in the same clubs as everyone else, and some of them have started their own brands.",
+      "The turning point came when factories began to design parts for sport rather than for daily life, and runners found that lighter shoes changed their times."
+     ],
+     "option_pool": "group-bank",
+     "answer": "A",
+     "explanation": "❹ 要的是no longer whether they can compete, but how the rules can be fair 把個人現況拉升為社會結論，故選 A；B 賽事開局；C 當前成績；D 技術轉折。",
+     "group": 4,
+     "passage": "A sporting event for athletes with missing arms or legs began small and is now watched around the world. ❶ ❷ ❸ ❹"
+    }
+   ]
+  },
+  {
+   "group": 5,
+   "topic": "科技｜遠距工作的折衷路徑",
+   "passage": "When offices closed for a year, one simple question came up: can a job be done from home? ❶ ❷ ❸ ❹",
+   "bank": [
+    "A The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+    "B Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+    "C Managers must now judge results by what is finished rather than by hours at a desk.",
+    "D For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+   ],
+   "optionOrderNote": "四個空格的選項順序固定同一組，且刻意不依 ❶❷❸❹ 排列（沿用 real.json 篇章結構區段的慣例）",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 1,
+     "stem": "Which fits blank ❶?",
+     "options": [
+      "A. The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "B. Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "C. Managers must now judge results by what is finished rather than by hours at a desk.",
+      "D. For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_texts": [
+      "The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "Managers must now judge results by what is finished rather than by hours at a desk.",
+      "For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_pool": "group-bank",
+     "answer": "D",
+     "explanation": "❶ 要的是the answer turned out to be possible 直接回應前句的問句，並說明多數公司保留遠距，故選 D；A 折衷方案屬於中後段；B Yet 是接在肯定答案之後的轉折；C 管理者的評估方式層次更後。",
+     "group": 5,
+     "passage": "When offices closed for a year, one simple question came up: can a job be done from home? ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 2,
+     "stem": "Which fits blank ❷?",
+     "options": [
+      "A. The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "B. Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "C. Managers must now judge results by what is finished rather than by hours at a desk.",
+      "D. For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_texts": [
+      "The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "Managers must now judge results by what is finished rather than by hours at a desk.",
+      "For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_pool": "group-bank",
+     "answer": "B",
+     "explanation": "❷ 要的是Yet the same year showed a limit 是轉折，並舉新人無法向同處一室的前輩學習為證，故選 B；A 提出折衷應在轉折之後；C 管理者層面的後果與前文限制不同調；D 已用於 ❶。",
+     "group": 5,
+     "passage": "When offices closed for a year, one simple question came up: can a job be done from home? ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 3,
+     "stem": "Which fits blank ❸?",
+     "options": [
+      "A. The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "B. Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "C. Managers must now judge results by what is finished rather than by hours at a desk.",
+      "D. For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_texts": [
+      "The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "Managers must now judge results by what is finished rather than by hours at a desk.",
+      "For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_pool": "group-bank",
+     "answer": "A",
+     "explanation": "❸ 要的是The result is a middle path 用 two or three days in the office 寫出限制之後的實際做法，故選 A；B 已用於 ❷；C 若先講管理影響再談折衷，順序顛倒；D 已用於 ❶。",
+     "group": 5,
+     "passage": "When offices closed for a year, one simple question came up: can a job be done from home? ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 4,
+     "stem": "Which fits blank ❹?",
+     "options": [
+      "A. The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "B. Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "C. Managers must now judge results by what is finished rather than by hours at a desk.",
+      "D. For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_texts": [
+      "The result is a middle path: two or three days in the office, and the rest chosen by the worker.",
+      "Yet the same year showed a limit, because new workers learned their jobs from colleagues who were not in the room.",
+      "Managers must now judge results by what is finished rather than by hours at a desk.",
+      "For many kinds of work the answer turned out to be possible, and companies that tried it kept a large part of it."
+     ],
+     "option_pool": "group-bank",
+     "answer": "C",
+     "explanation": "❹ 要的是must now judge results by what is finished 點出新制度對考核方式的影響，與 ❸ 的混合到訪形成因果收束，故選 C；A 只是到訪安排；B 背景限制；D 回答問句。",
+     "group": 5,
+     "passage": "When offices closed for a year, one simple question came up: can a job be done from home? ❶ ❷ ❸ ❹"
+    }
+   ]
+  },
+  {
+   "group": 6,
+   "topic": "文化｜老屋維修與街區再生",
+   "passage": "In many towns, old houses stand empty while new ones rise on empty land. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A Since the work was slow, the first residents worried that the street would never be finished.",
+    "B As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+    "C A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+    "D The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+   ],
+   "optionOrderNote": "四個空格的選項順序固定同一組，且刻意不依 ❶❷❸❹ 排列（沿用 real.json 篇章結構區段的慣例）",
+   "questions": [
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 1,
+     "stem": "Which fits blank ❶?",
+     "options": [
+      "A. Since the work was slow, the first residents worried that the street would never be finished.",
+      "B. As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "C. A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "D. The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_texts": [
+      "Since the work was slow, the first residents worried that the street would never be finished.",
+      "As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_pool": "group-bank",
+     "answer": "C",
+     "explanation": "❶ 要的是A group of local workers began with the cheapest houses 交代誰先動手，並列出先修屋頂、電線、窗戶的步驟，故選 C；A Since the work was slow 是對已開始的工程做的反應；B As families moved back 是施工完成後的現象；D The plan has spread 屬於總結。",
+     "group": 6,
+     "passage": "In many towns, old houses stand empty while new ones rise on empty land. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 2,
+     "stem": "Which fits blank ❷?",
+     "options": [
+      "A. Since the work was slow, the first residents worried that the street would never be finished.",
+      "B. As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "C. A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "D. The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_texts": [
+      "Since the work was slow, the first residents worried that the street would never be finished.",
+      "As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_pool": "group-bank",
+     "answer": "A",
+     "explanation": "❷ 要的是Since the work was slow 與 the first residents worried 是對施工的即時反應，帶出後續成果，故選 A；B 成果若先於擔心出現，順序顛倒；C 已用於 ❶；D 政策結論應放最後。",
+     "group": 6,
+     "passage": "In many towns, old houses stand empty while new ones rise on empty land. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 3,
+     "stem": "Which fits blank ❸?",
+     "options": [
+      "A. Since the work was slow, the first residents worried that the street would never be finished.",
+      "B. As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "C. A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "D. The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_texts": [
+      "Since the work was slow, the first residents worried that the street would never be finished.",
+      "As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_pool": "group-bank",
+     "answer": "B",
+     "explanation": "❸ 要的是As families moved back 與 the same old walls now hold a small market 寫出住戶回流後的變化，故選 B；A 已用於 ❷；C 已用於 ❶；D 應留給結論。",
+     "group": 6,
+     "passage": "In many towns, old houses stand empty while new ones rise on empty land. ❶ ❷ ❸ ❹"
+    },
+    {
+     "sourceType": "ai",
+     "source": "poolb-v1",
+     "section": "篇章結構",
+     "qnum": 4,
+     "stem": "Which fits blank ❹?",
+     "options": [
+      "A. Since the work was slow, the first residents worried that the street would never be finished.",
+      "B. As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "C. A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "D. The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_texts": [
+      "Since the work was slow, the first residents worried that the street would never be finished.",
+      "As families moved back, new shops appeared, and the same old walls now hold a small market on the ground floor.",
+      "A group of local workers began with the cheapest houses, repairing roofs, wiring, and windows before touching anything inside.",
+      "The plan has spread, because the city now treats empty old buildings as a public problem rather than a private one."
+     ],
+     "option_pool": "group-bank",
+     "answer": "D",
+     "explanation": "❹ 要的是The plan has spread 與 the city now treats… as a public problem 說明做法被採納的政策背景，替全文作結，故選 D；A 施工期的擔心；B 回流後的成果；C 施工步驟。",
+     "group": 6,
+     "passage": "In many towns, old houses stand empty while new ones rise on empty land. ❶ ❷ ❸ ❹"
+    }
+   ]
+  }
+ ]
+}
