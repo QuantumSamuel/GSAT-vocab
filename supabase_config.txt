@@ -1,0 +1,10 @@
+# Supabase 雲端同步設定（2.0.10）
+# 到 supabase.com 建立專案後，從「Project Settings → API」複製以下兩項，填在等號後面（不要加引號）：
+#
+#   1. Project URL        例如：https://abcd1234.supabase.co
+#   2. anon public key    例如：eyJhbGciOi...（很長的一串）
+#
+# 填好後回到 App 的「同步」頁即可上傳/下載。
+#
+# Project URL=https://ylpjtgorihamrdupjhqc.supabase.co
+# anon key=sb_publishable_OqRxC5uuqK-W1QONVznJgg_pisEt0T9

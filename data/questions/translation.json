@@ -1,0 +1,254 @@
+{
+  "note": "4.1.1 樣本句庫（starter）：考題挖空翻譯用。blanks.pos 為「引擎 TOKEN_RE 切分後 t==='word' 的 0-based 序號」（不含標點與空白；4.1.1 QA 修復後口徑）；正式題庫將由考題語料庫管線擴充。",
+  "sentences": [
+    {
+      "en": "The students went to the library after school.",
+      "zh": "學生們放學後去了圖書館。",
+      "blanks": [
+        {
+          "pos": 1,
+          "answer": "students"
+        },
+        {
+          "pos": 2,
+          "answer": "went",
+          "alts": [
+            "headed"
+          ]
+        },
+        {
+          "pos": 5,
+          "answer": "library"
+        }
+      ]
+    },
+    {
+      "en": "Regular exercise can significantly reduce the risk of heart disease.",
+      "zh": "規律運動能顯著降低心臟病的風險。",
+      "blanks": [
+        {
+          "pos": 1,
+          "answer": "exercise"
+        },
+        {
+          "pos": 4,
+          "answer": "reduce",
+          "alts": [
+            "lower"
+          ]
+        },
+        {
+          "pos": 6,
+          "answer": "risk"
+        },
+        {
+          "pos": 9,
+          "answer": "disease"
+        }
+      ]
+    },
+    {
+      "en": "Climate change has become one of the most serious problems facing the world.",
+      "zh": "氣候變遷已成為世界面臨最嚴重的問題之一。",
+      "blanks": [
+        {
+          "pos": 0,
+          "answer": "climate"
+        },
+        {
+          "pos": 1,
+          "answer": "change"
+        },
+        {
+          "pos": 8,
+          "answer": "serious",
+          "alts": [
+            "severe"
+          ]
+        },
+        {
+          "pos": 12,
+          "answer": "world"
+        }
+      ]
+    },
+    {
+      "en": "The museum offers free guided tours for visitors on weekends.",
+      "zh": "博物館週末為訪客提供免費導覽。",
+      "blanks": [
+        {
+          "pos": 1,
+          "answer": "museum"
+        },
+        {
+          "pos": 2,
+          "answer": "offers",
+          "alts": [
+            "provides"
+          ]
+        },
+        {
+          "pos": 5,
+          "answer": "tours"
+        }
+      ]
+    },
+    {
+      "en": "Many young people prefer messaging apps to phone calls.",
+      "zh": "許多年輕人偏好使用訊息應用程式而非講電話。",
+      "blanks": [
+        {
+          "pos": 3,
+          "answer": "prefer"
+        },
+        {
+          "pos": 4,
+          "answer": "messaging"
+        },
+        {
+          "pos": 8,
+          "answer": "calls"
+        }
+      ]
+    },
+    {
+      "en": "The company promised to reduce plastic waste in all of its products.",
+      "zh": "公司承諾在所有產品中減少塑膠垃圾。",
+      "blanks": [
+        {
+          "pos": 2,
+          "answer": "promised"
+        },
+        {
+          "pos": 4,
+          "answer": "reduce",
+          "alts": [
+            "cut"
+          ]
+        },
+        {
+          "pos": 5,
+          "answer": "plastic"
+        }
+      ]
+    },
+    {
+      "en": "Learning a second language opens the door to a different culture.",
+      "zh": "學習第二外語開啟了通往不同文化的大門。",
+      "blanks": [
+        {
+          "pos": 2,
+          "answer": "second"
+        },
+        {
+          "pos": 6,
+          "answer": "door"
+        },
+        {
+          "pos": 10,
+          "answer": "culture"
+        }
+      ]
+    },
+    {
+      "en": "Experts warn that too much screen time may harm children's eyesight.",
+      "zh": "專家警告過多的螢幕時間可能傷害兒童視力。",
+      "blanks": [
+        {
+          "pos": 0,
+          "answer": "experts",
+          "alts": [
+            "Expert"
+          ]
+        },
+        {
+          "pos": 5,
+          "answer": "screen"
+        },
+        {
+          "pos": 10,
+          "answer": "eyesight",
+          "alts": [
+            "vision"
+          ]
+        }
+      ]
+    },
+    {
+      "en": "The new policy encourages companies to hire more local workers.",
+      "zh": "新政策鼓勵企業雇用更多本地勞工。",
+      "blanks": [
+        {
+          "pos": 2,
+          "answer": "policy"
+        },
+        {
+          "pos": 3,
+          "answer": "encourages"
+        },
+        {
+          "pos": 8,
+          "answer": "local"
+        }
+      ]
+    },
+    {
+      "en": "A balanced diet and enough sleep are essential to good health.",
+      "zh": "均衡飲食與充足睡眠對健康至關重要。",
+      "blanks": [
+        {
+          "pos": 2,
+          "answer": "diet"
+        },
+        {
+          "pos": 7,
+          "answer": "essential",
+          "alts": [
+            "important",
+            "key"
+          ]
+        },
+        {
+          "pos": 10,
+          "answer": "health"
+        }
+      ]
+    },
+    {
+      "en": "Volunteers spent the whole weekend cleaning up the beach.",
+      "zh": "志工們花了整個週末清理海灘。",
+      "blanks": [
+        {
+          "pos": 0,
+          "answer": "volunteers"
+        },
+        {
+          "pos": 5,
+          "answer": "cleaning"
+        },
+        {
+          "pos": 8,
+          "answer": "beach"
+        }
+      ]
+    },
+    {
+      "en": "The report suggests that small daily habits shape our long-term health.",
+      "zh": "報告指出每天的小習慣塑造我們的長期健康。",
+      "blanks": [
+        {
+          "pos": 2,
+          "answer": "suggests"
+        },
+        {
+          "pos": 6,
+          "answer": "habits"
+        },
+        {
+          "pos": 10,
+          "answer": "health"
+        }
+      ]
+    }
+  ]
+}
