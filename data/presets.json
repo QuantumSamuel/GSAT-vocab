@@ -1,0 +1,4 @@
+{
+ "meta": { "note": "預設單詞本（3.0.2 起由 data/presets.json 提供；3.1 起可由管理後台發佈更新）。格式：presets:[{name, desc, words:[英文單字...]}]" },
+ "presets": []
+}

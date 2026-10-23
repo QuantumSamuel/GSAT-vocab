@@ -1,0 +1,632 @@
+{
+ "meta": {
+  "sourceType": "ai",
+  "generator": "MiniMax-M3.1-Flash-Preview",
+  "generatedAt": "2026-10-01T20:47:56.404Z",
+  "reviewStatus": "glm_review_passed",
+  "note": "AI 自製題庫（與真題庫嚴格分離）；未審核前不得併入正式題庫",
+  "round": 1,
+  "styleReference": [
+   "4.0/4.0.1/tools/exam_extract/real_questions/all_questions.json（113/114 學測 E、N 卷抽取題 727 題：題幹寫法、選項設計、干擾項類型、schema）",
+   "4.0/4.0.1/tools/exam_extract/stats/freq_surface.json（11,706 條高頻表面詞；詞彙題 8 個正解詞 freq_surface 皆 > 0）",
+   "4.0/4.0.1/tools/exam_extract/stats/lookalikes.json（4,892 組形近詞；詞彙題干擾項取自同族）",
+   "4.0/4.0.1/tools/exam_extract/stats/sentences_pool.json（2,863 句學測句池，句型與難度基準）",
+   "4.0/4.1.1/data/questions/selection_extra_draft.json（12 題既有 AI 草稿；本輪避開其正解詞與考點）"
+  ],
+  "count": 22,
+  "countNote": "任務文字寫「20 題」，但各區段配額 8＋4＋6＋4 加總為 22；本輪以各區段明確配額為準，差異待審核裁決。",
+  "deferred": "文意選填的共用詞庫（A–J）形式、篇章結構以外的共用選項池，統一留給第二輪。",
+  "selfCheck": {
+   "wordbank": "4.0/4.1.1/data/words.json（7,106 字）",
+   "script": "4.0/4.1.1/tools/ai_qcheck.mjs（node 執行）",
+   "singleWordOptions": "詞彙題 8 題＋綜合測驗 4 空＝48 個選項詞，全數回查 words.json",
+   "sentenceOptions": "閱讀 6 題＋篇章結構 4 題共 40 個句子選項。words.json 只收原形不收屈折形（need 有、needs 無），故未命中 token 再查原形：非虛詞 token 200 個，直接命中 189 個、屈折形 9 個（needs→need、volunteers→volunteer、visitors→visitor、longer→long、decided→decide、opened→open、vegetables→vegetable、looking→look、expected→expect），實際未收錄只有 easier（easy 的比較級，原形已收錄）與 caf（café 去重音符後的殘形）。",
+   "sentenceOptionBaseline": "同型選項在真題庫（閱讀測驗 3,072 個非虛詞 token）的字庫命中率為 50.7%，本輪為 99.0%。",
+   "optionLength": "詞彙題與克漏字的 4 個選項長度落差皆為 0。閱讀測驗落差 1–4（中位數 4，真題該區中位數 3），篇章結構落差 7（真題該區中位數 6，64 題中 63% 落差 ≥5）。均在學測慣例範圍內，未為了湊齊長度而扭曲句子。",
+   "noDuplicateWithExistingDraft": "與 data/questions/selection_extra_draft.json 的 12 題正解詞無重複",
+   "topicOverlap": "4 篇 AI 文章與真題庫 112 篇 passage 前 50 字比對，重疊 0 篇"
+  },
+  "reviewedAt": "2026-10-02",
+  "reviewNote": "GLM 逐題審核通過（2026-10-02 用戶拍板）；瑕疵記錄：詞彙#4 moderate 語境略牽強、克漏字干擾詞跨題重複"
+ },
+ "questions": [
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 1,
+   "stem": "To visit the nature reserve, every visitor must ______ a permit at the local office before entering the area.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "obtain",
+    "retain",
+    "contain",
+    "attain"
+   ],
+   "option_pool": "per-question",
+   "answer": "A",
+   "explanation": "obtain a permit（取得許可證）是固定用法，句意是進場前先「拿到」許可；retain（保留）指已持有後繼續保有，與 before entering 的時序不符；contain（包含）與 permit 沒有此搭配；attain（達成）通常搭配目標或水準，不與 a permit 連用。",
+   "answerWordLevel": "Lv4",
+   "answerWordFreqSurface": 4,
+   "distractorSource": "lookalikes：obtain ← attain / contain / retain（-tain 形近同詞性）",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 2,
+   "stem": "Students who move here from small towns soon learn to ______ to the long commute and the crowded buses at rush hour.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "adopt",
+    "attempt",
+    "attract",
+    "adapt"
+   ],
+   "option_pool": "per-question",
+   "answer": "D",
+   "explanation": "learn to adapt to（學會適應）是 learn to do sth 的固定結構，後面接 to + 名詞片語 the long commute and the crowded buses；adopt（採用）、attempt（嘗試）、attract（吸引）代入後都不能直接接 to 這個介系詞，句子不成句。",
+   "answerWordLevel": "Lv4",
+   "answerWordFreqSurface": 4,
+   "distractorSource": "lookalikes：adapt ← adopt（形近）；attempt / attract 為同級動詞語意干擾",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 3,
+   "stem": "When the town budget is limited, the council must give ______ to repairing the old bridge rather than building a new park.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "privilege",
+    "priority",
+    "principle",
+    "principal"
+   ],
+   "option_pool": "per-question",
+   "answer": "B",
+   "explanation": "give priority to（把…列為優先事項）是固定搭配，決定兩件公共工程先做哪一件；privilege（特權）、principle（原則）、principal（主要的／校長）代入後都不構成「優先處理某事」，其中 principal 作名詞是校長，與 repairing the old bridge 無關。",
+   "answerWordLevel": "Lv4",
+   "answerWordFreqSurface": 2,
+   "distractorSource": "lookalikes：priority / privilege / principle / principal（形近同詞性）",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 4,
+   "stem": "The city council decided to keep the new parking rule ______, so that both small shops and large stores could follow it easily.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "modern",
+    "moral",
+    "moderate",
+    "modest"
+   ],
+   "option_pool": "per-question",
+   "answer": "C",
+   "explanation": "so that both small shops and large stores could follow it easily 表示規定要「適中」，故用 moderate（適度的）；modern（現代的）與 parking rule 的可行程度無關，moral（道德的）用於停車規定不自然，modest（謙遜的）只形容人、不形容規定。",
+   "answerWordLevel": "Lv4",
+   "answerWordFreqSurface": 3,
+   "distractorSource": "lookalikes：moderate ← operate / tolerate；modern / moral / modest 為同級形容詞形近干擾",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 5,
+   "stem": "The teacher refused to ______ the names of the students who had failed the test, saying that it would shame them.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "reveal",
+    "replace",
+    "reserve",
+    "rescue"
+   ],
+   "option_pool": "per-question",
+   "answer": "A",
+   "explanation": "refuse to reveal the names（拒絕透露姓名）與 saying that it would shame them 的語意一致；replace（取代）不作用於姓名，reserve（保留／預訂）與 rescue（營救）也不會與 the names 構成「說或不說」的動作。",
+   "answerWordLevel": "Lv3",
+   "answerWordFreqSurface": 6,
+   "distractorSource": "lookalikes：reveal ← revive / repeat / rental；replace / reserve / rescue 為 re- 動詞群",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 6,
+   "stem": "Years of practice are needed to ______ the skill of playing the violin well enough to join an orchestra.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "advise",
+    "admire",
+    "accuse",
+    "acquire"
+   ],
+   "option_pool": "per-question",
+   "answer": "D",
+   "explanation": "acquire a skill（學得一項技能）符合 Years of practice are needed 的因果；advise（勸告）、admire（欽佩）、accuse（指控）放不進「靠練習獲得技能」的脈絡，代入後語意不成立。",
+   "answerWordLevel": "Lv4",
+   "answerWordFreqSurface": 4,
+   "distractorSource": "ad- 形近同長度動詞群語意干擾：advise / admire / accuse",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 7,
+   "stem": "After the storm broke the bridge, workers worked for months to ______ it to its former strength before the town reopened the road.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "rescue",
+    "restore",
+    "resort",
+    "retire"
+   ],
+   "option_pool": "per-question",
+   "answer": "B",
+   "explanation": "restore it to its former strength（使它恢復到原來的強度）是 restore A to B 的固定結構；rescue（營救）對象是人或動物的性命，resort（訴諸／度假地）與 retire（退休、退役）代入後都不成句。",
+   "answerWordLevel": "Lv4",
+   "answerWordFreqSurface": 4,
+   "distractorSource": "lookalikes：restore ← resort / retire / retort（re- 形近同詞性）",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "詞彙題",
+   "qnum": 8,
+   "stem": "The manager ______ that every machine must pass the safety check before it is started, even during the busy season.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "assist",
+    "resist",
+    "insist",
+    "enlist"
+   ],
+   "option_pool": "per-question",
+   "answer": "C",
+   "explanation": "insist that + 子句（堅持主張）是固定句型，與 even during the busy season 顯示的強硬態度一致；assist（協助）、resist（反抗）後接名詞或動名詞，enlist（徵募）後接人，三者都不能直接接 that 子句。",
+   "answerWordLevel": "Lv2",
+   "answerWordFreqSurface": 1,
+   "distractorSource": "lookalikes：insist ← assist / consist / enlist（in- 形近同詞性）",
+   "source": "ai-draft-v1",
+   "group": null,
+   "passage": null,
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "綜合測驗",
+   "qnum": 1,
+   "stem": "Members may 1. any tool they need, from drills to sewing machines, at no extra cost.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "waste",
+    "mend",
+    "borrow",
+    "destroy"
+   ],
+   "option_pool": "per-question",
+   "answer": "C",
+   "explanation": "at no extra cost（不額外付費）決定了這個空是借來用而不付租金或購買費，故用 borrow；waste（浪費）、destroy（毀壞）與會員取用工具的行為相反，mend（修補）則是對已損壞物品的處理，與 any tool they need 不合。",
+   "source": "ai-draft-v1",
+   "group": 1,
+   "passage": "A small town opened a tool library last spring. Members may 1. any tool they need, from drills to sewing machines, at no extra cost. Most households own only a few tools. By sharing equipment, the town hopes to 2. money and reduce waste. Local experts hold weekend classes to teach people how to 3. broken tools instead of throwing them away. The plan has worked better than expected, so the town will 4. a second library next year.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "綜合測驗",
+   "qnum": 2,
+   "stem": "By sharing equipment, the town hopes to 2. money and reduce waste.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "count",
+    "hide",
+    "waste",
+    "save"
+   ],
+   "option_pool": "per-question",
+   "answer": "D",
+   "explanation": "與後面的 reduce waste 並列的是省下錢，故用 save（節省）；waste（浪費）會與 reduce waste 自相矛盾，count（計算）與 hide（藏起）放不進「共享工具帶來好處」的語意中。",
+   "source": "ai-draft-v1",
+   "group": 1,
+   "passage": "A small town opened a tool library last spring. Members may 1. any tool they need, from drills to sewing machines, at no extra cost. Most households own only a few tools. By sharing equipment, the town hopes to 2. money and reduce waste. Local experts hold weekend classes to teach people how to 3. broken tools instead of throwing them away. The plan has worked better than expected, so the town will 4. a second library next year.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "綜合測驗",
+   "qnum": 3,
+   "stem": "Local experts hold weekend classes to teach people how to 3. broken tools instead of throwing them away.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "mend",
+    "bury",
+    "lend",
+    "hide"
+   ],
+   "option_pool": "per-question",
+   "answer": "A",
+   "explanation": "instead of throwing them away（而不是把它們丟掉）指出要把壞掉的工具修好，故用 mend（修補）；bury（埋掉）、hide（藏起來）仍屬丟棄式處理，lend（借出）的對象是完好可用的工具，與 broken tools 矛盾。",
+   "source": "ai-draft-v1",
+   "group": 1,
+   "passage": "A small town opened a tool library last spring. Members may 1. any tool they need, from drills to sewing machines, at no extra cost. Most households own only a few tools. By sharing equipment, the town hopes to 2. money and reduce waste. Local experts hold weekend classes to teach people how to 3. broken tools instead of throwing them away. The plan has worked better than expected, so the town will 4. a second library next year.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "綜合測驗",
+   "qnum": 4,
+   "stem": "The plan has worked better than expected, so the town will 4. a second library next year.",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "close",
+    "open",
+    "sell",
+    "mend"
+   ],
+   "option_pool": "per-question",
+   "answer": "B",
+   "explanation": "has worked better than expected（成效比預期好）之後自然是擴展，故用 open（開設）a second library；close（關閉）與 sell（出售）都與成效好相反，mend（修補）不能與 a second library 搭配。",
+   "source": "ai-draft-v1",
+   "group": 1,
+   "passage": "A small town opened a tool library last spring. Members may 1. any tool they need, from drills to sewing machines, at no extra cost. Most households own only a few tools. By sharing equipment, the town hopes to 2. money and reduce waste. Local experts hold weekend classes to teach people how to 3. broken tools instead of throwing them away. The plan has worked better than expected, so the town will 4. a second library next year.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "閱讀測驗",
+   "qnum": 1,
+   "stem": "What do corals receive in return from the small organisms inside their tissues?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "Food from their own body.",
+    "A hard skeleton to build.",
+    "Shelter and clean water.",
+    "Sunlight to make food."
+   ],
+   "option_pool": "per-question",
+   "answer": "C",
+   "explanation": "第二段末句說珊瑚回報給共生夥伴的是 shelter and clean water（庇護與乾淨的水），與題幹的 in return 完全對應；A 把方向弄反（食物是夥伴提供的）、B 的骨架是珊瑚自己造的、D 的陽光是夥伴利用的，三者都不是珊瑚得到的回報。",
+   "source": "ai-draft-v1",
+   "group": 2,
+   "passage": "Coral reefs are among the most colorful places in the ocean. They are built not by rocks but by tiny animals. Each coral polyp builds a hard skeleton, and over many years the skeletons of millions of polyps grow together into a reef. Living corals depend on small organisms inside their tissues. These partners use sunlight to make food, and they share part of it with the coral. In return, the coral provides shelter and clean water. When the water becomes too warm, however, the partners leave or die. Without their food supply, the corals turn white. This process, called bleaching, may kill the reef or leave it alive but weak. Scientists warn that a bleached reef can lose its color within a few weeks and may take decades to recover. Protecting reefs now therefore matters more than restoring them later.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "閱讀測驗",
+   "qnum": 2,
+   "stem": "Which of the following statements is true about the relationship between corals and the partners inside them?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The partner needs the coral more than the coral needs the partner.",
+    "The partner and the coral need each other to survive.",
+    "The coral gets all of its energy from the partner.",
+    "The partner can build the hard skeleton of the reef."
+   ],
+   "option_pool": "per-question",
+   "answer": "B",
+   "explanation": "文章明寫夥伴提供食物、珊瑚提供庇護與水，雙向交換可推知雙方互相需要；A 文中無依據、C 與 they share part of it（只分一部分）相衝突、D 與 Each coral polyp builds a hard skeleton 相衝突。",
+   "source": "ai-draft-v1",
+   "group": 2,
+   "passage": "Coral reefs are among the most colorful places in the ocean. They are built not by rocks but by tiny animals. Each coral polyp builds a hard skeleton, and over many years the skeletons of millions of polyps grow together into a reef. Living corals depend on small organisms inside their tissues. These partners use sunlight to make food, and they share part of it with the coral. In return, the coral provides shelter and clean water. When the water becomes too warm, however, the partners leave or die. Without their food supply, the corals turn white. This process, called bleaching, may kill the reef or leave it alive but weak. Scientists warn that a bleached reef can lose its color within a few weeks and may take decades to recover. Protecting reefs now therefore matters more than restoring them later.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "閱讀測驗",
+   "qnum": 3,
+   "stem": "What is the main idea of the passage?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "How a tiny animal can build a colorful reef.",
+    "Why the coral can turn white and how serious the result is.",
+    "What the coral and its partner do for each other.",
+    "The best way to keep sea water clean."
+   ],
+   "option_pool": "per-question",
+   "answer": "B",
+   "explanation": "前半在說明共生關係（背景），後半才是重點：海水升溫使夥伴離開或死亡、珊瑚白化甚至死亡、復原要數十年，故主旨是白化的成因與嚴重性；A 只涵蓋開頭、C 是過渡段落的內容、D 全篇未討論淨水方法。",
+   "source": "ai-draft-v1",
+   "group": 2,
+   "passage": "Coral reefs are among the most colorful places in the ocean. They are built not by rocks but by tiny animals. Each coral polyp builds a hard skeleton, and over many years the skeletons of millions of polyps grow together into a reef. Living corals depend on small organisms inside their tissues. These partners use sunlight to make food, and they share part of it with the coral. In return, the coral provides shelter and clean water. When the water becomes too warm, however, the partners leave or die. Without their food supply, the corals turn white. This process, called bleaching, may kill the reef or leave it alive but weak. Scientists warn that a bleached reef can lose its color within a few weeks and may take decades to recover. Protecting reefs now therefore matters more than restoring them later.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "閱讀測驗",
+   "qnum": 1,
+   "stem": "What may visitors need to pay for at a repair café?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The price of spare material.",
+    "The time of the volunteers.",
+    "A yearly entrance fee.",
+    "A small entrance ticket."
+   ],
+   "option_pool": "per-question",
+   "answer": "A",
+   "explanation": "第三段說志工不收工費，訪客 may donate a small amount for the cost of spare parts，因此可能要付的是零件費；工費、入會費與門票在文中都明說不存在。",
+   "source": "ai-draft-v1",
+   "group": 3,
+   "passage": "A repair café is a small event, often held in a community hall, where people bring broken household objects and learn to fix them with help. A kettle that no longer heats, a lamp with a broken wire, or a jacket with a torn pocket can all be saved. Volunteers at such events are usually neighbors who enjoy working with their hands; they do not charge for the work, although visitors may donate a small amount for the cost of spare parts. The idea began in the Netherlands and has since spread to many countries. Supporters say the main gain is not money but knowledge. A visitor who learns to replace a switch may repair the next lamp alone, without anyone else. Critics point out that some objects are still cheaper to replace than to mend. Even so, most visitors leave with something working, and many return to a later event with a new problem and a little more confidence.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "閱讀測驗",
+   "qnum": 2,
+   "stem": "What does the writer mean by saying a visitor \"may fix the next lamp alone\"?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "Visitors often break an object by accident.",
+    "A professional repair service is no longer useful.",
+    "One lamp is easier to fix than any other thing.",
+    "The real value of the event is to learn a skill."
+   ],
+   "option_pool": "per-question",
+   "answer": "D",
+   "explanation": "前一句 Supporters say the main gain is not money but knowledge 提示這句在說「學會技能」的好處：學會換開關之後，下次自己就能修；A 文中未提、B 文中只說某些物品換新比修便宜，無法推論專業服務無用、C 把單一例子擴大為通則。",
+   "source": "ai-draft-v1",
+   "group": 3,
+   "passage": "A repair café is a small event, often held in a community hall, where people bring broken household objects and learn to fix them with help. A kettle that no longer heats, a lamp with a broken wire, or a jacket with a torn pocket can all be saved. Volunteers at such events are usually neighbors who enjoy working with their hands; they do not charge for the work, although visitors may donate a small amount for the cost of spare parts. The idea began in the Netherlands and has since spread to many countries. Supporters say the main gain is not money but knowledge. A visitor who learns to replace a switch may repair the next lamp alone, without anyone else. Critics point out that some objects are still cheaper to replace than to mend. Even so, most visitors leave with something working, and many return to a later event with a new problem and a little more confidence.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "閱讀測驗",
+   "qnum": 3,
+   "stem": "What is the main idea of the passage?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "How to open a shop for spare material.",
+    "The kind of tool that people bring to the event.",
+    "What people do and learn at a repair café.",
+    "The history of the repair idea in another country."
+   ],
+   "option_pool": "per-question",
+   "answer": "C",
+   "explanation": "全文依序介紹 repair café 怎麼辦（志工免費協修、只收零件費）、它的好處（學到技術）與反對意見，末段仍以多數訪客帶著修好的物品與信心離開作結，故主旨是「人們在 repair café 做什麼、學到什麼」；A、D 文中未提，B 只涵蓋開頭列舉的物件。",
+   "source": "ai-draft-v1",
+   "group": 3,
+   "passage": "A repair café is a small event, often held in a community hall, where people bring broken household objects and learn to fix them with help. A kettle that no longer heats, a lamp with a broken wire, or a jacket with a torn pocket can all be saved. Volunteers at such events are usually neighbors who enjoy working with their hands; they do not charge for the work, although visitors may donate a small amount for the cost of spare parts. The idea began in the Netherlands and has since spread to many countries. Supporters say the main gain is not money but knowledge. A visitor who learns to replace a switch may repair the next lamp alone, without anyone else. Critics point out that some objects are still cheaper to replace than to mend. Even so, most visitors leave with something working, and many return to a later event with a new problem and a little more confidence.",
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "篇章結構",
+   "qnum": 1,
+   "stem": "Which of the following sentences is best put in ❶ of the passage?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The local people decided to build a community garden on the empty land.",
+    "The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "Looking back, the project has cost the town less money than people expected.",
+    "The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "option_pool": "group-bank",
+   "answer": "D",
+   "explanation": "❶ 是全篇起點，要交代工廠關閉的時間與「空地要怎麼處理」的難題，銜接前句 changed after a factory closed，故選 D；A 是決定、B 是成果、C 是回顧總結，都不能置於段首。",
+   "source": "ai-draft-v1",
+   "group": 4,
+   "passage": "Community life in the small town changed after a factory closed. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A The local people decided to build a community garden on the empty land.",
+    "B The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "C Looking back, the project has cost the town less money than people expected.",
+    "D The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "篇章結構",
+   "qnum": 2,
+   "stem": "Which of the following sentences is best put in ❷ of the passage?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The local people decided to build a community garden on the empty land.",
+    "The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "Looking back, the project has cost the town less money than people expected.",
+    "The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "option_pool": "group-bank",
+   "answer": "A",
+   "explanation": "❷ 承接 ❶ 的抉擇，需要寫出「居民決定闢建花園」這個決定過程，故選 A；B 是花園成立後的現況、C 是回顧總結、D 已用於 ❶。",
+   "source": "ai-draft-v1",
+   "group": 4,
+   "passage": "Community life in the small town changed after a factory closed. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A The local people decided to build a community garden on the empty land.",
+    "B The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "C Looking back, the project has cost the town less money than people expected.",
+    "D The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "篇章結構",
+   "qnum": 3,
+   "stem": "Which of the following sentences is best put in ❸ of the passage?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The local people decided to build a community garden on the empty land.",
+    "The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "Looking back, the project has cost the town less money than people expected.",
+    "The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "option_pool": "group-bank",
+   "answer": "B",
+   "explanation": "❸ 承接決定，寫花園成立與首次收成的時間線，故選 B；A 是決定（應在 ❷）、C 的 Looking back 須置於末段收束、D 是段首背景。",
+   "source": "ai-draft-v1",
+   "group": 4,
+   "passage": "Community life in the small town changed after a factory closed. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A The local people decided to build a community garden on the empty land.",
+    "B The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "C Looking back, the project has cost the town less money than people expected.",
+    "D The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "maybe": []
+  },
+  {
+   "sourceType": "ai",
+   "section": "篇章結構",
+   "qnum": 4,
+   "stem": "Which of the following sentences is best put in ❹ of the passage?",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The local people decided to build a community garden on the empty land.",
+    "The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "Looking back, the project has cost the town less money than people expected.",
+    "The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "option_pool": "group-bank",
+   "answer": "C",
+   "explanation": "❹ 前面的 Looking back, 要求對整件事做總結評價，因此只能放評估造價的 C；A 是過程、B 是中段現況、D 是背景，放進來都與回顧語氣不合。",
+   "source": "ai-draft-v1",
+   "group": 4,
+   "passage": "Community life in the small town changed after a factory closed. ❶ ❷ ❸ ❹",
+   "bank": [
+    "A The local people decided to build a community garden on the empty land.",
+    "B The new garden opened in April, and the first fresh vegetables were ready to pick in June.",
+    "C Looking back, the project has cost the town less money than people expected.",
+    "D The old factory shut down three years ago, and the town had to decide what to do with the land."
+   ],
+   "maybe": []
+  }
+ ]
+}

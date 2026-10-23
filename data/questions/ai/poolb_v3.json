@@ -1,0 +1,472 @@
+{
+ "meta": {
+  "sourceType": "ai",
+  "pool": "B",
+  "batch": "v3-vocab-AD",
+  "generator": "MiniMax-M3.1-Flash-Preview",
+  "generatedAt": "2026-10-02T18:51:09.769Z",
+  "reviewStatus": "glm_review_passed",
+  "note": "Pool B 收尾批：詞彙 30 題（A-D 開頭字分區）。正解詞全部 A/B/C/D 開頭、Lv2-5、freq_surface 有值、收錄於 words.json 7106 字；與 real.json 詞彙題／draft_v1／poolc_v1／poolb_v2／selection.json／selection_extra_draft.json 的正解零重複。",
+  "styleReference": [
+   "4.0/4.1.1/data/questions/real.json——真題詞彙題 150 題，題幹中位 17 詞，選項為同詞性、含形近與近義干擾",
+   "4.0/4.0.1/tools/exam_extract/stats/freq_surface.json——11706 條詞頻，正解詞須 f>0",
+   "4.0/4.0.1/tools/exam_extract/stats/lookalikes.json——pairs 表 4892 組形近詞，干擾項優先取自此表",
+   "4.0/4.1.1/data/words.json——words[].word 只收原形，level 欄位 Lv1-Lv7（正解取 Lv2-5）"
+  ],
+  "schemaNote": "沿用 poolb_v1/poolb_v2/poolc_v1 格式：options 採「A. 文字」完整形式，answer 為 0-3 索引。",
+  "selfCheck": "4.0/4.1.1/tools/poolb_v3_qcheck.mjs（題數／schema／選項命中字庫／正解 Lv2-5 與 freq>0／正解首字母 A-D／題幹 15-25 詞／答案字母分布／與 real+draft_v1+poolc_v1+poolb_v2+selection+selection_extra 正解零重複／本批內部零重複／干擾項 lookalikes 命中率／主詞性一致率／正解首字母分布）",
+  "reviewedAt": "2026-10-03"
+ },
+ "questions": [
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 1,
+   "q": "The ______ of any clear explanation from the officials caused angry residents to hold a protest in front of the city hall this weekend.",
+   "options": [
+    "A. absence",
+    "B. essence",
+    "C. existence",
+    "D. presence"
+   ],
+   "answer": 0,
+   "explanation": "absence＝缺乏、不在，the absence of any clear explanation（完全沒有任何說明）與 angry residents to hold a protest 直接扣合；existence＝存在，the existence of an explanation 正好相反（表示「有說明」）；presence＝出席、在場，the presence of an explanation 不成句；essence＝本質、要素，the essence of an explanation 談的是「說明的本質」，不是「有無說明」。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 2,
+   "q": "Many audience members ______ the young pianist, who played the entire concert from memory without ever looking at the sheet music.",
+   "options": [
+    "A. advise",
+    "B. aspire",
+    "C. admire",
+    "D. impress"
+   ],
+   "answer": 2,
+   "explanation": "admire＝欽佩、讚賞，admire the young pianist（欽佩那位年輕鋼琴家）與「全程背譜不看譜」相符；advise＝勸告，advise the pianist 只能是「給他建議」；aspire＝渴望，固定搭配是 aspire to do sth，不能直接接人；impress＝使…留下深刻印象，是「事物打動人」，主語應是鋼琴家的演奏，此處應說 the audience were impressed by the pianist，語意正好顛倒。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 3,
+   "q": "The research team reported a major ______ in medicine this year, and hospitals can now treat many patients within days instead of weeks.",
+   "options": [
+    "A. accuracy",
+    "B. advance",
+    "C. advantage",
+    "D. attitude"
+   ],
+   "answer": 1,
+   "explanation": "advance＝進步、進展，a major advance in medicine（醫學上的重大進展）與後面「治療時間由數週縮短到數天」直接扣合；accuracy＝準確度，指精密度高低，不會被「報導」為一項進展；advantage＝優勢，說的是對某方的好處，不是科學上的新突破；attitude＝態度，是人的心態，a major attitude in medicine 搭配完全不成立。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 4,
+   "q": "The school holds an ______ book fair every spring, and this year more than two hundred students brought their used textbooks.",
+   "options": [
+    "A. actual",
+    "B. casual",
+    "C. mutual",
+    "D. annual"
+   ],
+   "answer": 3,
+   "explanation": "annual＝每年的，an annual book fair（一年一度的書展）與 every spring、this year 一致；actual＝實際的，an actual book fair 不表達週期性；casual＝隨意的、休閒的，與「每年固定舉辦」無關；mutual＝相互的，an mutual book fair 冠詞與語意都不對。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 5,
+   "q": "Ticket sales for the summer festival ran far ahead of last year, so the organizers ______ an even larger crowd in August.",
+   "options": [
+    "A. anticipate",
+    "B. appreciate",
+    "C. hesitate",
+    "D. imitate"
+   ],
+   "answer": 0,
+   "explanation": "anticipate＝預期，anticipate an even larger crowd（預期人潮更大）與 ran far ahead of last year 呼應；appreciate＝感激、欣賞，appreciate a crowd 不成句；hesitate＝猶豫，固定搭配是 hesitate to do sth，hesitate a crowd 語法不通；imitate＝模仿，imitate a crowd 語意也不合。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 6,
+   "q": "The coach's positive ______ kept the team calm after the defeat, and they went on to win the next three matches.",
+   "options": [
+    "A. altitude",
+    "B. aptitude",
+    "C. attitude",
+    "D. latitude"
+   ],
+   "answer": 2,
+   "explanation": "attitude＝態度，the coach's positive attitude（教練的正面態度）與 kept the team calm 相扣；altitude＝海拔，the coach's positive altitude 語意不通；aptitude＝天資、才能，說的是能力而非心態；latitude＝緯度，與「態度」形近但完全無關。三個拉丁字首的選項是本題的形近干擾。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 7,
+   "q": "The teacher explained that only the principal has the legal ______ to change the exam schedule this late in the term.",
+   "options": [
+    "A. ability",
+    "B. accuracy",
+    "C. anxiety",
+    "D. authority"
+   ],
+   "answer": 3,
+   "explanation": "authority＝權限、權力，the legal authority to change（變更的法定權限）與 only the principal、this late in the term 一致；ability＝能力，the ability to change 只說「有能力」不表示「有權」；accuracy＝準確度，與「能不能改」無關；anxiety＝焦慮，has the anxiety to change 不成句。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 8,
+   "q": "Many students feel ______ about the entrance exam, so the school has added extra evening classes to calm their nerves.",
+   "options": [
+    "A. eager",
+    "B. anxious",
+    "C. envious",
+    "D. obvious"
+   ],
+   "answer": 1,
+   "explanation": "anxious＝焦慮的，feel anxious about（為某事感到焦慮）與 calm their nerves 呼應；eager＝渴望的，語意恰好相反，且固定搭配是 be eager to do sth.；envious＝嫉妒的，feel envious about 搭配與語意都不符；obvious＝顯然的，與「心情」無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 9,
+   "q": "It took the new manager months to ______ the books, since the shop had never kept a proper record of its daily sales.",
+   "options": [
+    "A. glance",
+    "B. palace",
+    "C. budget",
+    "D. balance"
+   ],
+   "answer": 3,
+   "explanation": "balance＝使平衡、核對，balance the books（把帳目核平）與 since the shop had never kept a proper record 一致；glance＝一瞥，glance at the books 才是固定用法，glance the books 不成句；palace＝宮殿，與記帳毫無關係；budget＝預算，budget the books 語法與慣用都不成立。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 10,
+   "q": "The teacher asked students to judge the story on the ______ of evidence rather than on their first impressions.",
+   "options": [
+    "A. basis",
+    "B. basics",
+    "C. basin",
+    "D. bass"
+   ],
+   "answer": 0,
+   "explanation": "on the basis of＝根據、基於，是固定片語，與 rather than on their first impressions 形成對比，答案唯一；basics＝基本要素，on the basics of 不是片語；basin＝臉盆、盆地，on the basin of 不成句；bass＝低音、鱸魚，on the bass of 語意不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 11,
+   "q": "The newspaper was accused of ______ in its reports, because it always praised one political party and completely ignored the others.",
+   "options": [
+    "A. balance",
+    "B. basis",
+    "C. bias",
+    "D. battle"
+   ],
+   "answer": 2,
+   "explanation": "be accused of bias＝被指有偏見，與後面「只誇一方、完全忽略另一方」直接扣合；balance＝平衡，be accused of balance 不成句，語意也與「偏頗」相反；basis＝基礎，be accused of basis 語法不通；battle＝爭鬥，be accused of battle 不合此處情境。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 12,
+   "q": "Most electric scooters sold here can travel about fifty kilometers on a single ______, which lasts roughly three years.",
+   "options": [
+    "A. barrel",
+    "B. battery",
+    "C. bakery",
+    "D. brass"
+   ],
+   "answer": 1,
+   "explanation": "battery＝電池，on a single battery（用一組電池）與 can travel fifty kilometers、lasts three years 一致；barrel＝桶，on a single barrel 談的是容器不是動力來源；bakery＝烘焙店，與交通工具無關；brass＝黃銅，既非動力來源也不符合 on a single 的搭配。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 13,
+   "q": "The ______ teacher showed the class how a single cell divides into two identical cells under a powerful lens.",
+   "options": [
+    "A. biology",
+    "B. apology",
+    "C. ecology",
+    "D. ballet"
+   ],
+   "answer": 0,
+   "explanation": "biology＝生物學，the biology teacher（生物老師）與單細胞分裂的內容完全一致；apology＝道歉，the apology teacher 根本不存在；ecology＝生態學，談的是生物與環境的關係，範圍與細胞分裂不同；ballet＝芭蕾舞，the ballet teacher 雖可成句，但與細胞分裂毫無關聯。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 14,
+   "q": "The journalist was ______ enough to publish the story that powerful companies had tried to bury for years.",
+   "options": [
+    "A. bald",
+    "B. blind",
+    "C. broad",
+    "D. bold"
+   ],
+   "answer": 3,
+   "explanation": "bold＝大膽的，be bold enough to do sth（大膽到足以做某事）與 had tried to bury（曾被壓下）呼應；bald＝禿頭的，與勇氣無關；blind＝失明的，be blind enough to publish 語意不通；broad＝寬廣的，形容範圍而非勇氣。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 15,
+   "q": "To avoid the long line at the counter, the two friends waited in a small ______ near the back of the theater.",
+   "options": [
+    "A. boot",
+    "B. booth",
+    "C. broth",
+    "D. bone"
+   ],
+   "answer": 1,
+   "explanation": "booth＝小隔間、座艙，a small booth（一个小隔間）與 long line at the counter、near the back 形成對照；boot＝靴子，waited in a boot 不成句；broth＝肉湯，waited in a broth 不合常理；bone＝骨頭，同樣不成句。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 16,
+   "q": "The new rule limits night flights because the noise creates a heavy ______ on families who live beside the airport.",
+   "options": [
+    "A. band",
+    "B. border",
+    "C. burden",
+    "D. burst"
+   ],
+   "answer": 2,
+   "explanation": "burden＝負擔，create a heavy burden on（對住在機場旁的家庭造成沉重負擔）是固定說法；band＝帶、樂團，create a heavy band on 語法不通；border＝邊界，create a heavy border on 語意不成立；burst＝爆發，create a heavy burst on 搭配錯誤。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 17,
+   "q": "The new stadium was built with a ______ of fifty thousand, yet tickets for the final match sold out in a single day.",
+   "options": [
+    "A. caution",
+    "B. capability",
+    "C. certainty",
+    "D. capacity"
+   ],
+   "answer": 3,
+   "explanation": "capacity＝容量，a capacity of fifty thousand（容量為五萬）指可容納的人數，與 sold out 呼應；caution＝小心、警告，a caution of fifty thousand 語意不通；capability＝能力，指人的才能，a capability of fifty thousand 不合語境；certainty＝確定的事，a certainty of 指「確定的事實」，不是容量。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 18,
+   "q": "After three years in the minor leagues, the young pitcher finally began his ______ in the national team last spring.",
+   "options": [
+    "A. carrier",
+    "B. career",
+    "C. carpet",
+    "D. corner"
+   ],
+   "answer": 1,
+   "explanation": "career＝職涯，begin one's career（展開某人的職業生涯）與 in the minor leagues、the national team 一致；carrier＝攜帶者、運輸工具，begin one's carrier 不成句；carpet＝地毯，與棒球生涯無關；corner＝角落，begin one's corner 語意不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 19,
+   "q": "Doctors now believe that the main ______ of the skin disease is a lack of sun protection rather than poor personal hygiene.",
+   "options": [
+    "A. cause",
+    "B. case",
+    "C. clause",
+    "D. pause"
+   ],
+   "answer": 0,
+   "explanation": "cause＝原因，the main cause of…（…的主要原因）與 a lack of sun protection 呼應；case＝情況、個案，the main case of 不成搭配；clause＝條款、從句，the main clause of the disease 不通；pause＝暫停，與疾病成因無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 20,
+   "q": "Because the path near the cliff was badly damaged, hikers were advised to use great ______ when crossing the narrow bridge.",
+   "options": [
+    "A. action",
+    "B. caption",
+    "C. caution",
+    "D. cartoon"
+   ],
+   "answer": 2,
+   "explanation": "caution＝謹慎、小心，use great caution（格外謹慎）正符合路損後的提醒；action＝行動，use great action 語法與語意都不成立；caption＝字幕，use great caption 不成句；cartoon＝卡通，use great cartoon 語意不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 21,
+   "q": "The mayor refused to ______ on last week's accident, saying only that the investigation would take several more months.",
+   "options": [
+    "A. command",
+    "B. commit",
+    "C. commend",
+    "D. comment"
+   ],
+   "answer": 3,
+   "explanation": "refuse to comment on＝拒絕評論，是固定搭配，與 saying only that 呼應；command＝命令，若作動詞須接賓語，command on 不成句；commit＝承諾、犯（罪），commit on 不是搭配；commend＝表揚，固定搭配是 commend sb. on sth.，此處缺少受詞 the accident 作為 on 的內容，語法不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 22,
+   "q": "After a careful ______ of the two designs, the judges chose the cheaper one and explained their reasons in public.",
+   "options": [
+    "A. comparison",
+    "B. companion",
+    "C. compassion",
+    "D. confusion"
+   ],
+   "answer": 0,
+   "explanation": "comparison＝比較，a comparison of the two designs（兩種設計的比較）後接 chose the cheaper one，語意連貫；companion＝同伴，a companion of 不搭配；compassion＝同情，與設計取捨無關；confusion＝困惑，a confusion of the two designs 不成句。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 23,
+   "q": "After listening to both sides, the researchers ______ that the warning was unnecessary and quietly withdrew it the next day.",
+   "options": [
+    "A. concede",
+    "B. conclude",
+    "C. conduct",
+    "D. continue"
+   ],
+   "answer": 1,
+   "explanation": "conclude that…＝得出…的結論，與 after listening to both sides 呼應；concede＝承認、讓步，concede that… 只表示退讓，不等於下結論；conduct＝進行、實施，conduct that 語法不通；continue 後不能直接接 that 從句作結論，此處應接 to do sth.。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 24,
+   "q": "Sales of sugary drinks began to ______ sharply after the school removed all the vending machines from its hallways last summer.",
+   "options": [
+    "A. decide",
+    "B. define",
+    "C. decline",
+    "D. incline"
+   ],
+   "answer": 2,
+   "explanation": "decline＝下降，sales began to decline sharply（銷售開始急遽下滑）與 vending machines 被撤走直接相關；decide＝決定，decide 後須接賓語，begin to decide 語法不合；define＝界定，begin to define sales 語意不通；incline＝傾斜，decline 與 incline 形近，但 incline 不與 sharply 搭配。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 25,
+   "q": "The new highway plan sparked a fierce ______, with residents on both sides shouting at the town meeting.",
+   "options": [
+    "A. debate",
+    "B. decade",
+    "C. dilemma",
+    "D. delight"
+   ],
+   "answer": 0,
+   "explanation": "debate＝辯論、爭議，spark a fierce debate（引起激烈辯論）與 on both sides shouting 呼應；decade＝十年，spark a fierce decade 語意荒謬；dilemma＝兩難困局，spark 是「引發」爭議而非兩難；delight＝喜悅，與「居民互相叫罵」的情境相反。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 26,
+   "q": "The new glassware is so ______ that even a light knock can break it, so the movers wrapped every single piece in thick paper.",
+   "options": [
+    "A. dedicate",
+    "B. delegate",
+    "C. decent",
+    "D. delicate"
+   ],
+   "answer": 3,
+   "explanation": "delicate＝易碎的，so delicate that…（如此易碎以致…）與 wrapped every single piece in thick paper 呼應；dedicate＝奉獻，是動詞，so dedicate that 語法不通；delegate＝代表，也是動詞，so delegate that 同樣不成立；decent＝體面的、還不錯的，與「怕摔破」無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 27,
+   "q": "The waiter brought the main course out first, and the ______ arrived half an hour later, which amused the children at the next table.",
+   "options": [
+    "A. desert",
+    "B. dessert",
+    "C. descent",
+    "D. dissent"
+   ],
+   "answer": 1,
+   "explanation": "dessert＝甜點，the main course（主餐）之後才端上桌的自然是 dessert，與 arrived half an hour later 呼應；desert＝沙漠／遺棄，the desert arrived 不成句；descent＝下降、下降處，談的是位置或過程，不是餐點；dissent＝異議、不同意，arrive 後接 dissent 完全不合語意。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 28,
+   "q": "This small ______ can measure the air quality inside a classroom within just a few seconds, and it costs very little.",
+   "options": [
+    "A. advice",
+    "B. decision",
+    "C. device",
+    "D. detail"
+   ],
+   "answer": 2,
+   "explanation": "device＝裝置、儀器，this small device 與 can measure the air quality 相符；advice＝建議（不可數），this small advice 連量詞都不對；decision＝決定，this small decision 與測量無關；detail＝細節，this small detail 可以指小細節，但無法「測量空氣品質」，語意不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 29,
+   "q": "The train station lies about ten kilometers ______ from our school, so most students take the bus instead of walking.",
+   "options": [
+    "A. distant",
+    "B. distance",
+    "C. distinct",
+    "D. instant"
+   ],
+   "answer": 0,
+   "explanation": "distant from＝離某地多遠，ten kilometers distant from 為固定說法，與 instead of walking 呼應；distance 是名詞，說 ten kilometers distance from 語法不通（這正是本題要考的詞性陷阱）；distinct from 意為「與…不同」，不表示距離；instant＝立即的、瞬間的，instant from 沒有「距離遠」的用法。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v3",
+   "section": "詞彙題",
+   "qnum": 30,
+   "q": "The school bought ______ desks that are still in perfect condition after ten years of heavy daily use by students.",
+   "options": [
+    "A. delicate",
+    "B. diverse",
+    "C. digital",
+    "D. durable"
+   ],
+   "answer": 3,
+   "explanation": "durable＝耐用的，與 still in perfect condition after ten years of heavy daily use 一致；delicate＝易碎的，語意恰好相反；diverse＝多樣的，談的是種類而非耐用度；digital＝數位的，digital desks 須是電子設備，與「十年耐用」無關。"
+  }
+ ]
+}

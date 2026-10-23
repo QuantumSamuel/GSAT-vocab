@@ -1,0 +1,472 @@
+{
+ "meta": {
+  "sourceType": "ai",
+  "pool": "B",
+  "batch": "v2-vocab",
+  "generator": "MiniMax-M3.1-Flash-Preview",
+  "generatedAt": "2026-10-03T00:00:00.000Z",
+  "reviewStatus": "glm_review_passed",
+  "note": "Pool B 第四批：詞彙 30 題（E-H 開頭字分區）。正解詞全部 E/F/G/H 開頭、Lv2-5、freq_surface 有值、收錄於 words.json 7106 字；與 real.json 詞彙題／draft_v1／poolc_v1／selection.json／selection_extra_draft.json 的正解零重複。",
+  "styleReference": [
+   "4.0/4.1.1/data/questions/real.json——真題詞彙題 150 題，題幹中位 17 詞，選項為同詞性、含形近與近義干擾",
+   "4.0/4.0.1/tools/exam_extract/stats/freq_surface.json——11706 條詞頻，正解詞須 f>0",
+   "4.0/4.0.1/tools/exam_extract/stats/lookalikes.json——pairs 表 4892 組形近詞，干擾項優先取自此表",
+   "4.0/4.1.1/data/words.json——words[].word 只收原形，level 欄位 Lv1-Lv7（正解取 Lv2-5）"
+  ],
+  "schemaNote": "沿用 poolb_v1/poolc_v1 格式：options 採「A. 文字」完整形式，answer 為 0-3 索引。",
+  "selfCheck": "4.0/4.1.1/tools/poolb_qcheck.mjs（題數／schema／選項命中字庫／正解 Lv2-5 與 freq>0／正解首字母 E-H／題幹 15-25 詞／答案字母分布／與 real+draft_v1+poolc_v1+selection+selection_extra 正解零重複／本批內部零重複／干擾項 lookalikes 命中率／詞性一致率）",
+  "reviewedAt": "2026-10-03"
+ },
+ "questions": [
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 1,
+   "q": "After the new rules were posted, the ______ of the registration process improved and far fewer people were turned away.",
+   "options": [
+    "A. efficiency",
+    "B. deficiency",
+    "C. efficient",
+    "D. capacity"
+   ],
+   "answer": 0,
+   "explanation": "efficiency＝效率，improve the efficiency of…（提升…的效率）是固定搭配，後面 far fewer people were turned away 正是效率提高的結果；deficiency＝缺乏、不足，improve the deficiency 說不通，只能 reduce it；efficient 是形容「有效率的」，improve the efficient 語法不通；capacity＝容量、能力，improve the capacity of a process 不合此處語意。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 2,
+   "q": "The scientist was careful to collect ______ from the river before making any claim about the pollution.",
+   "options": [
+    "A. evident",
+    "B. evidence",
+    "C. residence",
+    "D. experience"
+   ],
+   "answer": 1,
+   "explanation": "evidence＝證據，collect evidence from…（從…收集證據）是固定搭配，與 before making any claim 一致；evident 是形容「顯然的」，collect evident 不成句；residence＝住宅、居留，與河水污染無關；experience＝經驗，多指人的親身經歷，不能從河裡收集。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 3,
+   "q": "Few scientists have been able to ______ why the disease spreads so quickly in crowded cities.",
+   "options": [
+    "A. explode",
+    "B. export",
+    "C. explore",
+    "D. exploit"
+   ],
+   "answer": 2,
+   "explanation": "explore why…（探究…的原因）符合「還不知道原因」的語意；explode 是「爆炸」，explode why 語法不通；export 是「輸出、出口」，與原因無關；exploit 是「利用、剝削」，只談手段而非追查原因。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 4,
+   "q": "Because the fire lasted three days, the library suffered ______ damage and most of its old collection is now gone.",
+   "options": [
+    "A. excessive",
+    "B. expensive",
+    "C. intensive",
+    "D. extensive"
+   ],
+   "answer": 3,
+   "explanation": "extensive＝廣大的、大範圍的，與 fire lasted three days、整個館藏幾乎化為烏有相呼應；excessive（過度的）只能修飾量或程度，說 excessive damage 語意不通；expensive 是「貴的」，不描述損壞範圍；intensive 是「密集的、集中的」，說圖書館遭到 intensive damage 不合常理。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 5,
+   "q": "The villagers had to ______ three days without clean water after the pipe in the square broke.",
+   "options": [
+    "A. ensure",
+    "B. induce",
+    "C. endure",
+    "D. injure"
+   ],
+   "answer": 2,
+   "explanation": "endure＝忍受、撐過，had to endure three days（撐過三天沒有乾淨水）是自然說法；ensure 是「確定、保證」，後面必須接子句，不會接 three days；induce 是「誘使、引起」，不與飢渴或缺水並用；injure 是「使受傷」，缺水不會 injure 人。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 6,
+   "q": "In recent years, many small towns have begun to ______ as new centers for software work.",
+   "options": [
+    "A. merge",
+    "B. energy",
+    "C. encourage",
+    "D. emerge"
+   ],
+   "answer": 3,
+   "explanation": "emerge as…（成為、嶄露頭角為）是固定搭配；merge 是「合併」，towns merge as 不成句；energy 是名詞「精力」，放在 have begun to 後面接不到 as 表示身分轉變；encourage 是「鼓勵」，towns 不會 encourage 自己。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 7,
+   "q": "The school replaced its long speech day with short talks, which proved far more ______ in raising attendance than the old program did.",
+   "options": [
+    "A. effective",
+    "B. elective",
+    "C. ineffective",
+    "D. reflective"
+   ],
+   "answer": 0,
+   "explanation": "effective＝有效的，be effective in（doing）在…方面有效，與 than the old program did 的比較一致；elective 是「選修的、選舉的」，不描述活動能否奏效；ineffective 是「無效的」，與 than the old program did 的語意方向相反；reflective 是「反射的、沉思的」，與提升出席率無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 8,
+   "q": "The investigation was careful not to ______ the names of the two teenagers who were not involved in the case.",
+   "options": [
+    "A. excuse",
+    "B. expose",
+    "C. explode",
+    "D. impose"
+   ],
+   "answer": 1,
+   "explanation": "expose＝使暴露、揭穿，not to expose the names（不公開姓名）符合偵查小組保護當事人的語意；excuse 是「原諒、找藉口」，與姓名無關；explode 是「爆炸」，explode names 語意不通；impose 是「強加、徵收」，impose the names 讀起來是硬加罪名，與 not to 的語意相反。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 9,
+   "q": "Small classes help children to ______ a real love of reading, which large classes often cannot.",
+   "options": [
+    "A. filter",
+    "B. foster",
+    "C. falter",
+    "D. fasten"
+   ],
+   "answer": 1,
+   "explanation": "foster＝培養、撫育，foster a love of reading（培養對閱讀的熱愛）搭配自然；filter 是「過濾」，不會過濾出愛好；falter 是「蹣跚、動搖」，接不來；fasten 是「扣緊、使牢固」，與熱愛無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 10,
+   "q": "The new masks ______ dust from the air, so workers in the stone workshop no longer cover their faces.",
+   "options": [
+    "A. filter",
+    "B. finger",
+    "C. litter",
+    "D. falter"
+   ],
+   "answer": 0,
+   "explanation": "filter A from B（把 A 從 B 中過濾出來）是固定結構，mask 過濾空氣中的灰塵正合此意；finger 是「手指」，masks 沒有手指；litter 是「垃圾」，散亂丟棄與淨化相反；falter 是「蹣跚、動搖」，描述人走路不穩，用在口罩上語意不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 11,
+   "q": "The river floodplain is extremely ______, which is why farmers there can grow two crops a year.",
+   "options": [
+    "A. reptile",
+    "B. textile",
+    "C. fertile",
+    "D. fragile"
+   ],
+   "answer": 2,
+   "explanation": "fertile＝肥沃的，fertile floodplain 與 grow two crops a year 直接呼應；reptile 是「爬蟲類的」，只能形容動物；textile 是「紡織的」，與土地肥沃無關；fragile 是「易碎的」，土壤不會碎。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 12,
+   "q": "The school will hold a ______ dinner on Friday, so students are asked to wear their best clothes.",
+   "options": [
+    "A. normal",
+    "B. former",
+    "C. informal",
+    "D. formal"
+   ],
+   "answer": 3,
+   "explanation": "formal dinner＝正式晚宴，與 wear their best clothes 相呼應；normal 是「一般的」，學校例行晚宴用不上；former 是「以前的」，不修飾晚宴；informal（不正式的）與穿著禮服的要求正好相反。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 13,
+   "q": "Traffic laws in the United States are made by each state, but rules about air travel are a ______ matter.",
+   "options": [
+    "A. federal",
+    "B. general",
+    "C. several",
+    "D. financial"
+   ],
+   "answer": 0,
+   "explanation": "federal＝聯邦的，指中央政府層級，與前半句的 each state 對照，正是聯邦制的基本事實；general 只表示「大體的」，說不出由哪一層級制定；several 是數量詞「幾個的」，不能當定語描述法律屬於哪一層級；financial 是「財務的」，與管轄權無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 14,
+   "q": "Residents who wish to question the new plan can sign up for the public ______ next Tuesday evening.",
+   "options": [
+    "A. form",
+    "B. fortune",
+    "C. forum",
+    "D. foster"
+   ],
+   "answer": 2,
+   "explanation": "forum＝論壇，public forum（公開論壇）正是讓居民發問的場合；form 是「表格、形式」，public form 不指發言場合；fortune 是「財富、運氣」，與會議無關；foster 是動詞「培養」，用在此處不成名詞。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 15,
+   "q": "The bus company added more vehicles because the ______ stops along this route were crowded, while the last one was empty.",
+   "options": [
+    "A. frequency",
+    "B. request",
+    "C. federal",
+    "D. frequent"
+   ],
+   "answer": 3,
+   "explanation": "frequent stops＝班次密集、停靠站多，與 crowded 相呼應，也對照「最後一站很空」；frequency 是名詞「頻率」，說 the frequency stops 不成句；request 是「請求」，與班車無關；federal 指聯邦的，說不出加車原因。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 16,
+   "q": "The ______ of the company said the new branch near the harbor would stay open all year.",
+   "options": [
+    "A. founder",
+    "B. blunder",
+    "C. thunder",
+    "D. wonder"
+   ],
+   "answer": 0,
+   "explanation": "founder＝創辦人，會代表公司對外宣布營業計畫，與 said the new branch…相合；blunder 是「大錯」，指事件或動作而非人；thunder 是「雷聲」，與發言者無關；wonder 是「驚奇」，也不能表示公司發言的人。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 17,
+   "q": "The old farmer was ______ to the students who cleared his yard and fixed his gate after the typhoon.",
+   "options": [
+    "A. graceful",
+    "B. hateful",
+    "C. ungrateful",
+    "D. grateful"
+   ],
+   "answer": 3,
+   "explanation": "be grateful to someone（對某人感激）與 students who cleared his yard 的善行相配；graceful 是「優雅的」，修飾動作或姿態；hateful 是「可恨的」，語意完全相反；ungrateful 是「不知感恩的」，用來形容接受幫助的一方語意相反。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 18,
+   "q": "The survey found that the pay ______ gap between men and women had narrowed over the past ten years.",
+   "options": [
+    "A. gender",
+    "B. center",
+    "C. ginger",
+    "D. leader"
+   ],
+   "answer": 0,
+   "explanation": "gender gap（性別差距）是固定搭配，與 between men and women 直接呼應；center 是「中心」，pay center 不成片語；ginger 是「薑」，與薪資無關；leader 是「領導人」，指人而非差距的類別。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 19,
+   "q": "Wind farms can ______ enough power for a small town, and they need no fuel at all.",
+   "options": [
+    "A. penetrate",
+    "B. general",
+    "C. generate",
+    "D. generator"
+   ],
+   "answer": 2,
+   "explanation": "generate power＝發電，與 need no fuel（不需燃料）相呼應；penetrate 是「穿透」，風力發電不是穿透；general 是「一般的」，general power 不成搭配；generator 是名詞「發電機」，前面已有主詞 Wind farms，不能直接當動詞用。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 20,
+   "q": "Recovery after the operation was ______, and it took the patient several months to walk again.",
+   "options": [
+    "A. graduate",
+    "B. gradual",
+    "C. grim",
+    "D. global"
+   ],
+   "answer": 1,
+   "explanation": "gradual＝逐漸的，與 several months 呼應；graduate 是「畢業生、畢業」，不能形容復原過程；grim 是「嚴酷的」，用來描述術後恢復只會讓語意變成病情悲觀；global 是「全球的」，個人復原談不上全球。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 21,
+   "q": "She had a great ______ of speaking in front of the class, so she read her speech aloud at home.",
+   "options": [
+    "A. gear",
+    "B. rear",
+    "C. fear",
+    "D. tear"
+   ],
+   "answer": 2,
+   "explanation": "a fear of（對…的恐懼）是固定搭配，與 so she read her speech aloud 的補救做法相合；gear 是「齒輪、工具」，與情緒無關；rear 是「後部的、臀部」，the rear of speaking 讀不出意義；tear 是「眼淚」或「撕裂」，與恐懼這種情緒不同。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 22,
+   "q": "After years of silence, he finally admitted his ______ and quietly asked his family for forgiveness.",
+   "options": [
+    "A. quilt",
+    "B. guilty",
+    "C. grief",
+    "D. guilt"
+   ],
+   "answer": 3,
+   "explanation": "admit one's guilt（承認自己的罪過）與 asked his family for forgiveness 一致；quilt 是「棉被」，與認罪無關；guilty 是形容「有罪的、內疚的」，admit his guilty 語法不通；grief 是「悲傷」，多指喪親之痛，沒有可承認的法律或道德意義。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 23,
+   "q": "The speaker raised a small ______ to ask for silence, and the noisy room went quiet at once.",
+   "options": [
+    "A. texture",
+    "B. gesture",
+    "C. posture",
+    "D. lecture"
+   ],
+   "answer": 1,
+   "explanation": "raise a gesture（做手勢）搭配自然，且與 to ask for silence 一致；texture 是「質地、紋理」，只能摸到看不見，做不出來；posture 是「姿勢、體位」，是身體狀態而非用來要求安靜的訊號；lecture 是「演講」，演講不會讓房間安靜下來。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 24,
+   "q": "Many visitors come to see the old town hall, which the town lists as part of its cultural ______.",
+   "options": [
+    "A. heritage",
+    "B. hesitate",
+    "C. hazard",
+    "D. horizon"
+   ],
+   "answer": 0,
+   "explanation": "cultural heritage＝文化遺產，舊建築被列為遺產正是吸引訪客的理由；hesitate 是「猶豫」，動詞不能放在所有格後作名詞；hazard 是「危險」，不會被 town 列為文化資產；horizon 是「地平線、眼界」，與建築無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 25,
+   "q": "The photographer chose a long shot to ______ the whole city rather than a single face in the crowd.",
+   "options": [
+    "A. hesitate",
+    "B. highlight",
+    "C. hinder",
+    "D. hunt"
+   ],
+   "answer": 1,
+   "explanation": "highlight＝突顯、強調，用長鏡頭襯出整座城市正合此意；hesitate 是「猶豫」，與取景無關；hinder 是「阻礙」，是負面動作，與拍攝目的相反；hunt 是「狩獵、追尋」，談的是尋找獵物或線索。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 26,
+   "q": "The judge gave the driver a ______ sentence, saying this was the worst case in twenty years.",
+   "options": [
+    "A. harsh",
+    "B. hollow",
+    "C. humble",
+    "D. humid"
+   ],
+   "answer": 0,
+   "explanation": "harsh＝嚴厲的，a harsh sentence（嚴厲的刑期）與「二十年來最嚴重的案子」呼應；hollow 是「空洞的」，與 hollow 的字形相近但語意不同；humble 是「謙遜的」，用來形容刑期語意相反；humid 是「潮溼的」，與判決無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 27,
+   "q": "A survey of every ______ in the district found that few families own a car or a motorcycle.",
+   "options": [
+    "A. harmony",
+    "B. housing",
+    "C. horizon",
+    "D. household"
+   ],
+   "answer": 3,
+   "explanation": "survey of every household（調查每一戶人家）與 few families（少數家庭）相呼應；housing 指整體的住宅供給，every housing 不成片語；horizon 是地平線，與住戶無關；harmony 是「和諧」，survey of every harmony 語意不通。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 28,
+   "q": "Few people in the remote village had ever seen the sea, and the ______ broadened as the boat turned south.",
+   "options": [
+    "A. hardship",
+    "B. harmony",
+    "C. horizon",
+    "D. housing"
+   ],
+   "answer": 2,
+   "explanation": "the horizon broadened＝地平線變寬，視野隨船轉向南方而擴大，與從未見過海的背景相合；hardship 是「困苦」，不會「變寬」；harmony 是「和諧」，同樣不與 broaden 搭配；housing 是「住宅」，不屬於視野範圍。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 29,
+   "q": "The teacher was ______ when the class would not settle down, and his voice finally filled the room.",
+   "options": [
+    "A. curious",
+    "B. various",
+    "C. furious",
+    "D. dubious"
+   ],
+   "answer": 2,
+   "explanation": "furious＝盛怒的，與 his voice finally filled the room 那種提高嗓門的結果相合；curious 是「好奇的」，語氣不符；various 是「各種各樣的」，不能描述人的情緒；dubious 是「半信半疑的」，與生氣無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolb-v2",
+   "section": "詞彙題",
+   "qnum": 30,
+   "q": "The witness began to ______ when the police asked where he had been that night, and he looked away.",
+   "options": [
+    "A. hesitate",
+    "B. meditate",
+    "C. falter",
+    "D. entertain"
+   ],
+   "answer": 0,
+   "explanation": "hesitate＝猶豫，hesitate when…（在…時候猶豫起來）與 and he looked away 的肢體語一致；meditate 是「沉思、冥想」，是平靜的行為；falter 是「蹣跚、動搖」，多形容聲音或步伐；entertain 是「娛樂、考慮某念頭」，說 witness began to entertain 語意不通。"
+  }
+ ]
+}

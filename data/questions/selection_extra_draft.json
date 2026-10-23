@@ -1,0 +1,96 @@
+{
+  "note": "4.1.2 單選題擴充草稿（12 題）。僅供 GLM 審核用，未併入正式題庫——本檔不被任何程式讀取（js/practice/selection.js:13 只抓 data/questions/selection.json）。審核通過後由管理員手動併入 selection.json 的 single 陣列。",
+  "review_status": "pending_glm_review",
+  "draft_meta": {
+    "authored": "2026-10-02",
+    "style_reference": "4.0/4.0.1/tools/exam_extract/stats/sentences_pool.json（113/114 學測模擬考題句型）＋ freq_surface.json（高頻詞表）",
+    "vocab_check": "所有選項單字已逐一回查 4.0/4.1.1/data/words.json（7106 字）確認存在；答案詞與干擾詞等級見各題 level 欄",
+    "rule": "語法與答案正確性優先；每題單一最佳解；不採用超綱或語意可兩解的選項"
+  },
+  "single": [
+    {
+      "q": "Regular exercise is ______ to good health; without it, the risk of heart disease rises sharply.",
+      "options": ["optional", "essential", "excessive", "efficient"],
+      "answer": 1,
+      "level": ["Lv5", "Lv4", "Lv5", "Lv3"],
+      "explanation": "essential ＝不可或缺的、基本的，後面接 to 構成 be essential to。分號後的 without it…rising sharply 反證前面必須是不可或缺。optional（可選的）、excessive（過多的）、efficient（高效率的）都不構成「少了就不健康」的語意。"
+    },
+    {
+      "q": "Walking to school instead of taking a car can also ______ to a reduction in air pollution.",
+      "options": ["consume", "contain", "contribute", "consist"],
+      "answer": 2,
+      "level": ["Lv4", "Lv2", "Lv4", "Lv4"],
+      "explanation": "contribute to ＝「有助於、造成（某結果）」，與後面的 a reduction 形成因果。consume（消耗／吃完）與 contain（包含）都不能直接接 to 表達貢獻；consist 固定搭配是 consist of（由…組成），接 to 語法不成立。"
+    },
+    {
+      "q": "Using ______ amounts of fertilizer may contaminate the soil and harm the food chain.",
+      "options": ["excessive", "essential", "virtual", "genuine"],
+      "answer": 0,
+      "level": ["Lv5", "Lv4", "Lv5", "Lv4"],
+      "explanation": "後果 contaminate the soil and harm the food chain（污染土壤、危害食物鏈）指向「用量過多」，故用 excessive（過多的）。essential（必要的）、virtual（虛擬的）、genuine（真實的）都與「過量」無關。"
+    },
+    {
+      "q": "______ the heavy traffic, the shop on the corner is always crowded at lunchtime.",
+      "options": ["despite", "because", "unless", "although"],
+      "answer": 0,
+      "level": ["Lv4", "Lv1", "Lv2", "Lv1"],
+      "explanation": "句意是讓步：雖然交通壅塞，店裡午餐時依然人潮拥挤。despite 是介系詞，後接名詞 the heavy traffic，語法與語意皆正確。although 雖也可接子句但後面必須是子句（不能直接接名詞片語）；because 表原因、unless 表條件，與讓步語意相反。"
+    },
+    {
+      "q": "The shop sells ______ kinds of tea, from green to black.",
+      "options": ["valuable", "various", "virtual", "likely"],
+      "answer": 1,
+      "level": ["Lv2", "Lv3", "Lv5", "Lv2"],
+      "explanation": "from green to black 暗示種類很多，用 various（各種各樣的）修飾複數名詞 kinds。valuable（有價值的）、virtual（虛擬的）、likely（可能的）都不表「種類繁多」。"
+    },
+    {
+      "q": "In some villages, families still ______ traditional recipes and pass them on to the next generation.",
+      "options": ["prevent", "pretend", "present", "preserve"],
+      "answer": 3,
+      "level": ["Lv3", "Lv3", "Lv1", "Lv4"],
+      "explanation": "與 pass them on to the next generation（傳給下一代）呼應的是「保存、延續」，故用 preserve（保存、維護）。prevent 防止、pretend 假裝、present 呈現／現在的，語意都不成立。"
+    },
+    {
+      "q": "The view from the top of the mountain is so ______ that tourists rarely forget it.",
+      "options": ["excessive", "optional", "sufficient", "impressive"],
+      "answer": 3,
+      "level": ["Lv5", "Lv5", "Lv3", "Lv2"],
+      "explanation": "so … that ＋ rarely forget（很少忘記）帶正面讚嘆，需用 impressive（令人印象深刻的）。excessive（過多的）、optional（可選的）、sufficient（足夠的）都無法構成令人難忘的語意。"
+    },
+    {
+      "q": "The new lighting system in the hall is far more ______ than the old one, using only a third of the electricity.",
+      "options": ["expensive", "efficient", "excessive", "optional"],
+      "answer": 1,
+      "level": ["Lv1", "Lv3", "Lv5", "Lv5"],
+      "explanation": "using only a third of the electricity（只用三分之一的電）是節能數據，與 far more ___ than 構成比較，故用 efficient（有效率的）。expensive 是價格、excessive 是數量過多、optional 是可選的，都不能解釋省電。"
+    },
+    {
+      "q": "The city decided to ______ a fine on drivers who park in front of the school gate.",
+      "options": ["impress", "impose", "expose", "dispose"],
+      "answer": 1,
+      "level": ["Lv3", "Lv4", "Lv4", "Lv6"],
+      "explanation": "impose a fine on … 是「對…罰款」的固定搭配，impose ＝ 把（稅金、處罰）強加於。impress（留下印象）、expose（使暴露）、dispose（處置）都沒有「加諸他人身上」的語意。"
+    },
+    {
+      "q": "The difference between the two groups was ______: one used public transport every day, while the other drove a car.",
+      "options": ["specific", "sufficient", "sensible", "significant"],
+      "answer": 3,
+      "level": ["Lv3", "Lv3", "Lv3", "Lv3"],
+      "explanation": "分號後強烈對比兩組的通勤方式，表示差異很大，故用 significant（顯著的、重要的）。specific（特定的）、sufficient（充足的）、sensible（明智的）都沒有「差異大」的語意。"
+    },
+    {
+      "q": "Children who are ______ to a new environment often adapt more slowly than those raised in big cities.",
+      "options": ["relative", "respectable", "resistant", "responsible"],
+      "answer": 2,
+      "level": ["Lv1", "Lv4", "Lv6", "Lv2"],
+      "explanation": "be resistant to ＝「對…有抵抗力的」，後接 new environment 與後面 adapt more slowly（適應較慢）互相呼應。relative（相對的）、respectable（值得尊敬的）、responsible（負責任的）都放不進 be ___ to 的這個句型。"
+    },
+    {
+      "q": "Screen time has a strong ______ on teenagers' sleep; the more they scroll at night, the later they fall asleep.",
+      "options": ["impulse", "import", "impression", "impact"],
+      "answer": 3,
+      "level": ["Lv5", "Lv3", "Lv4", "Lv4"],
+      "explanation": "have an impact on … 是固定搭配，指「對…造成影響」。impulse 衝動、import 進口、impression 印象都不能與 have a strong ___ on 搭配。"
+    }
+  ]
+}

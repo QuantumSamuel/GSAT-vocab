@@ -1,0 +1,1711 @@
+{
+ "meta": {
+  "sourceType": "ai",
+  "pool": "A",
+  "generator": "MiniMax-M3.1-Flash-Preview",
+  "generatedAt": "2026-10-02T18:33:25.172Z",
+  "reviewStatus": "glm_review_passed",
+  "note": "Pool A 批次：綜合測驗 8 組＋文意選填 6 組",
+  "integrationNote": "篇章結構各題 option_texts 排列不同，js/practice/selection.js toDiscourseItems() 現行程式會整組丟棄，需擴充後才可載入。",
+  "generatedBy": "tools/build_poola_v1.mjs",
+  "reviewedAt": "2026-10-03"
+ },
+ "cloze": [
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 1,
+   "title": "老街修鞋攤",
+   "grammarPoint": "動詞時態（過去簡單／過去進行／現在完成＋過去分詞／過去完成／現在完成＋for）",
+   "passage": "The man at this corner has worked here for thirty years. He 11. his very first pair of leather shoes when he was only nineteen. While his neighbors slept, he 12. under a single bulb, sanding the same pair of boots again and again. Boots that older children 13. are handed down to younger siblings. Every customer that he 14. last month has come back at least twice. The bench he has used 15. is now too small for his tools.",
+   "wordCount": 81,
+   "questions": [
+    {
+     "qnum": 11,
+     "stem": "He 11. his very first pair of leather shoes when he was only nineteen.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "repairs",
+      "repaired",
+      "has repaired",
+      "is repairing"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「when he was only nineteen」是明確的過去時間點，動作早已完成、與現在無關，用過去簡單式 repaired。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 12,
+     "stem": "While his neighbors slept, he 12. under a single bulb, sanding the same pair of boots again and again.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "has worked",
+      "was working",
+      "will work",
+      "works"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "「While his neighbors slept」是過去的背景時段，「he ＿＿ under a single bulb」必須用過去進行式 was working 才表示當下正在做。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 13,
+     "stem": "Boots that older children 13. are handed down to younger siblings.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "have used",
+      "use",
+      "uses",
+      "used"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "「Boots that older children have used」用現在完成式 have + 過去分詞，對 boots 而言是被動的意義——「孩子們穿過、已磨舊的靴子」，強調延續到現在的狀態。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 14,
+     "stem": "Every customer that he 14. last month has come back at least twice.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "helps",
+      "helped",
+      "help",
+      "helping"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「has come back at least twice」表示到現在為止已完成、且早於 has come back 發生的動作，用過去完成式 helped。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 15,
+     "stem": "The bench he has used 15. is now too small for his tools.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "for thirty years",
+      "since thirty years",
+      "in thirty years",
+      "after thirty years"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「has used ＿＿」是現在完成式搭配表示持續多久的時間段，固定用 for；since 之後接時間點，in 表示「三十年後」，after 表示「三十年後才」。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 2,
+   "title": "潮間帶觀察",
+   "grammarPoint": "介系詞（搭配、比較、方向、be in 抽象名詞）",
+   "passage": "When the tide goes out twice a day, the rocks along the wall turn into a classroom. Children 16. the shallow pools, lifting up stones to look for small crabs. They must be careful 17. the water, which can rise without warning. The water is often colder 18. the air on a windy afternoon. An old teacher usually sits 19. the steps with a bucket and a paper chart. She says the best part of the lesson 20. knowing when to stop looking and simply watch.",
+   "wordCount": 86,
+   "questions": [
+    {
+     "qnum": 16,
+     "stem": "Children 16. the shallow pools, lifting up stones to look for small crabs.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "search for",
+      "search out",
+      "search",
+      "search up"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "search 後直接接受詞、不加任何介系詞，故選 search；search for the shallow pools 會變成語意重複的「尋找那些淺水窪」。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 17,
+     "stem": "They must be careful 17. the water, which can rise without warning.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "of",
+      "with",
+      "for",
+      "about"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "be careful of sth. 是固定搭配，of 指出「小心」的對象。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 18,
+     "stem": "The water is often colder 18. the air on a windy afternoon.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "like",
+      "from",
+      "unlike",
+      "than"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "前面已用比較級 colder，比較兩者必須用 than；unlike 表示「不像」、from 表示來源，都不能接比較級。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 19,
+     "stem": "An old teacher usually sits 19. the steps with a bucket and a paper chart.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "behind",
+      "under",
+      "on",
+      "across"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "sit 表示就位於某一表面時固定接 on；across 只能搭配 walk、run 之類的移動動詞。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 20,
+     "stem": "She says the best part of the lesson 20. knowing when to stop looking and simply watch.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "is at",
+      "is of",
+      "is in",
+      "is like"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「The best part of the lesson is in knowing…」用 be in + 抽象名詞表示「在於」，符合此處要說「價值所在」的語意；be like 是「像」，be at 表示地點或時間，都不合語意。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 3,
+   "title": "社區共餐",
+   "grammarPoint": "連接詞（目的、讓步、假設、同時、起點）",
+   "passage": "Every Friday a small church opens its hall, and the meal, though simple, always fills the room with talk and laughter. The hall is opened 21. all who live nearby can eat for free. 22. the weather is poor, the same families still walk the long way to join. 23. the program depends only on giving, a single quiet week can empty the table. 24. the soup is being served, neighbors pass around buckets of rice. And 25. the hall smells of fried garlic, strangers soon start talking.",
+   "wordCount": 88,
+   "questions": [
+    {
+     "qnum": 21,
+     "stem": "The hall is opened 21. all who live nearby can eat for free.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "so that",
+      "in order",
+      "as if",
+      "even though"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "前面是「開放場地」這個動作、後面是「任何人都能免費吃」這個目的，用 so that 引導目的子句最自然；in order 之後須接 to do。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 22,
+     "stem": "22. the weather is poor, the same families still walk the long way to join.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Unless",
+      "As long",
+      "Although",
+      "Because"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "前半句說「天氣差」、後半句說「他們還是走很遠來參加」，語意相反，用 Although 引導讓步子句。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 23,
+     "stem": "23. the program depends only on giving, a single quiet week can empty the table.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Even if",
+      "Since",
+      "Wherever",
+      "As soon"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「單靠捐款維持」與「安靜一週就可能空桌」之間是假設的讓步關係，用 Even if（即使）最貼切。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 24,
+     "stem": "24. the soup is being served, neighbors pass around buckets of rice.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Because",
+      "Unless",
+      "Meanwhile",
+      "Although"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「盛湯」與「鄰居傳飯」是同時進行的兩個動作，用 Meanwhile（同時）最貼切。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 25,
+     "stem": "And 25. the hall smells of fried garlic, strangers soon start talking.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "once",
+      "once more",
+      "only once",
+      "the once"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "「一聞到炸蒜味」是「陌生人開始聊天」的起點時間，用 once 表「一……就……」。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 4,
+   "title": "冬夜觀星",
+   "grammarPoint": "詞類轉換（同一詞根的名詞／形容詞／副詞）",
+   "passage": "On clear winter nights a small group of students walks up the hill and watches the sky. The old neighbors treat one another with great 26., and no one on the street feels alone. The children show a strong 27. in astronomy, and two of them already plan to study it. Please handle the old instruments 28., because they are hard to replace. The store keeps one written 29. of every repair, so the next worker knows what was done.",
+   "wordCount": 80,
+   "questions": [
+    {
+     "qnum": 26,
+     "stem": "The old neighbors treat one another with great 26., and no one on the street feels alone.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "kind",
+      "kindly",
+      "kinder",
+      "kindness"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "「with great ＿＿」要用名詞作介詞的受詞，with kindness 才是道地的搭配；kind 是形容詞、kindly 是副詞、kinder 是比較級。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 27,
+     "stem": "The children show a strong 27. in astronomy, and two of them already plan to study it.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "interested",
+      "interest",
+      "interesting",
+      "interests"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「a strong ＿＿ in astronomy」要用名詞 interest；interested 與 interesting 都是形容詞，須接人而不是接 in。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 28,
+     "stem": "Please handle the old instruments 28., because they are hard to replace.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "kindly",
+      "kind",
+      "kindness",
+      "kinder"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "「handle the old instruments ＿＿」修飾動詞 handle 的是副詞，用 kindly（小心地）；後面接 because 更不能接形容詞。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 29,
+     "stem": "The store keeps one written 29. of every repair, so the next worker knows what was done.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "orderly",
+      "orders",
+      "order",
+      "ordering"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「one written ＿＿ of every repair」用可數名詞 order（紀錄）；orderly 是形容詞、orders 與 ordering 在此語意都不通。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 5,
+   "title": "無障礙車站改造",
+   "grammarPoint": "語態（主動與被動的時態搭配）",
+   "passage": "When the station was fixed last year, several slopes 30. by workers, and the old lift was taken out. The plans 31. with wheelchair users before any concrete was poured, and several ideas changed the design. Today every platform 32. by a new slope, so a passenger never has to ask for help. The heavy work 33. by people who had grown up near the station. These days the new hall 34. every morning, and the last visitors leave before nine.",
+   "wordCount": 81,
+   "questions": [
+    {
+     "qnum": 30,
+     "stem": "When the station was fixed last year, several slopes 30. by workers, and the old lift was taken out.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "install",
+      "have installed",
+      "were installed",
+      "are installing"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "ramps 是被動受詞，動工已完成且錨定在過去的 was fixed，故用過去被動 were installed（install 的過去分詞）。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 31,
+     "stem": "The plans 31. with wheelchair users before any concrete was poured, and several ideas changed the design.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "were shown",
+      "show",
+      "are showing",
+      "had shown"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "the plans 是受詞，動作由設計團隊以外的使用者執行，且在「澆混凝土之前」完成，用過去被動 were shown。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 32,
+     "stem": "Today every platform 32. by a new slope, so a passenger never has to ask for help.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "reaches",
+      "can be reached",
+      "was reached",
+      "has reached"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「Today every platform ＿＿ by a new ramp」說明的是現況；platform 是被到達的對象，而 can be reached 呼應「不必再求助」的語意，用現在被動＋情態動詞。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 33,
+     "stem": "The heavy work 33. by people who had grown up near the station.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "does",
+      "did",
+      "has done",
+      "was done"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "The heavy work 是受詞、由 people 執行且已完成，用過去被動 was done。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 34,
+     "stem": "These days the new hall 34. every morning, and the last visitors leave before nine.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "cleans",
+      "cleaned",
+      "is cleaned",
+      "was cleaned"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「These days」是現在的習慣，且 hall 是被清掃的對象，用現在被動 is cleaned。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 6,
+   "title": "社區路跑",
+   "grammarPoint": "比較級與最高級（than／the＋最高級／Not only…）",
+   "passage": "The neighborhood race covers only one park. The youngest runner is seven, the oldest is seventy-two, and the 35. course is deliberately short. It is 36. than a marathon, so most people finish in an hour. Not only the 37. runners win a ribbon; every finisher gets fruit soup. The last hill is the 38. part, and all of them climb it twice. This is the 39. event of the year; the first race drew only twenty people.",
+   "wordCount": 78,
+   "questions": [
+    {
+     "qnum": 35,
+     "stem": "The neighborhood race covers only one park. The youngest runner is seven, the oldest is seventy-two, and the 35. course is deliberately short.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "long",
+      "shortest",
+      "longer",
+      "longest"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「covers only one park」可知是最短的一段路線，形容詞最高級前須加 the，故用 shortest。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 36,
+     "stem": "It is 36. than a marathon, so most people finish in an hour.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "short",
+      "shortest",
+      "shorter",
+      "more short"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「It is ＿＿ than a marathon」是兩者相比，前面已出現比較級 than，用比較級 shorter。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 37,
+     "stem": "Not only the 37. runners win a ribbon; every finisher gets fruit soup.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "fast",
+      "faster",
+      "more fast",
+      "fastest"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "「Not only the ＿＿ runners…」與後半「every finisher」形成對照，指全部跑者中最快的那些；最高級前已有 the。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 38,
+     "stem": "The last hill is the 38. part, and all of them climb it twice.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "hardest",
+      "hard",
+      "harder",
+      "most hard"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "「The last hill is the ＿＿ part」前面已用 the，且範圍限定在這一條路線之內，選出最難爬的那一段，用最高級 hardest。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 39,
+     "stem": "This is the 39. event of the year; the first race drew only twenty people.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "better",
+      "best",
+      "good",
+      "well"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "「This is the ＿＿ event of the year」已用 the、且限定在「今年」的範圍內比較，用最高級 best。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 7,
+   "title": "清晨魚市場",
+   "grammarPoint": "冠詞（a／an／the／不填）與可數不可數的搭配",
+   "passage": "At four in the morning, 40. fish market in town is already crowded. Workers carry 41. ice from a truck outside, and spread it across the counters. Then each of them holds up 42. fish so customers can judge the weight. By seven, almost 43. fish is all that remains. The staff wash 44. tables and the floor with cold water before the shops open. A person who is early enough can buy 45. ice from a stall at the far end of the street.",
+   "wordCount": 85,
+   "questions": [
+    {
+     "qnum": 40,
+     "stem": "At four in the morning, 40. fish market in town is already crowded.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "a",
+      "an",
+      "the",
+      "--"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "in town 已限定為「鎮上那座魚市場」，是特定的一間，特指須用 the。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 41,
+     "stem": "Workers carry 41. ice from a truck outside, and spread it across the counters.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "an",
+      "the",
+      "--",
+      "a"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "ice 是不可數名詞，此處泛指這種物質，句意已由上下文交代，不加冠詞。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 42,
+     "stem": "Then each of them holds up 42. fish so customers can judge the weight.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "an",
+      "a",
+      "the",
+      "--"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "fish 此處可數，第一次出現、泛指單數的一條魚，用 a。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 43,
+     "stem": "By seven, almost 43. fish is all that remains.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "an",
+      "the",
+      "a",
+      "--"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「almost ＿＿ fish」用 almost 修飾不可數名詞泛指「魚」這種物質，不加冠詞；若加 a 或 the 就不再是泛指整體。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 44,
+     "stem": "The staff wash 44. tables and the floor with cold water before the shops open.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "the",
+      "a",
+      "an",
+      "--"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "「wash ＿＿ tables」承接前面賣魚的攤位，聽眾已知道是哪幾張桌子，須用 the。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 45,
+     "stem": "A person who is early enough can buy 45. ice from a stall at the far end of the street.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "an",
+      "the",
+      "--",
+      "a"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "「buy ＿＿ ice」是第一次出現、且泛指任何一袋冰，用 a 點出「一袋」這個量。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "綜合測驗",
+   "group": 8,
+   "title": "海灘清道夫",
+   "grammarPoint": "非限定動詞（to do／doing／stop to do）",
+   "passage": "Once a month a small group of students meets 46. the beach to clear up plastic waste. They 47. carrying buckets, and they arrive early enough to sort the waste before the crowds appear. The team leader asks everyone 48. the sharp pieces twice, because cuts in sea water take long to heal. They say the work is far better 49. side by side than alone. After two hours, the team 50. to count what it has picked up and plan the next trip.",
+   "wordCount": 84,
+   "questions": [
+    {
+     "qnum": 46,
+     "stem": "Once a month a small group of students meets 46. the beach to clear up plastic waste.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "cleaning",
+      "clean",
+      "to clean",
+      "cleaned"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「meets ＿＿ the beach to clear up…」先定動作再說地點，用不定式 to clean 最順；若用 cleaning 會變成「在打掃的同時正好碰面」，語意錯亂。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 47,
+     "stem": "They 47. carrying buckets, and they arrive early enough to sort the waste before the crowds appear.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "enjoys",
+      "enjoy",
+      "enjoying",
+      "enjoyed"
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "主語 They 是複數、且 enjoy 之後只能接動名詞（enjoy carrying），故用原形 enjoy。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 48,
+     "stem": "The team leader asks everyone 48. the sharp pieces twice, because cuts in sea water take long to heal.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "checking",
+      "checked",
+      "checks",
+      "to check"
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "ask someone to do sth. 是固定句型，ask 後面接人、再接 to do。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 49,
+     "stem": "They say the work is far better 49. side by side than alone.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "doing",
+      "do",
+      "done",
+      "being done"
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "「is far easier ＿＿ side by side」easy 之後接動名詞，並列 side by side 與 alone。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 50,
+     "stem": "After two hours, the team 50. to count what it has picked up and plan the next trip.",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "stops",
+      "stops for",
+      "stops to",
+      "stops in"
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "「After two hours, the team ＿＿ to count…」用 stop to do 表示「先停下、再進行下一個動作」；stops 只表示停下，不會接續到 to count。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  }
+ ],
+ "discourse": [
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "篇章結構",
+   "group": 1,
+   "title": "老屋翻修與地方技藝",
+   "passage": "Several small towns in the south now face the same problem: old houses stand empty, and the young people who once lived in them have left for big cities. ❶ Fixing an empty house usually costs less than pulling it down and building again. ❷ The first one, however, did not go well: the wood was wet, and the work took four extra months. ❸ One such project in a mountain town began when an old engineer gave free classes on wooden beams. ❹ Towns hoping to copy the plan should therefore listen to the people who already live in these old streets. ",
+   "blanks": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D"
+   },
+   "blankKeys": [
+    1,
+    0,
+    3,
+    2
+   ],
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The first one, however, did not go well: the wood was wet, and the work took four extra months.",
+    "Fixing an empty house usually costs less than pulling it down and building again.",
+    "Towns hoping to copy the plan should therefore listen to the people who already live in these old streets.",
+    "One such project in a mountain town began when an old engineer gave free classes on wooden beams."
+   ],
+   "option_pool": "per-question",
+   "wordCount": 103,
+   "questions": [
+    {
+     "qnum": 51,
+     "stem": "哪一句放入空格 ❶ 最恰當？",
+     "passage": "Several small towns in the south now face the same problem: old houses stand empty, and the young people who once lived in them have left for big cities. ❶ Fixing an empty house usually costs less than pulling it down and building again. ❷ The first one, however, did not go well: the wood was wet, and the work took four extra months. ❸ One such project in a mountain town began when an old engineer gave free classes on wooden beams. ❹ Towns hoping to copy the plan should therefore listen to the people who already live in these old streets. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "The first one, however, did not go well: the wood was wet, and the work took four extra months.",
+      "Fixing an empty house usually costs less than pulling it down and building again.",
+      "One such project in a mountain town began when an old engineer gave free classes on wooden beams.",
+      "Towns hoping to copy the plan should therefore listen to the people who already live in these old streets."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "第一段只提出問題，這一句要補上全篇的作法主張（翻修比拆除便宜），後面才有例子可依循。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 52,
+     "stem": "哪一句放入空格 ❷ 最恰當？",
+     "passage": "Several small towns in the south now face the same problem: old houses stand empty, and the young people who once lived in them have left for big cities. ❶ Fixing an empty house usually costs less than pulling it down and building again. ❷ The first one, however, did not go well: the wood was wet, and the work took four extra months. ❸ One such project in a mountain town began when an old engineer gave free classes on wooden beams. ❹ Towns hoping to copy the plan should therefore listen to the people who already live in these old streets. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Towns hoping to copy the plan should therefore listen to the people who already live in these old streets.",
+      "One such project in a mountain town began when an old engineer gave free classes on wooden beams.",
+      "Fixing an empty house usually costs less than pulling it down and building again.",
+      "The first one, however, did not go well: the wood was wet, and the work took four extra months."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "however 把主張翻成真實的困難，讀者才知道事情並不順利。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 53,
+     "stem": "哪一句放入空格 ❸ 最恰當？",
+     "passage": "Several small towns in the south now face the same problem: old houses stand empty, and the young people who once lived in them have left for big cities. ❶ Fixing an empty house usually costs less than pulling it down and building again. ❷ The first one, however, did not go well: the wood was wet, and the work took four extra months. ❸ One such project in a mountain town began when an old engineer gave free classes on wooden beams. ❹ Towns hoping to copy the plan should therefore listen to the people who already live in these old streets. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Fixing an empty house usually costs less than pulling it down and building again.",
+      "One such project in a mountain town began when an old engineer gave free classes on wooden beams.",
+      "The first one, however, did not go well: the wood was wet, and the work took four extra months.",
+      "Towns hoping to copy the plan should therefore listen to the people who already live in these old streets."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "One such project 把前面的主張收斂成一個具體例子，內容也與 ❶ 的做法直接對應。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 54,
+     "stem": "哪一句放入空格 ❹ 最恰當？",
+     "passage": "Several small towns in the south now face the same problem: old houses stand empty, and the young people who once lived in them have left for big cities. ❶ Fixing an empty house usually costs less than pulling it down and building again. ❷ The first one, however, did not go well: the wood was wet, and the work took four extra months. ❸ One such project in a mountain town began when an old engineer gave free classes on wooden beams. ❹ Towns hoping to copy the plan should therefore listen to the people who already live in these old streets. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "One such project in a mountain town began when an old engineer gave free classes on wooden beams.",
+      "Towns hoping to copy the plan should therefore listen to the people who already live in these old streets.",
+      "The first one, however, did not go well: the wood was wet, and the work took four extra months.",
+      "Fixing an empty house usually costs less than pulling it down and building again."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "therefore 需要前面已可引用的根據，放在最後收束成給其他城鎮的建議最自然。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "篇章結構",
+   "group": 2,
+   "title": "夜市小吃的學徒制",
+   "passage": "Walk through a night market in the south and you will smell chili and frying oil long before you see anything. ❶ Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience. ❷ Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment. ❸ The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone. ❹ A number of young people have already signed up, and three old stall owners will teach these skills free of charge. ",
+   "blanks": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D"
+   },
+   "blankKeys": [
+    1,
+    3,
+    0,
+    2
+   ],
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone.",
+    "Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience.",
+    "A number of young people have already signed up, and three old stall owners will teach these skills free of charge.",
+    "Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment."
+   ],
+   "option_pool": "per-question",
+   "wordCount": 117,
+   "questions": [
+    {
+     "qnum": 55,
+     "stem": "哪一句放入空格 ❶ 最恰當？",
+     "passage": "Walk through a night market in the south and you will smell chili and frying oil long before you see anything. ❶ Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience. ❷ Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment. ❸ The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone. ❹ A number of young people have already signed up, and three old stall owners will teach these skills free of charge. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone.",
+      "Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience.",
+      "Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment.",
+      "A number of young people have already signed up, and three old stall owners will teach these skills free of charge."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "開場只寫氣味，Behind each stall stands… 把焦點從場景帶到人，是全篇的第一個主角。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 56,
+     "stem": "哪一句放入空格 ❷ 最恰當？",
+     "passage": "Walk through a night market in the south and you will smell chili and frying oil long before you see anything. ❶ Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience. ❷ Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment. ❸ The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone. ❹ A number of young people have already signed up, and three old stall owners will teach these skills free of charge. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience.",
+      "A number of young people have already signed up, and three old stall owners will teach these skills free of charge.",
+      "Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment.",
+      "The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "Recipes are often not written down 緊接著說明上一句的學藝過程，解釋技藝究竟怎麼傳下來。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 57,
+     "stem": "哪一句放入空格 ❸ 最恰當？",
+     "passage": "Walk through a night market in the south and you will smell chili and frying oil long before you see anything. ❶ Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience. ❷ Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment. ❸ The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone. ❹ A number of young people have already signed up, and three old stall owners will teach these skills free of charge. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "A number of young people have already signed up, and three old stall owners will teach these skills free of charge.",
+      "Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment.",
+      "The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone.",
+      "Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "The teachers of a new weekend class 承接 ❷ 的傳承問題，把話題推到打算採取的行動。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 58,
+     "stem": "哪一句放入空格 ❹ 最恰當？",
+     "passage": "Walk through a night market in the south and you will smell chili and frying oil long before you see anything. ❶ Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience. ❷ Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment. ❸ The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone. ❹ A number of young people have already signed up, and three old stall owners will teach these skills free of charge. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Recipes are often not written down, since the best ones were learned by watching an old cook's hands and tasting the oil at the right moment.",
+      "The teachers of a new weekend class hope that the old flavors will survive long after the stalls themselves are gone.",
+      "Behind each stall stands a cook who began, like most cooks here, with nothing but a borrowed pot and a great deal of patience.",
+      "A number of young people have already signed up, and three old stall owners will teach these skills free of charge."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "A number of young people have already signed up 說明課程為什麼辦得起來，放在最後交代結果最順。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "篇章結構",
+   "group": 3,
+   "title": "屋頂菜園",
+   "passage": "On top of an old apartment building, rows of vegetables now grow where nobody has walked for years. ❶ The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy. ❷ Families take turns carrying water up the stairs, and each one looks after a small patch of its own. ❸ Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice. ❹ For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest. ",
+   "blanks": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D"
+   },
+   "blankKeys": [
+    2,
+    1,
+    3,
+    0
+   ],
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest.",
+    "Families take turns carrying water up the stairs, and each one looks after a small patch of its own.",
+    "The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy.",
+    "Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice."
+   ],
+   "option_pool": "per-question",
+   "wordCount": 113,
+   "questions": [
+    {
+     "qnum": 59,
+     "stem": "哪一句放入空格 ❶ 最恰當？",
+     "passage": "On top of an old apartment building, rows of vegetables now grow where nobody has walked for years. ❶ The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy. ❷ Families take turns carrying water up the stairs, and each one looks after a small patch of its own. ❸ Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice. ❹ For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest.",
+      "Families take turns carrying water up the stairs, and each one looks after a small patch of its own.",
+      "Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice.",
+      "The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "The plan came from… 交代菜園怎麼開始的，是全篇的起點。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 60,
+     "stem": "哪一句放入空格 ❷ 最恰當？",
+     "passage": "On top of an old apartment building, rows of vegetables now grow where nobody has walked for years. ❶ The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy. ❷ Families take turns carrying water up the stairs, and each one looks after a small patch of its own. ❸ Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice. ❹ For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Families take turns carrying water up the stairs, and each one looks after a small patch of its own.",
+      "The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy.",
+      "Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice.",
+      "For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "Families take turns 描述實際運作方式，緊接著 ❶ 的構想往下寫最自然。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 61,
+     "stem": "哪一句放入空格 ❸ 最恰當？",
+     "passage": "On top of an old apartment building, rows of vegetables now grow where nobody has walked for years. ❶ The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy. ❷ Families take turns carrying water up the stairs, and each one looks after a small patch of its own. ❸ Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice. ❹ For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy.",
+      "Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice.",
+      "For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest.",
+      "Families take turns carrying water up the stairs, and each one looks after a small patch of its own."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "Besides 開頭表示好處已經提過，這裡再補一層人際關係上的收穫。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 62,
+     "stem": "哪一句放入空格 ❹ 最恰當？",
+     "passage": "On top of an old apartment building, rows of vegetables now grow where nobody has walked for years. ❶ The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy. ❷ Families take turns carrying water up the stairs, and each one looks after a small patch of its own. ❸ Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice. ❹ For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Besides giving fresh greens, the garden has become a place where neighbors who never used to speak now share tools and advice.",
+      "For a person planning a similar project, the old founder says start small and worry about the weight of the roof only after the first harvest.",
+      "The plan came from an old man who found that the roof was empty, hot and full of sun, three things that vegetables enjoy.",
+      "Families take turns carrying water up the stairs, and each one looks after a small patch of its own."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "For anyone planning a similar project 轉為給讀者的建議，用來收束全篇。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "篇章結構",
+   "group": 4,
+   "title": "二手書店與交換制",
+   "passage": "Bookstores that sell only used books have appeared in more and more college towns. ❶ Their tables hold novels that have been read three times and textbooks that no student can find in any new store. ❷ Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value. ❸ Instead of throwing an old copy away, a reader can bring it in and take another book of the same value. ❹ Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week. ",
+   "blanks": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D"
+   },
+   "blankKeys": [
+    3,
+    1,
+    0,
+    2
+   ],
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "Instead of throwing an old copy away, a reader can bring it in and take another book of the same value.",
+    "Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value.",
+    "Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week.",
+    "Their tables hold novels that have been read three times and textbooks that no student can find in any new store."
+   ],
+   "option_pool": "per-question",
+   "wordCount": 110,
+   "questions": [
+    {
+     "qnum": 63,
+     "stem": "哪一句放入空格 ❶ 最恰當？",
+     "passage": "Bookstores that sell only used books have appeared in more and more college towns. ❶ Their tables hold novels that have been read three times and textbooks that no student can find in any new store. ❷ Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value. ❸ Instead of throwing an old copy away, a reader can bring it in and take another book of the same value. ❹ Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Instead of throwing an old copy away, a reader can bring it in and take another book of the same value.",
+      "Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value.",
+      "Their tables hold novels that have been read three times and textbooks that no student can find in any new store.",
+      "Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "Their tables hold… 說明這類書店賣什麼，先回答「是怎樣的店」才能繼續談經營。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 64,
+     "stem": "哪一句放入空格 ❷ 最恰當？",
+     "passage": "Bookstores that sell only used books have appeared in more and more college towns. ❶ Their tables hold novels that have been read three times and textbooks that no student can find in any new store. ❷ Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value. ❸ Instead of throwing an old copy away, a reader can bring it in and take another book of the same value. ❹ Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value.",
+      "Their tables hold novels that have been read three times and textbooks that no student can find in any new store.",
+      "Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week.",
+      "Instead of throwing an old copy away, a reader can bring it in and take another book of the same value."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "Owners say 引用老闆的話解釋交換制的價值，連上 ❶ 的商品。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 65,
+     "stem": "哪一句放入空格 ❸ 最恰當？",
+     "passage": "Bookstores that sell only used books have appeared in more and more college towns. ❶ Their tables hold novels that have been read three times and textbooks that no student can find in any new store. ❷ Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value. ❸ Instead of throwing an old copy away, a reader can bring it in and take another book of the same value. ❹ Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Their tables hold novels that have been read three times and textbooks that no student can find in any new store.",
+      "Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week.",
+      "Instead of throwing an old copy away, a reader can bring it in and take another book of the same value.",
+      "Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "Instead of throwing a worn copy away 具體說明交換制怎麼運作，正好扣緊 ❷ 說的「不會貶值」。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 66,
+     "stem": "哪一句放入空格 ❹ 最恰當？",
+     "passage": "Bookstores that sell only used books have appeared in more and more college towns. ❶ Their tables hold novels that have been read three times and textbooks that no student can find in any new store. ❷ Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value. ❸ Instead of throwing an old copy away, a reader can bring it in and take another book of the same value. ❹ Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Still, keeping a shop alive on paper alone takes patience, and most owners say the real customers are the people who come back every week.",
+      "Instead of throwing an old copy away, a reader can bring it in and take another book of the same value.",
+      "Owners say the exchange system is the heart of the business, because a book that keeps going from hand to hand never loses its value.",
+      "Their tables hold novels that have been read three times and textbooks that no student can find in any new store."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "Still, … takes patience 帶出但書，是全篇的收束。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "篇章結構",
+   "group": 5,
+   "title": "山地志願救援隊",
+   "passage": "Every year people get lost on the high mountains, and those who first reach them are often a volunteer rescue team from the town below. ❶ These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on. ❷ A new member spends the first year learning to read a map in bad weather before she may go near a cliff. ❸ When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance. ❹ Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning. ",
+   "blanks": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D"
+   },
+   "blankKeys": [
+    0,
+    2,
+    1,
+    3
+   ],
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on.",
+    "When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance.",
+    "A new member spends the first year learning to read a map in bad weather before she may go near a cliff.",
+    "Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning."
+   ],
+   "option_pool": "per-question",
+   "wordCount": 119,
+   "questions": [
+    {
+     "qnum": 67,
+     "stem": "哪一句放入空格 ❶ 最恰當？",
+     "passage": "Every year people get lost on the high mountains, and those who first reach them are often a volunteer rescue team from the town below. ❶ These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on. ❷ A new member spends the first year learning to read a map in bad weather before she may go near a cliff. ❸ When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance. ❹ Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on.",
+      "When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance.",
+      "Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning.",
+      "A new member spends the first year learning to read a map in bad weather before she may go near a cliff."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "These teams have no money 說明志願隊的處境，緊接在介紹隊伍之後最合理。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 68,
+     "stem": "哪一句放入空格 ❷ 最恰當？",
+     "passage": "Every year people get lost on the high mountains, and those who first reach them are often a volunteer rescue team from the town below. ❶ These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on. ❷ A new member spends the first year learning to read a map in bad weather before she may go near a cliff. ❸ When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance. ❹ Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance.",
+      "These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on.",
+      "A new member spends the first year learning to read a map in bad weather before she may go near a cliff.",
+      "Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "A new member 把焦點收到新人身上，正好呼應 ❶ 提到的知識傳承。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 69,
+     "stem": "哪一句放入空格 ❸ 最恰當？",
+     "passage": "Every year people get lost on the high mountains, and those who first reach them are often a volunteer rescue team from the town below. ❶ These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on. ❷ A new member spends the first year learning to read a map in bad weather before she may go near a cliff. ❸ When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance. ❹ Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "A new member spends the first year learning to read a map in bad weather before she may go near a cliff.",
+      "Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning.",
+      "When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance.",
+      "These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "When a call comes in 把焦點拉回真正的任務，必須放在訓練與結論之間。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 70,
+     "stem": "哪一句放入空格 ❹ 最恰當？",
+     "passage": "Every year people get lost on the high mountains, and those who first reach them are often a volunteer rescue team from the town below. ❶ These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on. ❷ A new member spends the first year learning to read a map in bad weather before she may go near a cliff. ❸ When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance. ❹ Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Organizers say the hardest part is not the climb, but keeping enough young members interested in a job that begins at three in the morning.",
+      "A new member spends the first year learning to read a map in bad weather before she may go near a cliff.",
+      "These teams have no money for new vehicles, so they rely on training, radios and the knowledge that older members pass on.",
+      "When a call comes in, the team decides within minutes who goes up and who stays behind to guide the ambulance."
+     ],
+     "option_pool": "per-question",
+     "answer": "A",
+     "explanation": "Organizers say the hardest part 是一句總結與展望，用來收尾。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  },
+  {
+   "year": "AI",
+   "paper": "A1",
+   "kind": "題目卷",
+   "section": "篇章結構",
+   "group": 6,
+   "title": "學校的社區演出",
+   "passage": "Every spring a middle school in the south opens its hall for a concert that no one pays to attend. ❶ The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it. ❷ What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat. ❸ Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly. ❹ Parents who once complained about the noise now offer to fix the broken stand before the show next year. ",
+   "blanks": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D"
+   },
+   "blankKeys": [
+    2,
+    0,
+    3,
+    1
+   ],
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_texts": [
+    "What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat.",
+    "Parents who once complained about the noise now offer to fix the broken stand before the show next year.",
+    "The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it.",
+    "Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly."
+   ],
+   "option_pool": "per-question",
+   "wordCount": 114,
+   "questions": [
+    {
+     "qnum": 71,
+     "stem": "哪一句放入空格 ❶ 最恰當？",
+     "passage": "Every spring a middle school in the south opens its hall for a concert that no one pays to attend. ❶ The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it. ❷ What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat. ❸ Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly. ❹ Parents who once complained about the noise now offer to fix the broken stand before the show next year. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat.",
+      "Parents who once complained about the noise now offer to fix the broken stand before the show next year.",
+      "Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly.",
+      "The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it."
+     ],
+     "option_pool": "per-question",
+     "answer": "D",
+     "explanation": "The program is written… 說明這場演出的準備狀態，必須緊接在開場白之後。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 72,
+     "stem": "哪一句放入空格 ❷ 最恰當？",
+     "passage": "Every spring a middle school in the south opens its hall for a concert that no one pays to attend. ❶ The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it. ❷ What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat. ❸ Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly. ❹ Parents who once complained about the noise now offer to fix the broken stand before the show next year. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Parents who once complained about the noise now offer to fix the broken stand before the show next year.",
+      "The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it.",
+      "What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat.",
+      "Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "What the audience remembers 轉到觀眾的感受，承接 ❶ 描述的演出本身。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 73,
+     "stem": "哪一句放入空格 ❸ 最恰當？",
+     "passage": "Every spring a middle school in the south opens its hall for a concert that no one pays to attend. ❶ The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it. ❷ What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat. ❸ Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly. ❹ Parents who once complained about the noise now offer to fix the broken stand before the show next year. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it.",
+      "Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly.",
+      "What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat.",
+      "Parents who once complained about the noise now offer to fix the broken stand before the show next year."
+     ],
+     "option_pool": "per-question",
+     "answer": "B",
+     "explanation": "Teachers in the music club argue 把焦點移到老師的看法，解釋它為何值得辦。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    },
+    {
+     "qnum": 74,
+     "stem": "哪一句放入空格 ❹ 最恰當？",
+     "passage": "Every spring a middle school in the south opens its hall for a concert that no one pays to attend. ❶ The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it. ❷ What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat. ❸ Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly. ❹ Parents who once complained about the noise now offer to fix the broken stand before the show next year. ",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "option_texts": [
+      "Teachers in the music club argue that the concert matters less as a show than as a place where shy students may play badly.",
+      "What the audience remembers is not the violin solo, but the moment a beginner in the back row finally keeps the beat.",
+      "Parents who once complained about the noise now offer to fix the broken stand before the show next year.",
+      "The program is written on a sheet of paper by hand, and the sound system is older than most of the students playing on it."
+     ],
+     "option_pool": "per-question",
+     "answer": "C",
+     "explanation": "Parents who once complained… now offer 是一個反轉的收尾，放在最後最有效果。",
+     "sourceType": "ai",
+     "source": "poola-v1"
+    }
+   ]
+  }
+ ]
+}
