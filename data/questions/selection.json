@@ -1,0 +1,389 @@
+{
+  "note": "4.1.1 樣本題庫（starter）：單選／克漏字（5 題一組）／文意選填。正式題庫將由考題語料庫管線（4.0.1）結構化擴充。",
+  "single": [
+    {
+      "q": "The scientist conducted a series of ______ to test her hypothesis.",
+      "options": [
+        "experiments",
+        "ceremonies",
+        "declarations",
+        "appointments"
+      ],
+      "answer": 0,
+      "explanation": "conduct a series of experiments 為固定搭配（conduct＝進行、策畫）；句末 to test her hypothesis（測試她的假設）決定了要用實驗。ceremonies（典禮）、declarations（宣言）、appointments（任命）都不可能用來「測試假設」。"
+    },
+    {
+      "q": "Regular exercise can significantly ______ the risk of heart disease.",
+      "options": [
+        "increase",
+        "reduce",
+        "ignore",
+        "replace"
+      ],
+      "answer": 1,
+      "explanation": "risk 只能被 reduce（大幅降低），不會被 increase（增加）；significantly 加強了變化的幅度。ignore（忽略）與 replace（取代）跟風險都沒有搭配關係。"
+    },
+    {
+      "q": "Despite the heavy rain, the construction workers continued their tasks without ______.",
+      "options": [
+        "complaint",
+        "celebration",
+        "interruption",
+        "permission"
+      ],
+      "answer": 2,
+      "explanation": "without 後接單數名詞，表示「在沒有…的情況下」；Despite the heavy rain 與 continued their tasks 呼應的是不被打斷地繼續工作，故用 interruption（中斷）。complaint（抱怨）、celebration（慶祝）、permission（許可）都不是此意。"
+    },
+    {
+      "q": "The government has ______ new regulations to protect endangered species.",
+      "options": [
+        "implemented",
+        "translated",
+        "postponed forever",
+        "forgotten"
+      ],
+      "answer": 0,
+      "explanation": "法規政策常用 implement（實施、施行），to protect endangered species 說明新規定已經上路。translated（翻譯）、postponed forever（永遠延後）、forgotten（被遺忘）都不符「訂定並施行」的語意。"
+    },
+    {
+      "q": "Her ______ explanation left the audience more confused than before.",
+      "options": [
+        "clear",
+        "vague",
+        "detailed",
+        "careful"
+      ],
+      "answer": 1,
+      "explanation": "more confused（更困惑）呼應 vague（模糊的），前後語意一致。clear（清楚的）與 confused 相反；detailed（詳細的）、careful（仔細的）都不會讓聽眾更困惑。"
+    },
+    {
+      "q": "The novel was so ______ that I finished it in one sitting.",
+      "options": [
+        "boring",
+        "lengthy",
+        "gripping",
+        "complicated"
+      ],
+      "answer": 2,
+      "explanation": "so ___ that…（如此…以至於）加上 finished it in one sitting（一口氣讀完）表示小說引人入勝，故用 gripping。boring（無聊的）、lengthy（冗長的）、complicated（複雜的）都無法解釋一氣呵成。"
+    },
+    {
+      "q": "To stay healthy, you should ______ processed foods as much as possible.",
+      "options": [
+        "consume",
+        "avoid",
+        "preserve",
+        "donate"
+      ],
+      "answer": 1,
+      "explanation": "To stay healthy（為了維持健康）指向 avoid（避免）加工食品。consume（食用）、preserve（保存）、donate（捐贈）都與維持健康的語意相反。"
+    },
+    {
+      "q": "The manager ______ the importance of teamwork during the meeting.",
+      "options": [
+        "denied",
+        "emphasized",
+        "postponed",
+        "cancelled"
+      ],
+      "answer": 1,
+      "explanation": "emphasize the importance of（強調…的重要性）為固定搭配，during the meeting 符合會上發言的場合。denied（否認）、postponed（延後）、cancelled（取消）都不合場合。"
+    },
+    {
+      "q": "Regular exercise is ______ to good health; without it, the risk of heart disease rises sharply.",
+      "options": [
+        "optional",
+        "essential",
+        "excessive",
+        "efficient"
+      ],
+      "answer": 1,
+      "explanation": "essential ＝不可或缺的、基本的，後面接 to 構成 be essential to。分號後的 without it…rising sharply 反證前面必須是不可或缺。optional（可選的）、excessive（過多的）、efficient（高效率的）都不構成「少了就不健康」的語意。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "Walking to school instead of taking a car can also ______ to a reduction in air pollution.",
+      "options": [
+        "consume",
+        "contain",
+        "contribute",
+        "consist"
+      ],
+      "answer": 2,
+      "explanation": "contribute to ＝「有助於、造成（某結果）」，與後面的 a reduction 形成因果。consume（消耗／吃完）與 contain（包含）都不能直接接 to 表達貢獻；consist 固定搭配是 consist of（由…組成），接 to 語法不成立。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "Using ______ amounts of fertilizer may contaminate the soil and harm the food chain.",
+      "options": [
+        "excessive",
+        "essential",
+        "virtual",
+        "genuine"
+      ],
+      "answer": 0,
+      "explanation": "後果 contaminate the soil and harm the food chain（污染土壤、危害食物鏈）指向「用量過多」，故用 excessive（過多的）。essential（必要的）、virtual（虛擬的）、genuine（真實的）都與「過量」無關。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "______ the heavy traffic, the shop on the corner is always crowded at lunchtime.",
+      "options": [
+        "despite",
+        "because",
+        "unless",
+        "although"
+      ],
+      "answer": 0,
+      "explanation": "句意是讓步：雖然交通壅塞，店裡午餐時依然人潮拥挤。despite 是介系詞，後接名詞 the heavy traffic，語法與語意皆正確。although 雖也可接子句但後面必須是子句（不能直接接名詞片語）；because 表原因、unless 表條件，與讓步語意相反。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "The shop sells ______ kinds of tea, from green to black.",
+      "options": [
+        "valuable",
+        "various",
+        "virtual",
+        "likely"
+      ],
+      "answer": 1,
+      "explanation": "from green to black 暗示種類很多，用 various（各種各樣的）修飾複數名詞 kinds。valuable（有價值的）、virtual（虛擬的）、likely（可能的）都不表「種類繁多」。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "In some villages, families still ______ traditional recipes and pass them on to the next generation.",
+      "options": [
+        "prevent",
+        "pretend",
+        "present",
+        "preserve"
+      ],
+      "answer": 3,
+      "explanation": "與 pass them on to the next generation（傳給下一代）呼應的是「保存、延續」，故用 preserve（保存、維護）。prevent 防止、pretend 假裝、present 呈現／現在的，語意都不成立。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "The view from the top of the mountain is so ______ that tourists rarely forget it.",
+      "options": [
+        "excessive",
+        "optional",
+        "sufficient",
+        "impressive"
+      ],
+      "answer": 3,
+      "explanation": "so … that ＋ rarely forget（很少忘記）帶正面讚嘆，需用 impressive（令人印象深刻的）。excessive（過多的）、optional（可選的）、sufficient（足夠的）都無法構成令人難忘的語意。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "The new lighting system in the hall is far more ______ than the old one, using only a third of the electricity.",
+      "options": [
+        "expensive",
+        "efficient",
+        "excessive",
+        "optional"
+      ],
+      "answer": 1,
+      "explanation": "using only a third of the electricity（只用三分之一的電）是節能數據，與 far more ___ than 構成比較，故用 efficient（有效率的）。expensive 是價格、excessive 是數量過多、optional 是可選的，都不能解釋省電。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "The city decided to ______ a fine on drivers who park in front of the school gate.",
+      "options": [
+        "impress",
+        "impose",
+        "expose",
+        "dispose"
+      ],
+      "answer": 1,
+      "explanation": "impose a fine on … 是「對…罰款」的固定搭配，impose ＝ 把（稅金、處罰）強加於。impress（留下印象）、expose（使暴露）、dispose（處置）都沒有「加諸他人身上」的語意。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "The difference between the two groups was ______: one used public transport every day, while the other drove a car.",
+      "options": [
+        "specific",
+        "sufficient",
+        "sensible",
+        "significant"
+      ],
+      "answer": 3,
+      "explanation": "分號後強烈對比兩組的通勤方式，表示差異很大，故用 significant（顯著的、重要的）。specific（特定的）、sufficient（充足的）、sensible（明智的）都沒有「差異大」的語意。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "Children who are ______ to a new environment often adapt more slowly than those raised in big cities.",
+      "options": [
+        "relative",
+        "respectable",
+        "resistant",
+        "responsible"
+      ],
+      "answer": 2,
+      "explanation": "be resistant to ＝「對…有抵抗力的」，後接 new environment 與後面 adapt more slowly（適應較慢）互相呼應。relative（相對的）、respectable（值得尊敬的）、responsible（負責任的）都放不進 be ___ to 的這個句型。",
+      "source": "ai-review-passed"
+    },
+    {
+      "q": "Screen time has a strong ______ on teenagers' sleep; the more they scroll at night, the later they fall asleep.",
+      "options": [
+        "impulse",
+        "import",
+        "impression",
+        "impact"
+      ],
+      "answer": 3,
+      "explanation": "have an impact on … 是固定搭配，指「對…造成影響」。impulse 衝動、import 進口、impression 印象都不能與 have a strong ___ on 搭配。",
+      "source": "ai-review-passed"
+    }
+  ],
+  "cloze": [
+    {
+      "title": "Sleep and Learning",
+      "passage": "Research shows that sleep plays a key role in learning. When we sleep, our brains [1] and organize the information we take in during the day. Students who stay up all night before an exam often perform worse than those who get enough [2]. Lack of sleep can also [3] concentration and memory. Experts therefore suggest that learners avoid using electronic devices before bedtime, since the blue light from screens can [4] the production of melatonin, a hormone that helps us fall [5].",
+      "questions": [
+        {
+          "q": "[1]",
+          "options": [
+            "process",
+            "transport",
+            "delete",
+            "record"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "[2]",
+          "options": [
+            "food",
+            "rest",
+            "money",
+            "practice"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "[3]",
+          "options": [
+            "improve",
+            "measure",
+            "weaken",
+            "test"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "[4]",
+          "options": [
+            "increase",
+            "balance",
+            "replace",
+            "reduce"
+          ],
+          "answer": 3
+        },
+        {
+          "q": "[5]",
+          "options": [
+            "asleep",
+            "sleep",
+            "awake",
+            "bed"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "title": "Plastic in the Ocean",
+      "passage": "Every year, millions of tons of plastic waste [1] into the ocean. Sea animals often mistake plastic bags for food, which can be [2]. Several countries have started to [3] single-use plastics in order to solve the problem. However, experts warn that laws alone are not enough; everyone must [4] part by reducing plastic use in daily life. Otherwise, the damage to marine ecosystems may be [5].",
+      "questions": [
+        {
+          "q": "[1]",
+          "options": [
+            "turn",
+            "end",
+            "flow",
+            "look"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "[2]",
+          "options": [
+            "delicious",
+            "deadly",
+            "digestive",
+            "gentle"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "[3]",
+          "options": [
+            "ban",
+            "produce",
+            "recycle",
+            "import"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "[4]",
+          "options": [
+            "skip",
+            "play",
+            "take",
+            "make"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "[5]",
+          "options": [
+            "invisible",
+            "reversible",
+            "flexible",
+            "visible"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ],
+  "discourse": [
+    {
+      "passage": "Many students believe that talent alone determines success. However, studies suggest that effort matters even more. People who keep practicing tend to improve over time, while those who give up early rarely make progress. In other words, success is not a gift but a [1] of hard work.\n\nOf course, working hard does not mean working without rest. Taking breaks can actually [2] productivity, because a tired mind learns slowly. The key is to find a [3] between effort and recovery.",
+      "options": [
+        "balance",
+        "result",
+        "increase",
+        "reduce",
+        "habit",
+        "burden",
+        "practice",
+        "talent"
+      ],
+      "blanks": {
+        "1": "result",
+        "2": "increase",
+        "3": "balance"
+      }
+    },
+    {
+      "passage": "When the museum announced free admission for teenagers, visitors doubled within a month. Young people who had never shown interest in art suddenly began [1] the galleries on weekends. Curators responded by offering guided tours designed for first-time visitors.\n\nThe program's success shows that small changes in policy can have a big [2] on public behavior. Making culture [3] is the first step toward building a lifelong audience.",
+      "options": [
+        "visiting",
+        "impact",
+        "affordable",
+        "expensive",
+        "painting",
+        "selling",
+        "accessible",
+        "donating"
+      ],
+      "blanks": {
+        "1": "visiting",
+        "2": "impact",
+        "3": "accessible"
+      }
+    }
+  ]
+}

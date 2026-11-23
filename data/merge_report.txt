@@ -1,0 +1,92 @@
+============================================================
+2.0.4 字庫合併報告（2026-09-29）
+============================================================
+原始 6009 筆 → 合併後 7014 筆
+
+各級別筆數：Lv1=1004, Lv2=1003, Lv3=1002, Lv4=1003, Lv5=1002, Lv6=1002, Lv7=998
+
+[修復] id=464「knowledge n. lake」拆為 2 筆
+[修復] id=2009「additional adj. admire」拆為 2 筆
+[修復] id=4163「columnist n. combat」拆為 2 筆
+[補官方缺字] 共 4 個：agreement(Lv1), treatment(Lv1), mate(Lv2), bald(Lv4)
+[舊制補充字→Lv7] 共 998 個
+[舊表 OCR 破損丟棄] 共 11 行：(空), (空), (空), (空), (空), (空), (空), (空), (空), (空), (空)
+[無釋義修補] 共 1 筆
+
+--- 補上的官方缺字明細 ---
+  agreement  Lv1  協議；同意
+  treatment  Lv1  治療；處理；對待
+  mate  Lv2  同伴
+  bald  Lv4  禿的
+
+--- Lv7 補充字（前 60 筆示例）---
+  abbey
+  abbreviation
+  abolition
+  aborigine
+  absorbing
+  acceleration
+  accomplished
+  ace
+  acoustic
+  acreage
+  adequately
+  adjoin
+  adv
+  advancement
+  advert
+  advertising
+  aerospace
+  affiliated
+  aftermath
+  afterward(s)
+  aggregate
+  aging
+  agree(ment)
+  aide
+  aids
+  air-tight
+  airforce
+  airmail
+  akin
+  alarming
+  alas
+  albeit
+  alienation
+  allegation
+  allied
+  allocation
+  allot
+  alteration
+  alternatively
+  amazing
+  ambush
+  amenna
+  ammunition
+  amnesty
+  amobiography
+  analects
+  ancestral
+  anecdote
+  angler
+  angular
+  antibody
+  anymore
+  appal
+  appalling
+  appealing
+  appetizer
+  appraisal
+  apprehension
+  april
+  aptitude
+
+============================================================
+2.0.6 釋義擴充報告（2026-09-29）
+============================================================
+輸入 7014 筆 → 輸出 7005 筆
+
+音標覆蓋：6608｜詳細釋義覆蓋：6930｜詞形變化覆蓋：2618｜簡略釋義覆蓋：7005
+（無 ECDICT 條目但保留的非補充字：0）
+
+[丟棄 OCR 破損補充字] 共 9 個：amenna, amobiography, briefmg, etemity, fiea, figuron, fught, halftvay, tumpike

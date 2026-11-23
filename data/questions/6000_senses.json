@@ -1,0 +1,1539 @@
+{
+ "model": "gemini-flash-lite-latest",
+ "at": "2026-10-03T17:31:31",
+ "entries": [
+  {
+   "word": "abiding",
+   "pos": "adj.",
+   "phonetic": "əˈbaɪdɪŋ",
+   "senses": [
+    "持久的",
+    "不變的",
+    "長久的"
+   ],
+   "dictSenses": [
+    "adj. 持久的, 永恆的"
+   ],
+   "dictBrief": "adj. 持久的、永恆的"
+  },
+  {
+   "word": "accustomed",
+   "pos": "adj.",
+   "phonetic": "əˈkʌstəmd",
+   "senses": [
+    "習慣的",
+    "慣常的"
+   ],
+   "dictSenses": [
+    "adj. 習慣的, 慣常的"
+   ],
+   "dictBrief": "adj. 習慣的、慣常的"
+  },
+  {
+   "word": "amid",
+   "pos": "prep.",
+   "phonetic": "əˈmɪd",
+   "senses": [
+    "在...之中",
+    "當...的時候",
+    "被...包圍"
+   ],
+   "dictSenses": [
+    "prep. 在...之中, 當...的時候"
+   ],
+   "dictBrief": "prep. 在...之中、當...的時候"
+  },
+  {
+   "word": "animated",
+   "pos": "adj.",
+   "phonetic": "ˈænɪmeɪtɪd",
+   "senses": [
+    "生氣勃勃的",
+    "熱烈的",
+    "動畫的"
+   ],
+   "dictSenses": [
+    "adj. 活潑的, 熱烈討論的",
+    "adj. 動畫製成的"
+   ],
+   "dictBrief": "adj. 活潑的、熱烈討論的、動畫製成的"
+  },
+  {
+   "word": "animation",
+   "pos": "n.",
+   "phonetic": "ˌænɪˈmeɪʃn",
+   "senses": [
+    "動畫",
+    "生氣",
+    "活躍"
+   ],
+   "dictSenses": [
+    "n. 動畫製作, 動畫片",
+    "n. 活潑, 生氣"
+   ],
+   "dictBrief": "n. 動畫製作、動畫片、活潑、生氣"
+  },
+  {
+   "word": "approximately",
+   "pos": "adv.",
+   "phonetic": "əˈprɑːksɪmətli",
+   "senses": [
+    "大約",
+    "左右",
+    "近乎"
+   ],
+   "dictSenses": [
+    "adv. 大約, 近乎"
+   ],
+   "dictBrief": "adv. 大約、近乎"
+  },
+  {
+   "word": "assassination",
+   "pos": "n.",
+   "phonetic": "əˌsæsɪˈneɪʃn",
+   "senses": [
+    "暗殺",
+    "行刺"
+   ],
+   "dictSenses": [
+    "n. 暗殺, 行刺"
+   ],
+   "dictBrief": "n. 暗殺、行刺"
+  },
+  {
+   "word": "authorized",
+   "pos": "adj.",
+   "phonetic": "ˈɔːθəraɪzd",
+   "senses": [
+    "授權的",
+    "官方的",
+    "認可的"
+   ],
+   "dictSenses": [
+    "adj. 授權的, 官方的"
+   ],
+   "dictBrief": "adj. 授權的、官方的"
+  },
+  {
+   "word": "barbaric",
+   "pos": "adj.",
+   "phonetic": "bɑːrˈbærɪk",
+   "senses": [
+    "野蠻的",
+    "殘暴的",
+    "粗俗的"
+   ],
+   "dictSenses": [
+    "adj. 野蠻的, 殘酷的"
+   ],
+   "dictBrief": "adj. 野蠻的、殘酷的"
+  },
+  {
+   "word": "battered",
+   "pos": "adj.",
+   "phonetic": "ˈbætərd",
+   "senses": [
+    "破舊的",
+    "受虐的",
+    "撞壞的"
+   ],
+   "dictSenses": [
+    "adj. 破舊的, 受損的",
+    "adj. 受虐待的"
+   ],
+   "dictBrief": "adj. 破舊的、受損的、受虐待的"
+  },
+  {
+   "word": "betrayal",
+   "pos": "n.",
+   "phonetic": "bɪˈtreɪəl",
+   "senses": [
+    "背叛",
+    "出賣",
+    "洩露"
+   ],
+   "dictSenses": [
+    "n. 背叛, 出賣",
+    "n. 洩露, 透露"
+   ],
+   "dictBrief": "n. 背叛、出賣、洩露"
+  },
+  {
+   "word": "betrayer",
+   "pos": "n.",
+   "phonetic": "bɪˈtreɪər",
+   "senses": [
+    "背叛者",
+    "出賣者",
+    "叛徒"
+   ],
+   "dictSenses": [
+    "n. 背叛者, 叛徒"
+   ],
+   "dictBrief": "n. 背叛者、叛徒"
+  },
+  {
+   "word": "blond",
+   "pos": "adj./n.",
+   "phonetic": "blɑnd",
+   "senses": [
+    "金發的",
+    "白皙的",
+    "金發男子"
+   ],
+   "dictSenses": [
+    "adj. 金發的, 膚色白皙的",
+    "n. 金發男子"
+   ],
+   "dictBrief": "adj. 金發的、膚色白皙的、n. 金發男子"
+  },
+  {
+   "word": "blonde",
+   "pos": "adj./n.",
+   "phonetic": "blɑnd",
+   "senses": [
+    "金發的",
+    "金發女子"
+   ],
+   "dictSenses": [
+    "adj. 金發的, 淺色的",
+    "n. 金發女子"
+   ],
+   "dictBrief": "adj. 金發的、淺色的、n. 金發女子"
+  },
+  {
+   "word": "brassiere",
+   "pos": "n.",
+   "phonetic": "brəˈzɪr",
+   "senses": [
+    "胸罩",
+    "乳罩"
+   ],
+   "dictSenses": [
+    "n. 胸罩, 乳罩"
+   ],
+   "dictBrief": "n. 胸罩、乳罩"
+  },
+  {
+   "word": "bribery",
+   "pos": "n.",
+   "phonetic": "ˈbraɪbəri",
+   "senses": [
+    "賄賂",
+    "行賄",
+    "受賄"
+   ],
+   "dictSenses": [
+    "n. 賄賂行為, 行賄, 受賄"
+   ],
+   "dictBrief": "n. 賄賂行為、行賄、受賄"
+  },
+  {
+   "word": "catastrophic",
+   "pos": "adj.",
+   "phonetic": "ˌkætəˈstrɑfɪk",
+   "senses": [
+    "災難性的",
+    "悲慘的",
+    "慘敗的"
+   ],
+   "dictSenses": [
+    "adj. 災難性的, 悲慘的",
+    "adj. 慘敗的"
+   ],
+   "dictBrief": "adj. 災難性的、悲慘的、慘敗的"
+  },
+  {
+   "word": "caterer",
+   "pos": "n.",
+   "phonetic": "ˈkeɪtərər",
+   "senses": [
+    "承辦酒席者",
+    "外燴業者",
+    "食品供應商"
+   ],
+   "dictSenses": [
+    "n. 承辦酒席者, 外燴業者"
+   ],
+   "dictBrief": "n. 承辦酒席者、外燴業者"
+  },
+  {
+   "word": "certainly",
+   "pos": "adv.",
+   "phonetic": "ˈsɜrtnli",
+   "senses": [
+    "當然",
+    "必定",
+    "毫無疑問"
+   ],
+   "dictSenses": [
+    "adv. 必定, 當然",
+    "adv. 確切地"
+   ],
+   "dictBrief": "adv. 必定、當然、確切地"
+  },
+  {
+   "word": "certified",
+   "pos": "adj.",
+   "phonetic": "ˈsɜrtəˌfaɪd",
+   "senses": [
+    "具備資格的",
+    "認證的",
+    "保證的"
+   ],
+   "dictSenses": [
+    "adj. 具備資格的, 有證書的",
+    "adj. 經認證的, 官方證明的"
+   ],
+   "dictBrief": "adj. 具備資格的、有證書的、經認證的"
+  },
+  {
+   "word": "chairman",
+   "pos": "n.",
+   "phonetic": "ˈtʃɛrmən",
+   "senses": [
+    "主席",
+    "董事長",
+    "主持人"
+   ],
+   "dictSenses": [
+    "n. 主席, 董事長"
+   ],
+   "dictBrief": "n. 主席、董事長"
+  },
+  {
+   "word": "chairperson",
+   "pos": "n.",
+   "phonetic": "ˈtʃɛrˌpɜrsən",
+   "senses": [
+    "主席",
+    "主持人",
+    "董事長"
+   ],
+   "dictSenses": [
+    "n. 主席, 董事長"
+   ],
+   "dictBrief": "n. 主席、董事長"
+  },
+  {
+   "word": "chairwoman",
+   "pos": "n.",
+   "phonetic": "ˈtʃɛrˌwʊmən",
+   "senses": [
+    "女主席",
+    "女董事長"
+   ],
+   "dictSenses": [
+    "n. 女主席, 女董事長"
+   ],
+   "dictBrief": "n. 女主席、女董事長"
+  },
+  {
+   "word": "characterization",
+   "pos": "n.",
+   "phonetic": "ˌkærəktərɪˈzeɪʃən",
+   "senses": [
+    "刻畫",
+    "描繪",
+    "特性描述"
+   ],
+   "dictSenses": [
+    "n. 描繪, 刻畫",
+    "n. 人物塑造"
+   ],
+   "dictBrief": "n. 描繪、刻畫、人物塑造"
+  },
+  {
+   "word": "chunky",
+   "pos": "adj.",
+   "phonetic": "ˈtʃʌŋki",
+   "senses": [
+    "矮胖的",
+    "厚重的",
+    "大塊的"
+   ],
+   "dictSenses": [
+    "adj. 矮胖結實的",
+    "adj. 混有大塊的"
+   ],
+   "dictBrief": "adj. 矮胖結實的、混有大塊的"
+  },
+  {
+   "word": "civilized",
+   "pos": "adj.",
+   "phonetic": "ˈsɪvəˌlaɪzd",
+   "senses": [
+    "文明的",
+    "有教養的",
+    "開化的"
+   ],
+   "dictSenses": [
+    "adj. 文明的, 開化的",
+    "adj. 有教養的"
+   ],
+   "dictBrief": "adj. 文明的、開化的、有教養的"
+  },
+  {
+   "word": "coincide",
+   "pos": "v.",
+   "phonetic": "ˌkoʊɪnˈsaɪd",
+   "senses": [
+    "同時發生",
+    "相符",
+    "一致"
+   ],
+   "dictSenses": [
+    "v. 同時發生",
+    "v. 相符, 一致"
+   ],
+   "dictBrief": "v. 同時發生、相符、一致"
+  },
+  {
+   "word": "coincident",
+   "pos": "adj.",
+   "phonetic": "koʊˈɪnsɪdənt",
+   "senses": [
+    "同時發生的",
+    "巧合的",
+    "一致的"
+   ],
+   "dictSenses": [
+    "adj. 同時發生的",
+    "adj. 一致的, 符合的"
+   ],
+   "dictBrief": "adj. 同時發生的、一致的、符合的"
+  },
+  {
+   "word": "coincidental",
+   "pos": "adj.",
+   "phonetic": "koʊˌɪnsɪˈdɛntəl",
+   "senses": [
+    "巧合的",
+    "碰巧的"
+   ],
+   "dictSenses": [
+    "adj. 巧合的, 碰巧的"
+   ],
+   "dictBrief": "adj. 巧合的、碰巧的"
+  },
+  {
+   "word": "collectively",
+   "pos": "adv.",
+   "phonetic": "kəˈlɛktɪvli",
+   "senses": [
+    "共同地",
+    "集體地"
+   ],
+   "dictSenses": [
+    "adv. 共同地, 全體地"
+   ],
+   "dictBrief": "adv. 共同地、全體地"
+  },
+  {
+   "word": "collide",
+   "pos": "v.",
+   "phonetic": "kəˈlaɪd",
+   "senses": [
+    "相撞",
+    "衝突",
+    "抵触"
+   ],
+   "dictSenses": [
+    "v. 碰撞, 相撞",
+    "v. 抵触, 冲突"
+   ],
+   "dictBrief": "v. 碰撞、相撞、抵触、冲突"
+  },
+  {
+   "word": "complementary",
+   "pos": "adj.",
+   "phonetic": "ˌkɑːmplɪˈmentəri",
+   "senses": [
+    "互補的",
+    "補充的"
+   ],
+   "dictSenses": [
+    "adj. 互补的",
+    "adj. 补充的, 补助的"
+   ],
+   "dictBrief": "adj. 互补的、补充的"
+  },
+  {
+   "word": "computerization",
+   "pos": "n.",
+   "phonetic": "kəmˌpjuːtəraɪˈzeɪʃn",
+   "senses": [
+    "電腦化",
+    "資訊化"
+   ],
+   "dictSenses": [
+    "n. 计算机化, 电脑化"
+   ],
+   "dictBrief": "n. 计算机化、电脑化"
+  },
+  {
+   "word": "conceivable",
+   "pos": "adj.",
+   "phonetic": "kənˈsiːvəbl",
+   "senses": [
+    "可想象的",
+    "可能的"
+   ],
+   "dictSenses": [
+    "adj. 可想象的, 想得到的",
+    "adj. 可能的"
+   ],
+   "dictBrief": "adj. 可想象的、想得到的、可能的"
+  },
+  {
+   "word": "congressman",
+   "pos": "n.",
+   "phonetic": "ˈkɑːŋɡrəsמən",
+   "senses": [
+    "國会議員",
+    "众议员"
+   ],
+   "dictSenses": [
+    "n. 国会议员, 众议员"
+   ],
+   "dictBrief": "n. 国会议员、众议员"
+  },
+  {
+   "word": "congresswoman",
+   "pos": "n.",
+   "phonetic": "ˈkɑːŋɡrəsˌwʊmən",
+   "senses": [
+    "女國会議員",
+    "女众议员"
+   ],
+   "dictSenses": [
+    "n. 女国会议员, 女众议员"
+   ],
+   "dictBrief": "n. 女国会议员、女众议员"
+  },
+  {
+   "word": "conspire",
+   "pos": "v.",
+   "phonetic": "kənˈspaɪər",
+   "senses": [
+    "密謀",
+    "共謀"
+   ],
+   "dictSenses": [
+    "v. 阴谋, 共谋",
+    "v. 协同起作用"
+   ],
+   "dictBrief": "v. 阴谋、共谋、协同起作用"
+  },
+  {
+   "word": "contradictory",
+   "pos": "adj./n.",
+   "phonetic": "ˌkɑːntrəˈdɪktəri",
+   "senses": [
+    "矛盾的",
+    "對立的",
+    "矛盾體"
+   ],
+   "dictSenses": [
+    "adj. 矛盾的, 反对的, 对立的",
+    "n. 对立物, 矛盾"
+   ],
+   "dictBrief": "adj. 矛盾的、反对的、对立的、n. 对立物"
+  },
+  {
+   "word": "criterion",
+   "pos": "n.",
+   "phonetic": "kraɪˈtɪriən",
+   "senses": [
+    "標準",
+    "準則",
+    "尺度"
+   ],
+   "dictSenses": [
+    "n. 标准, 准则, 尺度"
+   ],
+   "dictBrief": "n. 标准、准则、尺度"
+  },
+  {
+   "word": "dazzling",
+   "pos": "adj.",
+   "phonetic": "ˈdæzlɪŋ",
+   "senses": [
+    "耀眼的",
+    "眩目的",
+    "燦爛的"
+   ],
+   "dictSenses": [
+    "adj. 耀眼的, 眩目的",
+    "adj. 灿烂的, 华丽的"
+   ],
+   "dictBrief": "adj. 耀眼的、眩目的、灿烂的、华丽的"
+  },
+  {
+   "word": "depressed",
+   "pos": "adj.",
+   "phonetic": "dɪˈprɛst",
+   "senses": [
+    "沮喪的",
+    "蕭條的",
+    "抑鬱的"
+   ],
+   "dictSenses": [
+    "adj. 沮喪的, 氣餒的",
+    "adj. 蕭條的, 景氣低迷的"
+   ],
+   "dictBrief": "adj. 沮喪的、氣餒的、蕭條的、景氣低迷的"
+  },
+  {
+   "word": "depressing",
+   "pos": "adj.",
+   "phonetic": "dɪˈprɛsɪŋ",
+   "senses": [
+    "令人沮喪的",
+    "令人 depress 的",
+    "使人消沉的"
+   ],
+   "dictSenses": [
+    "adj. 令人沮喪的, 令人消沉的"
+   ],
+   "dictBrief": "adj. 令人沮喪的、令人消沉的"
+  },
+  {
+   "word": "diabetic",
+   "pos": "adj./n.",
+   "phonetic": "ˌdaɪəˈbɛtɪk",
+   "senses": [
+    "糖尿病的",
+    "糖尿病患者"
+   ],
+   "dictSenses": [
+    "adj. 糖尿病的",
+    "n. 糖尿病患者"
+   ],
+   "dictBrief": "adj. 糖尿病的、n. 糖尿病患者"
+  },
+  {
+   "word": "disabled",
+   "pos": "adj.",
+   "phonetic": "dɪˈseɪbəld",
+   "senses": [
+    "殘疾的",
+    "喪失能力的",
+    "殘障的"
+   ],
+   "dictSenses": [
+    "adj. 殘疾的, 殘障的",
+    "adj. 失去功能的"
+   ],
+   "dictBrief": "adj. 殘疾的、殘障的、失去功能的"
+  },
+  {
+   "word": "distressed",
+   "pos": "adj.",
+   "phonetic": "dɪˈstrɛst",
+   "senses": [
+    "苦惱的",
+    "受困的",
+    "破舊的"
+   ],
+   "dictSenses": [
+    "adj. 痛苦的, 苦惱的",
+    "adj. 經濟困難的, 窘迫的"
+   ],
+   "dictBrief": "adj. 痛苦的、苦惱的、經濟困難的、窘迫的"
+  },
+  {
+   "word": "drastically",
+   "pos": "adv.",
+   "phonetic": "ˈdræstɪkli",
+   "senses": [
+    "激烈地",
+    "徹底地",
+    "大幅度地"
+   ],
+   "dictSenses": [
+    "adv. 激烈地, 徹底地",
+    "adv. 大幅度地,  drastic 的副詞"
+   ],
+   "dictBrief": "adv. 激烈地、徹底地、大幅度地"
+  },
+  {
+   "word": "eruption",
+   "pos": "n.",
+   "phonetic": "ɪˈrʌpʃən",
+   "senses": [
+    "火山爆發",
+    "爆發",
+    "噴發"
+   ],
+   "dictSenses": [
+    "n. 爆發, 噴發",
+    "n. 疹子, 出疹"
+   ],
+   "dictBrief": "n. 爆發、噴發、疹子、出疹"
+  },
+  {
+   "word": "escalate",
+   "pos": "v.",
+   "phonetic": "ˈɛskəˌleɪt",
+   "senses": [
+    "逐步升高",
+    "升級",
+    "惡化"
+   ],
+   "dictSenses": [
+    "v. 逐步上升, 升高",
+    "v. 使惡化, 使升級"
+   ],
+   "dictBrief": "v. 逐步上升、升高、使惡化、使升級"
+  },
+  {
+   "word": "excluding",
+   "pos": "prep.",
+   "phonetic": "ɪkˈskluːdɪŋ",
+   "senses": [
+    "把…排除在外",
+    "不包括"
+   ],
+   "dictSenses": [
+    "prep. 除…之外, 不包括"
+   ],
+   "dictBrief": "prep. 除…之外、不包括"
+  },
+  {
+   "word": "fascinated",
+   "pos": "adj.",
+   "phonetic": "ˈfæsəˌneɪtɪd",
+   "senses": [
+    "入迷的",
+    "極具吸引力的",
+    "著迷的"
+   ],
+   "dictSenses": [
+    "adj. 入迷的, 著迷的"
+   ],
+   "dictBrief": "adj. 入迷的、著迷的"
+  },
+  {
+   "word": "fascinating",
+   "pos": "adj.",
+   "phonetic": "ˈfæsəˌneɪtɪŋ",
+   "senses": [
+    "迷人的",
+    "極有吸引力的",
+    "使人神魂顛倒的"
+   ],
+   "dictSenses": [
+    "adj. 迷人的, 極有趣的",
+    "adj. 吸引人的, 扣人心弦的"
+   ],
+   "dictBrief": "adj. 迷人的、極有趣的、吸引人的、扣人心弦的"
+  },
+  {
+   "word": "fleeting",
+   "pos": "adj.",
+   "phonetic": "ˈflitɪŋ",
+   "senses": [
+    "短暫的",
+    "轉瞬即逝的",
+    "疾馳的"
+   ],
+   "dictSenses": [
+    "adj. 短暫的, 飛逝的",
+    "adj. 疾馳的, 稍縱即逝的"
+   ],
+   "dictBrief": "adj. 短暫的、飛逝的、疾馳的、稍縱即逝的"
+  },
+  {
+   "word": "geographically",
+   "pos": "adv.",
+   "phonetic": "ˌdʒiəˈɡræfɪkli",
+   "senses": [
+    "地理上",
+    "地理學上"
+   ],
+   "dictSenses": [
+    "adv. 地理上, 地理學上"
+   ],
+   "dictBrief": "adv. 地理上、地理學上"
+  },
+  {
+   "word": "geometric",
+   "pos": "adj.",
+   "phonetic": "ˌdʒiəˈmɛtrɪk",
+   "senses": [
+    "幾何的",
+    "幾何學的"
+   ],
+   "dictSenses": [
+    "adj. 幾何的, 幾何學的",
+    "adj. 成幾何級數的"
+   ],
+   "dictBrief": "adj. 幾何的、幾何學的、成幾何級數的"
+  },
+  {
+   "word": "glittering",
+   "pos": "adj.",
+   "phonetic": "ˈɡlɪtərɪŋ",
+   "senses": [
+    "閃爍的",
+    "閃閃發光的",
+    "輝煌的"
+   ],
+   "dictSenses": [
+    "adj. 閃爍的, 閃光的",
+    "adj. 燦爛的, 輝煌的"
+   ],
+   "dictBrief": "adj. 閃爍的、閃光的、燦爛的、輝煌的"
+  },
+  {
+   "word": "hazardous",
+   "pos": "adj.",
+   "phonetic": "ˈhæzərdəs",
+   "senses": [
+    "危險的",
+    "有害的",
+    "冒險的"
+   ],
+   "dictSenses": [
+    "adj. 危險的, 冒險的",
+    "adj. 有害的, 帶來危險的"
+   ],
+   "dictBrief": "adj. 危險的、冒險的、有害的、帶來危險的"
+  },
+  {
+   "word": "herbal",
+   "pos": "adj.",
+   "phonetic": "ˈhɜrbəl",
+   "senses": [
+    "草本的",
+    "藥草的"
+   ],
+   "dictSenses": [
+    "adj. 草本的, 藥草的",
+    "n. 草本植物誌"
+   ],
+   "dictBrief": "adj. 草本的、藥草的 / n. 草本植物誌"
+  },
+  {
+   "word": "hostilities",
+   "pos": "n.",
+   "phonetic": "hɑˈstɪlətiz",
+   "senses": [
+    "敵意",
+    "戰鬥",
+    "交戰"
+   ],
+   "dictSenses": [
+    "n. 戰鬥, 敵對行動",
+    "n. 敵意, 敵對狀態"
+   ],
+   "dictBrief": "n. 戰鬥、敵對行動、敵意、敵對狀態"
+  },
+  {
+   "word": "idiotic",
+   "pos": "adj.",
+   "phonetic": "ˌɪdiˈɑtɪk",
+   "senses": [
+    "愚蠢的",
+    "白癡的",
+    "智障的"
+   ],
+   "dictSenses": [
+    "adj. 愚蠢的, 白癡的",
+    "adj. 極度荒謬的"
+   ],
+   "dictBrief": "adj. 愚蠢的、白癡的、極度荒謬的"
+  },
+  {
+   "word": "illumination",
+   "pos": "n.",
+   "phonetic": "ɪˌluməˈneɪʃən",
+   "senses": [
+    "照明",
+    "闡明",
+    "啟發",
+    "彩燈裝飾"
+   ],
+   "dictSenses": [
+    "n. 照明, 照亮",
+    "n. 闡明, 啟發"
+   ],
+   "dictBrief": "n. 照明、照亮、闡明、啟發"
+  },
+  {
+   "word": "imperialism",
+   "pos": "n.",
+   "phonetic": "ɪmˈpɪriəˌlɪzəm",
+   "senses": [
+    "帝國主義",
+    "殖民主義"
+   ],
+   "dictSenses": [
+    "n. 帝國主義, 帝國統治"
+   ],
+   "dictBrief": "n. 帝國主義、帝國統治"
+  },
+  {
+   "word": "indulgence",
+   "pos": "n.",
+   "phonetic": "ɪnˈdʌldʒəns",
+   "senses": [
+    "縱容",
+    "沉溺",
+    "嗜好"
+   ],
+   "dictSenses": [
+    "n. 縱容, 沉溺",
+    "n. 赦罪符, 赎罪券"
+   ],
+   "dictBrief": "n. 縱容、沉溺、赦罪符"
+  },
+  {
+   "word": "indulgent",
+   "pos": "adj.",
+   "phonetic": "ɪnˈdʌldʒənt",
+   "senses": [
+    "縱容的",
+    "溺愛的",
+    "寬容的"
+   ],
+   "dictSenses": [
+    "adj. 縱容的, 溺愛的, 寬容的"
+   ],
+   "dictBrief": "adj. 縱容的、溺愛的、寬容的"
+  },
+  {
+   "word": "inevitably",
+   "pos": "adv.",
+   "phonetic": "ɪnˈevɪtəbli",
+   "senses": [
+    "不可避免地",
+    "必然"
+   ],
+   "dictSenses": [
+    "adv. 不可避免地, 必然地"
+   ],
+   "dictBrief": "adv. 不可避免地、必然地"
+  },
+  {
+   "word": "inheritance",
+   "pos": "n.",
+   "phonetic": "ɪnˈherɪtəns",
+   "senses": [
+    "遺產",
+    "繼承",
+    "傳統"
+   ],
+   "dictSenses": [
+    "n. 遺產, 繼承, 傳統"
+   ],
+   "dictBrief": "n. 遺產、繼承、傳統"
+  },
+  {
+   "word": "innovate",
+   "pos": "v.",
+   "phonetic": "ˈɪnəˌveɪt",
+   "senses": [
+    "創新",
+    "改革"
+   ],
+   "dictSenses": [
+    "v. 創新, 改革, 創設"
+   ],
+   "dictBrief": "v. 創新、改革、創設"
+  },
+  {
+   "word": "intimidated",
+   "pos": "adj.",
+   "phonetic": "ɪnˈtɪməˌdeɪtɪd",
+   "senses": [
+    "受威脅的",
+    "畏縮的",
+    "害怕的"
+   ],
+   "dictSenses": [
+    "adj. 受驚吓的, 害怕的"
+   ],
+   "dictBrief": "adj. 受驚吓的、害怕的"
+  },
+  {
+   "word": "intimidating",
+   "pos": "adj.",
+   "phonetic": "ɪnˈtɪməˌdeɪtɪŋ",
+   "senses": [
+    "嚇人的",
+    "令人畏懼的"
+   ],
+   "dictSenses": [
+    "adj. 嚇人的, 令人畏懼的"
+   ],
+   "dictBrief": "adj. 嚇人的、令人畏懼的"
+  },
+  {
+   "word": "majestically",
+   "pos": "adv.",
+   "phonetic": "məˈdʒestɪkli",
+   "senses": [
+    "威嚴地",
+    "宏偉地"
+   ],
+   "dictSenses": [
+    "adv. 威嚴地, 宏偉地"
+   ],
+   "dictBrief": "adv. 威嚴地、宏偉地"
+  },
+  {
+   "word": "masculinity",
+   "pos": "n.",
+   "phonetic": "ˌmæskjəˈlɪnəti",
+   "senses": [
+    "男性氣質",
+    "男子氣概"
+   ],
+   "dictSenses": [
+    "n. 男性氣質, 男子氣概"
+   ],
+   "dictBrief": "n. 男性氣質、男子氣概"
+  },
+  {
+   "word": "mischievously",
+   "pos": "adv.",
+   "phonetic": "ˈmɪs.tʃə.vəs.li",
+   "senses": [
+    "頑皮地",
+    "惡作劇地",
+    "淘氣地"
+   ],
+   "dictSenses": [
+    "adv. 頑皮地, 惡作劇地, 淘氣地"
+   ],
+   "dictBrief": "adv. 頑皮地、惡作劇地、淘氣地"
+  },
+  {
+   "word": "molecular",
+   "pos": "adj.",
+   "phonetic": "məˈlɛk.jə.lɚ",
+   "senses": [
+    "分子的",
+    "由分子組成的"
+   ],
+   "dictSenses": [
+    "adj. 分子的, 由分子組成的"
+   ],
+   "dictBrief": "adj. 分子的、由分子組成的"
+  },
+  {
+   "word": "monotonous",
+   "pos": "adj.",
+   "phonetic": "məˈnɑː.tə.nəs",
+   "senses": [
+    "單調的",
+    "乏味的",
+    "千篇一律的"
+   ],
+   "dictSenses": [
+    "adj. 單調的, 乏味的, 千篇一律的"
+   ],
+   "dictBrief": "adj. 單調的、乏味的、千篇一律的"
+  },
+  {
+   "word": "mythical",
+   "pos": "adj.",
+   "phonetic": "ˈmɪθ.ɪ.kəl",
+   "senses": [
+    "神話的",
+    "虛構的",
+    "想像中的"
+   ],
+   "dictSenses": [
+    "adj. 神話的, 虛構的, 想像中的"
+   ],
+   "dictBrief": "adj. 神話的、虛構的、想像中的"
+  },
+  {
+   "word": "notification",
+   "pos": "n.",
+   "phonetic": "ˌnoʊ.t̬ə.fəˈkeɪ.ʃən",
+   "senses": [
+    "通知",
+    "告示",
+    "通告"
+   ],
+   "dictSenses": [
+    "n. 通知, 通告, 告示"
+   ],
+   "dictBrief": "n. 通知、通告、告示"
+  },
+  {
+   "word": "notoriously",
+   "pos": "adv.",
+   "phonetic": "noʊˈtɔːr.i.əs.li",
+   "senses": [
+    "惡名昭彰地",
+    "眾所周知地"
+   ],
+   "dictSenses": [
+    "adv. 惡名昭彰地, 聲名狼藉地, 眾所周知地"
+   ],
+   "dictBrief": "adv. 惡名昭彰地、聲名狼藉地、眾所周知地"
+  },
+  {
+   "word": "nourishing",
+   "pos": "adj.",
+   "phonetic": "ˈnɝː.ɪ.ʃɪŋ",
+   "senses": [
+    "滋養的",
+    "營養豐富的"
+   ],
+   "dictSenses": [
+    "adj. 滋養的, 營養豐富的"
+   ],
+   "dictBrief": "adj. 滋養的、營養豐富的"
+  },
+  {
+   "word": "operationally",
+   "pos": "adv.",
+   "phonetic": "ˌɑː.pəˈreɪ.ʃən.əl.i",
+   "senses": [
+    "操作上",
+    "運作上"
+   ],
+   "dictSenses": [
+    "adv. 操作上, 運作上",
+    "adv. 實施上, 實用上"
+   ],
+   "dictBrief": "adv. 操作上、運作上、實施上"
+  },
+  {
+   "word": "optimist",
+   "pos": "n.",
+   "phonetic": "ˈɑːp.tə.mɪst",
+   "senses": [
+    "樂觀主義者",
+    "樂觀者"
+   ],
+   "dictSenses": [
+    "n. 樂觀主義者, 樂觀者"
+   ],
+   "dictBrief": "n. 樂觀主義者、樂觀者"
+  },
+  {
+   "word": "outwardly",
+   "pos": "adv.",
+   "phonetic": "ˈaʊt.wɚd.li",
+   "senses": [
+    "表面上",
+    "向外",
+    "外表上"
+   ],
+   "dictSenses": [
+    "adv. 表面上, 外表上, 向外"
+   ],
+   "dictBrief": "adv. 表面上、外表上、向外"
+  },
+  {
+   "word": "overwhelming",
+   "pos": "adj.",
+   "phonetic": "ˌoʊvərˈwɛlmɪŋ",
+   "senses": [
+    "壓倒性的",
+    "巨大的",
+    "無法抗拒的"
+   ],
+   "dictSenses": [
+    "adj. 壓倒的, 勢不可擋的",
+    "adj. 巨大的, 壓倒性的"
+   ],
+   "dictBrief": "adj. 壓倒的、勢不可擋的、巨大的、壓倒性的"
+  },
+  {
+   "word": "overwhelmingly",
+   "pos": "adv.",
+   "phonetic": "ˌoʊvərˈwɛlmɪŋli",
+   "senses": [
+    "壓倒性地",
+    "不可抗拒地",
+    "巨大地"
+   ],
+   "dictSenses": [
+    "adv. 壓倒性地, 絕大多數地"
+   ],
+   "dictBrief": "adv. 壓倒性地、絕大多數地"
+  },
+  {
+   "word": "patronage",
+   "pos": "n.",
+   "phonetic": "ˈpeɪtrənɪdʒ",
+   "senses": [
+    "贊助",
+    "光顧",
+    "庇護"
+   ],
+   "dictSenses": [
+    "n. 贊助, 庇護",
+    "n. 光顧, 顧客的光顧"
+   ],
+   "dictBrief": "n. 贊助、庇護、光顧、顧客的光顧"
+  },
+  {
+   "word": "patronize",
+   "pos": "v.",
+   "phonetic": "ˈpeɪtrənaɪz",
+   "senses": [
+    "光顧",
+    "以恩賜態度對待",
+    "贊助"
+   ],
+   "dictSenses": [
+    "v. 光顧, 惠顧",
+    "v. 以高人一等的態度對待, 恩賜"
+   ],
+   "dictBrief": "v. 光顧、惠顧、以高人一等的態度對待、恩賜"
+  },
+  {
+   "word": "pessimist",
+   "pos": "n.",
+   "phonetic": "ˈpɛsɪmɪst",
+   "senses": [
+    "悲觀主義者",
+    "悲觀者"
+   ],
+   "dictSenses": [
+    "n. 悲觀主義者, 悲觀者"
+   ],
+   "dictBrief": "n. 悲觀主義者、悲觀者"
+  },
+  {
+   "word": "prevailing",
+   "pos": "adj.",
+   "phonetic": "prɪˈveɪlɪŋ",
+   "senses": [
+    "盛行的",
+    "主流的",
+    "現行的"
+   ],
+   "dictSenses": [
+    "adj. 流行的, 盛行的",
+    "adj. 普遍的, 現行的"
+   ],
+   "dictBrief": "adj. 流行的、盛行的、普遍的、現行的"
+  },
+  {
+   "word": "profoundly",
+   "pos": "adv.",
+   "phonetic": "prəˈfaʊndli",
+   "senses": [
+    "深刻地",
+    "深深地",
+    "極度"
+   ],
+   "dictSenses": [
+    "adv. 深深地, 深刻地",
+    "adv. 极度, 完全"
+   ],
+   "dictBrief": "adv. 深深地、深刻地、极度、完全"
+  },
+  {
+   "word": "rebelliously",
+   "pos": "adv.",
+   "phonetic": "rɪˈbɛliəsli",
+   "senses": [
+    "叛逆地",
+    "造反地"
+   ],
+   "dictSenses": [
+    "adv. 叛逆地, 造反地"
+   ],
+   "dictBrief": "adv. 叛逆地、造反地"
+  },
+  {
+   "word": "recklessly",
+   "pos": "adv.",
+   "phonetic": "ˈrɛkləsli",
+   "senses": [
+    "魯莽地",
+    "不計后果地",
+    "草率地"
+   ],
+   "dictSenses": [
+    "adv. 魯莽地, 不顧后果地"
+   ],
+   "dictBrief": "adv. 魯莽地、不顧后果地"
+  },
+  {
+   "word": "recruitment",
+   "pos": "n.",
+   "phonetic": "rɪˈkruːtmənt",
+   "senses": [
+    "招募",
+    "招聘",
+    "吸收新成員"
+   ],
+   "dictSenses": [
+    "n. 招募, 招聘",
+    "n. 徵募新兵"
+   ],
+   "dictBrief": "n. 招募、招聘、徵募新兵"
+  },
+  {
+   "word": "reinforcement",
+   "pos": "n.",
+   "phonetic": "ˌriːɪnˈfɔːrsmənt",
+   "senses": [
+    "增援",
+    "加固",
+    "強化"
+   ],
+   "dictSenses": [
+    "n. 增援, 加固, 強化",
+    "n. 增援部隊, 補給品"
+   ],
+   "dictBrief": "n. 增援、加固、強化、增援部隊、補給品"
+  },
+  {
+   "word": "repayment",
+   "pos": "n.",
+   "phonetic": "rɪˈpeɪmənt",
+   "senses": [
+    "償還",
+    "還款",
+    "報答"
+   ],
+   "dictSenses": [
+    "n. 償還, 還款, 報答",
+    "n. 償還額, 酬勞"
+   ],
+   "dictBrief": "n. 償還、還款、報答、償還額、酬勞"
+  },
+  {
+   "word": "reproduction",
+   "pos": "n.",
+   "phonetic": "ˌriːprəˈdʌkʃn",
+   "senses": [
+    "繁殖",
+    "複製",
+    "生殖"
+   ],
+   "dictSenses": [
+    "n. 繁殖, 複製, 生殖",
+    "n. 複製品, 再現"
+   ],
+   "dictBrief": "n. 繁殖、複製、生殖、複製品、再現"
+  },
+  {
+   "word": "respectively",
+   "pos": "adv.",
+   "phonetic": "rɪˈspektɪvli",
+   "senses": [
+    "各自",
+    "分別",
+    "依序"
+   ],
+   "dictSenses": [
+    "adv. 分別, 各自, 依序"
+   ],
+   "dictBrief": "adv. 分別、各自、依序"
+  },
+  {
+   "word": "retailer",
+   "pos": "n.",
+   "phonetic": "ˈriːteɪlər",
+   "senses": [
+    "零售商",
+    "零售業者"
+   ],
+   "dictSenses": [
+    "n. 零售商, 零售業者"
+   ],
+   "dictBrief": "n. 零售商、零售業者"
+  },
+  {
+   "word": "retrieval",
+   "pos": "n.",
+   "phonetic": "rɪˈtriːvl",
+   "senses": [
+    "檢索",
+    "取回",
+    "挽回"
+   ],
+   "dictSenses": [
+    "n. 取回, 挽回, 恢復",
+    "n. 檢索, 資訊檢索"
+   ],
+   "dictBrief": "n. 取回、挽回、恢復、檢索、資訊檢索"
+  },
+  {
+   "word": "rhetorical",
+   "pos": "adj.",
+   "phonetic": "rɪˈtɔːrɪkl",
+   "senses": [
+    "修辭的",
+    "辭藻華麗的",
+    "反問的"
+   ],
+   "dictSenses": [
+    "adj. 修辭的, 辭藻華麗的",
+    "adj. 反問的, 虛飾的"
+   ],
+   "dictBrief": "adj. 修辭的、辭藻華麗的、反問的、虛飾的"
+  },
+  {
+   "word": "saddler",
+   "pos": "n.",
+   "phonetic": "ˈsædlər",
+   "senses": [
+    "馬具商",
+    "鞍匠"
+   ],
+   "dictSenses": [
+    "n. 馬具商, 鞍匠"
+   ],
+   "dictBrief": "n. 馬具商、鞍匠"
+  },
+  {
+   "word": "scornful",
+   "pos": "adj.",
+   "phonetic": "ˈskɔːrnfl",
+   "senses": [
+    "輕蔑的",
+    "鄙視的",
+    "傲慢的"
+   ],
+   "dictSenses": [
+    "adj. 輕蔑的, 鄙視的"
+   ],
+   "dictBrief": "adj. 輕蔑的、鄙視的"
+  },
+  {
+   "word": "senate",
+   "pos": "n.",
+   "phonetic": "ˈsenət",
+   "senses": [
+    "參議院",
+    "上議院"
+   ],
+   "dictSenses": [
+    "n. 參議院, 上議院",
+    "n. 大學理事會, 元老院"
+   ],
+   "dictBrief": "n. 參議院、上議院、大學理事會、元老院"
+  },
+  {
+   "word": "shattering",
+   "pos": "adj.",
+   "phonetic": "ˈʃætərɪŋ",
+   "senses": [
+    "令人心碎的",
+    "震碎的",
+    "打碎的"
+   ],
+   "dictSenses": [
+    "adj. 破碎的, 令人震驚的",
+    "adj. 毀滅性的, 令人心碎的"
+   ],
+   "dictBrief": "adj. 破碎的、令人震驚的、毀滅性的、令人心碎的"
+  },
+  {
+   "word": "spacecraft",
+   "pos": "n.",
+   "phonetic": "ˈspeɪskræft",
+   "senses": [
+    "太空船",
+    "宇宙飛船"
+   ],
+   "dictSenses": [
+    "n. 太空船, 宇宙飛船"
+   ],
+   "dictBrief": "n. 太空船、宇宙飛船"
+  },
+  {
+   "word": "speculation",
+   "pos": "n.",
+   "phonetic": "ˌspɛkjəˈleɪʃən",
+   "senses": [
+    "推測",
+    "投機",
+    "猜測"
+   ],
+   "dictSenses": [
+    "n. 推測, 猜測",
+    "n. 投機, 投機買賣"
+   ],
+   "dictBrief": "n. 推測、猜測、投機、投機買賣"
+  },
+  {
+   "word": "spontaneously",
+   "pos": "adv.",
+   "phonetic": "spɑnˈtneɪəsli",
+   "senses": [
+    "自發地",
+    "不由自主地",
+    "自然地"
+   ],
+   "dictSenses": [
+    "adv. 自發地, 自然地",
+    "adv. 不由自主地"
+   ],
+   "dictBrief": "adv. 自發地、自然地、不由自主地"
+  },
+  {
+   "word": "startling",
+   "pos": "adj.",
+   "phonetic": "ˈstɑrtəlɪŋ",
+   "senses": [
+    "令人驚訝的",
+    "令人震驚的"
+   ],
+   "dictSenses": [
+    "adj. 令人驚訝的, 令人震驚的"
+   ],
+   "dictBrief": "adj. 令人驚訝的、令人震驚的"
+  },
+  {
+   "word": "submission",
+   "pos": "n.",
+   "phonetic": "səbˈmɪʃən",
+   "senses": [
+    "提交",
+    "屈服",
+    "呈遞"
+   ],
+   "dictSenses": [
+    "n. 提交, 呈遞",
+    "n. 屈服, 服從"
+   ],
+   "dictBrief": "n. 提交、呈遞、屈服、服從"
+  },
+  {
+   "word": "synthesize",
+   "pos": "v.",
+   "phonetic": "ˈsɪnθəˌsaɪz",
+   "senses": [
+    "合成",
+    "綜合",
+    "整合"
+   ],
+   "dictSenses": [
+    "v. 合成, 綜合",
+    "v. 整合"
+   ],
+   "dictBrief": "v. 合成、綜合、整合"
+  },
+  {
+   "word": "terrifying",
+   "pos": "adj.",
+   "phonetic": "ˈtɛrəˌfaɪɪŋ",
+   "senses": [
+    "可怕的",
+    "嚇人的",
+    "駭人的"
+   ],
+   "dictSenses": [
+    "adj. 可怕的, 駭人的",
+    "adj. 嚇人的"
+   ],
+   "dictBrief": "adj. 可怕的、駭人的、嚇人的"
+  }
+ ]
+}

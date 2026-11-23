@@ -1,0 +1,464 @@
+{
+ "meta": {
+  "sourceType": "ai",
+  "pool": "C",
+  "generator": "SenseNova 6.8 Flash Lite",
+  "generatedAt": "2026-10-02T16:57:59.645Z",
+  "reviewStatus": "glm_review_passed",
+  "note": "Pool C 第一批（30 題詞彙）；與 draft_v1/selection/real 不得重複正解詞",
+  "reviewedAt": "2026-10-03"
+ },
+ "questions": [
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 1,
+   "q": "The new battery plant triples ______ in six months, and the county hopes the extra jobs will stop young people from leaving for Taipei.",
+   "options": [
+    "A. production",
+    "B. prediction",
+    "C. reduction",
+    "D. protection"
+   ],
+   "answer": 0,
+   "explanation": "production＝產量、生產，新工廠 triples production（產量增加三倍）是固定搭配；prediction（預測）與 protection（保護）無法被工廠增加三倍，reduction（減少）更與 triples 直接矛盾。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 2,
+   "q": "During the group project, the teacher graded cooperation and listening as well as writing, because these ______ skills decide how well a team works.",
+   "options": [
+    "A. special",
+    "B. social",
+    "C. facial",
+    "D. racial"
+   ],
+   "answer": 1,
+   "explanation": "social skills（社交能力）指與人相處的技術，正對應前文的 cooperation 與 listening；special（特別的）在前文沒有依據，facial（臉部的）、racial（種族的）與團隊合作毫無關係。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 3,
+   "q": "After the last small school closed, the county built a longer bus route so rural children would not miss out on their ______.",
+   "options": [
+    "A. deduction",
+    "B. duration",
+    "C. education",
+    "D. medication"
+   ],
+   "answer": 2,
+   "explanation": "education＝教育，學校停辦後要讓孩子不失去的是上學的機會；deduction（推論）、duration（持續時間）、medication（藥物）都不是學校停辦會失去的東西。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 4,
+   "q": "Instead of arguing who was wrong, the teacher asked the two groups to ______ one set of data with the other and find the error.",
+   "options": [
+    "A. compete",
+    "B. compile",
+    "C. compose",
+    "D. compare"
+   ],
+   "answer": 3,
+   "explanation": "compare A with B（把 A 與 B 比較）是固定結構，目的正是找出量測上的錯誤；compete 須接 for 或 against，compile（彙編）、compose（組成、譜寫）都不接 with 來比較兩組資料。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 5,
+   "q": "Every volunteer must ______ a first-aid certificate before working with the children, and the certificate expires after three years.",
+   "options": [
+    "A. receive",
+    "B. deceive",
+    "C. perceive",
+    "D. recite"
+   ],
+   "answer": 0,
+   "explanation": "receive a certificate（取得證書）為固定用法，且 must 後接原形；deceive（欺騙）、perceive（感知）、recite（背誦）都不能與 certificate 搭配。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 6,
+   "q": "After the city replaced the old copper lines, farmers in the village finally have a stable internet ______ for checking prices.",
+   "options": [
+    "A. collection",
+    "B. convention",
+    "C. connection",
+    "D. contention"
+   ],
+   "answer": 2,
+   "explanation": "internet connection（網路連線）被 stable 修飾並用來查價格，語境完全吻合；collection（收集）、convention（會議）、contention（爭論）都不能與 stable internet 搭配。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 7,
+   "q": "The committee needed one more week to make the ______, because two of the members had not seen the final report.",
+   "options": [
+    "A. division",
+    "B. decision",
+    "C. precision",
+    "D. revision"
+   ],
+   "answer": 1,
+   "explanation": "make the decision（做出決定）是固定搭配，後文「成員還沒看到最終報告」正是決定無法做出的原因；division（部門、除法）、precision（精確度）、revision（修訂）都不能用 make 搭配。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 8,
+   "q": "Children ask many strange questions during the farm trip, and the guide says being ______ is the best reason to learn about insects.",
+   "options": [
+    "A. furious",
+    "B. curious",
+    "C. cautious",
+    "D. serious"
+   ],
+   "answer": 1,
+   "explanation": "curious（好奇的）對應前文 ask many strange questions，也是願意學習觀察昆蟲的動機；furious（生氣的）、cautious（過度小心）、serious（嚴肅的）都不是不停提問的理由。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 9,
+   "q": "After the library moved its catalogue online, the old paper cards ______ in a glass case beside the front entrance.",
+   "options": [
+    "A. regain",
+    "B. refrain",
+    "C. remain",
+    "D. remind"
+   ],
+   "answer": 2,
+   "explanation": "remain 接補語表示「仍留在原地」，主詞 old paper cards 為複數所以用原形；regain（重新取得）、refrain（克制）、remind（提醒）都不能接 in a glass case。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 10,
+   "q": "The school sent a small team to another city to learn how people there sort lunch waste; the trip was a valuable ______.",
+   "options": [
+    "A. mission",
+    "B. admission",
+    "C. emission",
+    "D. mansion"
+   ],
+   "answer": 0,
+   "explanation": "mission＝為特定目的而進行的任務、考察，與 sent a small team to another city 完全對應；admission（准許）、emission（排放）、mansion（大宅）語意皆不符。",
+   "doubts": "同詞性形近詞 session 未採用（它可寬鬆解讀為「一次活動」，可能削弱答案唯一性）；如審核者認為「到另一個城市」的移動語境已足夠排除，可自行加回作干擾項。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 11,
+   "q": "Users on the app can ______ every restaurant with stars, so new customers know which shop is worth the long walk.",
+   "options": [
+    "A. race",
+    "B. mate",
+    "C. date",
+    "D. rate"
+   ],
+   "answer": 3,
+   "explanation": "rate something with stars（以星星為某物評分）是常見用法，也呼應後文讓新顧客判斷哪家值得走一趟；race（比賽）、mate（配對）、date（約會）都不能接 with stars 表示評價。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 12,
+   "q": "The hikers marked their ______ on the map every hour, so the ranger could find the whole group after the storm.",
+   "options": [
+    "A. vocation",
+    "B. location",
+    "C. donation",
+    "D. rotation"
+   ],
+   "answer": 1,
+   "explanation": "location＝位置，mark the location on the map 是 ranger 事後找到整隊的前提；vocation（志業）、donation（捐獻）、rotation（輪值）都不可能標在地圖上。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 13,
+   "q": "Two teams wanted to ______ for the same prize, so the judges changed the rules to avoid unfair scores.",
+   "options": [
+    "A. compete",
+    "B. compute",
+    "C. commute",
+    "D. compose"
+   ],
+   "answer": 0,
+   "explanation": "compete for（競爭某項獎）為固定搭配，兩隊搶同一獎項才需要裁判修改規則；compute（計算）、commute（通勤）、compose（組成、譜寫）都不接 for a prize。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 14,
+   "q": "The teacher rewrote her test after seeing the students' ______ to the first version, because most answers showed a misunderstanding.",
+   "options": [
+    "A. action",
+    "B. reduction",
+    "C. rejection",
+    "D. reaction"
+   ],
+   "answer": 3,
+   "explanation": "reaction to（對……的反應）對應 seeing the students' reaction，並解釋老師為何重寫試題；action（行動）與 reduction（減少）不接 to，rejection（拒斥）通常接 of。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 15,
+   "q": "With poor ______ in the heavy fog, the pilot had to rely on her instruments, and she still landed the plane safely.",
+   "options": [
+    "A. division",
+    "B. revision",
+    "C. vision",
+    "D. person"
+   ],
+   "answer": 2,
+   "explanation": "vision＝視力，poor vision in the heavy fog 是必須依賴儀器的原因；division（部門、除法）、revision（修訂）、person（人）與霧中航行無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 16,
+   "q": "The manager tried to ______ the temptation to check his phone during the meeting, and finally placed it in a drawer.",
+   "options": [
+    "A. assist",
+    "B. persist",
+    "C. reside",
+    "D. resist"
+   ],
+   "answer": 3,
+   "explanation": "resist the temptation（抵擋誘惑）為固定搭配，與後文「把手機收進抽屜」一致；assist（協助）、reside（居住）都不能接 temptation，persist 須接 in。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 17,
+   "q": "The school asks every parent to sign the form, to ______ that no student rides home alone after dark.",
+   "options": [
+    "A. ensure",
+    "B. assure",
+    "C. ensue",
+    "D. injure"
+   ],
+   "answer": 0,
+   "explanation": "ensure that（確保……）直接接 that 子句，說明簽名的目的是避免有學生獨自天黑回家；assure 須接人（assure someone that），ensue（發生）、injure（傷害）語意不合。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 18,
+   "q": "The student's simple ______ saves electricity at night, and the principal asked her to show it to the whole grade.",
+   "options": [
+    "A. intention",
+    "B. convention",
+    "C. infection",
+    "D. invention"
+   ],
+   "answer": 3,
+   "explanation": "invention＝發明，simple invention 能省電並值得給全級展示；intention（意圖）、convention（慣例、大會）、infection（感染）都沒有節省電力的功能。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 19,
+   "q": "Students who miss the Saturday test may still sit on Sunday, because the school leaves one extra ______ for late arrivals.",
+   "options": [
+    "A. opinion",
+    "B. notion",
+    "C. option",
+    "D. nation"
+   ],
+   "answer": 2,
+   "explanation": "option＝選項、可供選擇的方案，學校留下額外的 option 讓遲到者改在週日應試；opinion（意見）、notion（概念）、nation（國家）都不是能留下來給學生改期的東西。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 20,
+   "q": "The new bridge solved the traffic problem, yet the language difference still acts as a ______ between the two groups of neighbors.",
+   "options": [
+    "A. carrier",
+    "B. barrier",
+    "C. warrior",
+    "D. barrel"
+   ],
+   "answer": 1,
+   "explanation": "barrier＝障礙、鴻溝，a barrier between 是固定結構，呼應橋通了但語言仍不相通；carrier（攜帶者）、warrior（戰士）、barrel（木桶）在 between 兩群鄰居的句型中不成立。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 21,
+   "q": "Nobody in the room wanted to speak first, so the ______ grew until the teacher asked for a quick vote.",
+   "options": [
+    "A. extension",
+    "B. tension",
+    "C. version",
+    "D. mansion"
+   ],
+   "answer": 1,
+   "explanation": "tension＝緊張氣氛，沒有人先開口使氣氛緊繃，最後靠投票化解；extension（延長、分機）、version（版本）、mansion（大宅）都不會 grow 到需要投票。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 22,
+   "q": "The boy raised his arm to call the dog, but the old man thought his movement carried a rude ______.",
+   "options": [
+    "A. invention",
+    "B. attention",
+    "C. intention",
+    "D. infection"
+   ],
+   "answer": 2,
+   "explanation": "intention＝意圖，舉手是叫狗卻被誤解為帶有無禮意圖，正是誤會的焦點；invention（發明）、attention（注意）、infection（感染）都無法與 carried a rude 搭配。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 23,
+   "q": "The nurse cleaned the small cut at once, because even a tiny wound can cause a serious ______ in hot weather.",
+   "options": [
+    "A. infection",
+    "B. affection",
+    "C. inflation",
+    "D. inspection"
+   ],
+   "answer": 0,
+   "explanation": "infection＝感染，炎熱天氣連小傷口都可能造成感染，所以要立刻清理；affection（喜愛）、inflation（通膨、膨脹）、inspection（檢查）都不是傷口會引發的東西。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 24,
+   "q": "The library closes early every Sunday without ______, even in summer when almost no other store in town stays open.",
+   "options": [
+    "A. deception",
+    "B. execution",
+    "C. perception",
+    "D. exception"
+   ],
+   "answer": 3,
+   "explanation": "without exception（沒有例外）是固定片語，說明週日提早閉館從無例外；deception（欺騙）、execution（執行）、perception（知覺）都不能接在 without 之後表達「無例外」。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 25,
+   "q": "Students must ______ their first draft at least once before submitting it, because most endings contradict the opening paragraph.",
+   "options": [
+    "A. devise",
+    "B. revise",
+    "C. define",
+    "D. recite"
+   ],
+   "answer": 1,
+   "explanation": "revise（修訂）後接原稿，正是為了修正結尾與開頭矛盾的問題；devise（設計）、define（定義）、recite（背誦）都無法用來修改第一稿。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 26,
+   "q": "The artist wants viewers to share the same ______ of her painting, so she explains the color of each corner.",
+   "options": [
+    "A. deception",
+    "B. reception",
+    "C. perception",
+    "D. exception"
+   ],
+   "answer": 2,
+   "explanation": "perception＝知覺、理解，perception of 指觀者對畫作的解讀，正是要說明每個角落顏色的理由；deception（欺騙）、reception（接待、接收）、exception（例外）都不表對畫的理解方式。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 27,
+   "q": "The game offers an easier ______ for young children, so they can finish the first level without any help from an adult.",
+   "options": [
+    "A. diversion",
+    "B. erosion",
+    "C. person",
+    "D. version"
+   ],
+   "answer": 3,
+   "explanation": "version＝版本，an easier version for young children（較簡單的小孩版）讓孩童不必大人幫忙；diversion（轉移、娛樂）、erosion（侵蝕）、person（人）都不用於形容同一款遊戲的難度設定。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 28,
+   "q": "The new table has much wider legs, so it has better ______ and does not shake when students climb on it.",
+   "options": [
+    "A. stability",
+    "B. inability",
+    "C. instability",
+    "D. liability"
+   ],
+   "answer": 0,
+   "explanation": "stability＝穩固性，桌腳較寬讓桌面更穩、不受學生攀爬影響；instability（不穩）與 better 矛盾，inability（無能力）、liability（負債、傾向）都不描述桌椅的穩固度。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 29,
+   "q": "The phone motion ______ turns the screen off when you lay it face down, which saves a lot of battery power.",
+   "options": [
+    "A. mentor",
+    "B. sensor",
+    "C. senator",
+    "D. vendor"
+   ],
+   "answer": 1,
+   "explanation": "sensor＝感測器，motion sensor 能偵測擺放角度才可能自動關螢幕省電；mentor（導師）、senator（參議員）、vendor（賣主）與手機硬體功能無關。"
+  },
+  {
+   "sourceType": "ai",
+   "source": "poolc-v1",
+   "section": "詞彙題",
+   "qnum": 30,
+   "q": "Workers near hot machines can be exposed to harmful ______, so the factory limits the time each person may stay there.",
+   "options": [
+    "A. aviation",
+    "B. graduation",
+    "C. radiation",
+    "D. tradition"
+   ],
+   "answer": 2,
+   "explanation": "radiation＝輻射，be exposed to harmful radiation 是高溫機器旁的風險，所以才限制停留時間；aviation（航空）、graduation（畢業）、tradition（傳統）都不是人會暴露在下的有害物質。"
+  }
+ ]
+}
